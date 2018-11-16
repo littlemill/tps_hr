@@ -2,14 +2,15 @@ package tps_hr;
 
 import java.util.*;
 
-public class Employee {
-	private String user;
-	private String password;
-	private String name,surname,nickname,tel,address,id,status;
-	private int age;
-	private String startingdate,birthdate,resignationdate; //"date/month/year" and "-" if haven't resigned yet.
-	private Certificate[] CertificateList;
-	private Payroll[] PayrollList;
+public abstract class Employee {
+	protected String user;
+	protected String password;
+	protected String name,surname,nickname,tel,address,id,status;
+	protected int age;
+	protected String startingdate,birthdate,resignationdate; //"date/month/year" and "-" if haven't resigned yet.
+	protected Certificate[] CertificateList;
+	protected Payroll[] PayrollList;
+	protected int holidayEntitlement;
 	
 	
 	public Employee() {
@@ -109,6 +110,11 @@ public class Employee {
 	public void setResignationdate(String resignationdate) {
 		this.resignationdate = resignationdate;
 	}
-	
+
+	public int getHolidayEntitlement() {
+		return holidayEntitlement;
+	}
+
+	public abstract void setHolidayEntitlement() ;
 	
 }
