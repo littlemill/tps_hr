@@ -9,7 +9,7 @@ public abstract class Employee {
 	protected int age;
 	protected String startingdate,birthdate,resignationdate; //"date/month/year" and "-" if haven't resigned yet.
 	protected Certificate[] CertificateList;
-	protected Payroll[] PayrollList;
+	protected PayrollClass[] PayrollList;
 	protected int holidayEntitlement;
 	
 	
