@@ -12,7 +12,7 @@ public abstract class Employee extends TPS {
 	protected ArrayList<Payroll> payrollList;
 	protected ArrayList<TimeSheet> timeSheetList;
 	protected int workYears; // calculating holiday entitlement
-	
+	protected boolean hasResigned;
 	
 	public Employee() {
 		setId("");
@@ -42,6 +42,12 @@ public abstract class Employee extends TPS {
 		certificateList = new ArrayList<Certificate>();
 		payrollList = new ArrayList<Payroll>();
 		timeSheetList = new ArrayList<TimeSheet>();
+	}
+	
+	public void resign() {
+		this.setHasResigned(true);
+		this.setResignationDate(Calendar.getInstance());
+		this.resignedEmployee.add(this);
 	}
 	public abstract String toString(); 
 
@@ -163,4 +169,16 @@ public abstract class Employee extends TPS {
 		this.workYears = workYears;
 	}
 
+	public boolean isHasResigned() {
+		return hasResigned;
+	}
+
+	public void setHasResigned(boolean hasResigned) {
+		this.hasResigned = hasResigned;
+	}
+
+	public void setResignationDate(Calendar resignationDate) {
+		this.resignationDate = resignationDate;
+	}
+	
 }

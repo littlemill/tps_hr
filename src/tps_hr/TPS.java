@@ -9,6 +9,7 @@ public class TPS {
 	protected ArrayList<GA> gaList;
 	protected ArrayList<Finance> financeList;
 	protected ArrayList<Project> projectList;
+	protected ArrayList<Employee> resignedEmployee;
 	public int latestProjectCode;
 	
 	public TPS() {
@@ -18,6 +19,7 @@ public class TPS {
 		gaList = new ArrayList<GA>();
 		financeList = new ArrayList<Finance>();
 		projectList = new ArrayList<Project>();
+		resignedEmployee = new ArrayList<Employee>();
 		this.setLatestProjectCode(0);		
 	}
 	
