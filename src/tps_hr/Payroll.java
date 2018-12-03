@@ -42,5 +42,4 @@ public class Payroll {
 	public void setCommission(int commission) {
 		this.commission = commission;
 	}
-	
 }
