@@ -19,6 +19,17 @@ public class TPS {
 		this.setLatestProjectCode(0);		
 	}
 	
+	public Project projectCodeToProject(int projectCode) {
+		if (projectCode > (this.getLatestProjectCode()-1)) {
+			projectCode = this.getLatestProjectCode()-1;
+		}
+		for(int i=0;i<projectList.size();i++) {
+			if(projectList.get(i).getProjectCode() == projectCode) {
+				return projectList.get(i);
+			}
+		}
+	}
+	
 	public void addOperation(Operation operation) {
 		this.operationList.add(operation);
 	}
