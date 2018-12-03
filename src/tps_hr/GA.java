@@ -1,20 +1,20 @@
 package tps_hr;
 
-import java.util.Date;
-
 public class GA extends Employee {
 	private int projectCode;
 	
-	public GA() {
-		super();
+	public GA(String name, String surname) {
+		super(name, surname);
 	}
 	
-	public void generateProjectCode(String projectName, Sales sales, Operation operation, Date date) {
-		Project project = new Project(projectName, sales, operation);
-		this.addProject(project);
-		sales.projects(project);
-		operation.projects(project);
-		project.hasProjectCode = true;
+	public boolean generateProjectCode(Project projectName) {
+		if (projectName.isHasProjectCode()) return false;
+		else {
+		projectName.setProjectCode(this.getLatestProjectCode());
+		this.setLatestProjectCode(this.getLatestProjectCode()+1);
+		projectName.setHasProjectCode(true);
+		return true;
+		}
 	}
 
 	public int getProjectCode() {
@@ -25,5 +25,8 @@ public class GA extends Employee {
 		this.projectCode = projectCode;
 	}
 	
-	
+	public String toString() {
+		return "GA"+"\n"+"Name: "+this.getName()+" Surname: "+this.getSurname()+" ("+nickname+")\n"+
+	            "Birthdate: "+this.getBirthDate().toString()+" Age:"+this.getAge()+" Tel: "+this.getTel()+"\n"+"Address :"+this.getAddress();
+	}
 }

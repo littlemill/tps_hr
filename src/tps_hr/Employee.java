@@ -2,7 +2,7 @@ package tps_hr;
 
 import java.util.*;
 
-public abstract class Employee implements HolidayEntitlement {
+public abstract class Employee extends TPS {
 	protected String id, password;
 	protected String name,surname,nickname,tel,address,status;
 	protected int age, salary;
@@ -29,6 +29,10 @@ public abstract class Employee implements HolidayEntitlement {
 		certificateList = new ArrayList<Certificate>();
 		payrollList = new ArrayList<Payroll>();
 		timeSheetList = new ArrayList<TimeSheet>();
+	}
+	public Employee(String name, String surname) {
+		this.name = name;
+		this.surname = surname;
 	}
 	
 	public abstract String toString(); 

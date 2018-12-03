@@ -5,7 +5,7 @@ import java.util.Calendar;
 public class Project {
 	private String projectName,organization,sale,engineer,note;
 	private Calendar startingDate,implementDate;
-	private String projectCode;
+	private int projectCode;
 	private int projectCost,profit;
 	private boolean hasProjectCode,isApprovedbyCEO,isApprovedbyEVP,isImplemented;
 	
@@ -73,11 +73,11 @@ public class Project {
 		
 	}
 
-	public String getProjectCode() {
+	public int getProjectCode() {
 		return projectCode;
 	}
 
-	public void setProjectCode(String projectCode) {
+	public void setProjectCode(int projectCode) {
 		this.projectCode = projectCode;
 	}
 

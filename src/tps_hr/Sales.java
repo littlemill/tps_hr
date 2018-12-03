@@ -1,19 +1,38 @@
 package tps_hr;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 public class Sales extends Employee {
 	private double annualCommission;
-	private ArrayList<Project> projectList;
+	private ArrayList<Project> projectHistory;
 	
-	public Sales() {
-		super();
-		projectList = new ArrayList<Project>();
+	public Sales(String name, String surname) {
+		super(name, surname);
+		projectHistory = new ArrayList<Project>();
 	}
 	
-	public projects(Project project) {
-		projectList.add(project);
+	public void addHistory(Project project) {
+		projectHistory.add(project);
 	}
+	
+	public String toString() {
+		return "SALES"+"\n"+"Name: "+this.getName()+" Surname: "+this.getSurname()+" ("+nickname+")\n"+
+	            "Birthdate: "+this.getBirthDate().toString()+" Age:"+this.getAge()+" Tel: "+this.getTel()+"\n"+"Address :"+this.getAddress();
+	}
+
+	//getters&setters
+	public double getAnnualCommission() {
+		return annualCommission;
+	}
+
+	public void setAnnualCommission(double annualCommission) {
+		this.annualCommission = annualCommission;
+	}
+
+	public ArrayList<Project> getProjectHistory() {
+		return projectHistory;
+	}
+	
+	
 	
 }

@@ -3,20 +3,26 @@ package tps_hr;
 import java.util.ArrayList;
 
 public class TPS {
+	protected ArrayList<EVP> evpList;
 	protected ArrayList<Operation> operationList;
 	protected ArrayList<Sales> salesList;
 	protected ArrayList<GA> gaList;
 	protected ArrayList<Finance> financeList;
 	protected ArrayList<Project> projectList;
-	protected int latestProjectCode;
+	public int latestProjectCode;
 	
 	public TPS() {
+		evpList = new ArrayList<EVP>();
 		operationList = new ArrayList<Operation>();
 		salesList = new ArrayList<Sales>();
 		gaList = new ArrayList<GA>();
 		financeList = new ArrayList<Finance>();
 		projectList = new ArrayList<Project>();
 		this.setLatestProjectCode(0);		
+	}
+	
+	public void addEVP(EVP evp) {
+		this.evpList.add(evp);
 	}
 	
 	public void addOperation(Operation operation) {
