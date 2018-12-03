@@ -129,6 +129,4 @@ public class Project {
 		this.isImplemented = isImplemented;
 	}
 	
-	
-	
 }
