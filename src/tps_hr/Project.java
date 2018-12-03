@@ -3,17 +3,29 @@ package tps_hr;
 import java.util.Calendar;
 
 public class Project {
-	private String projectName,organization,sale,engineer,note;
+	private String projectName,organization,note;
+	private Sales sale;
+	private Operation engineer;
 	private Calendar startingDate,implementDate;
 	private int projectCode;
-	private int projectCost,profit;
+	private int projectCost,profit,travelExpenses;
 	private boolean hasProjectCode,isApprovedbyCEO,isApprovedbyEVP,isImplemented;
 	
-	public Project(String projectName,String sale,String engineer){
+	public Project(String projectName,Sales sale,Operation engineer){
 		setProjectName(projectName);
 		setSale(sale);
 		setEngineer(engineer);
 		setStartingDate(Calendar.getInstance());
+	}
+	
+	public boolean closeProject() {
+		if(isImplemented()&&isApprovedbyCEO()&&isApprovedbyEVP()) {
+			this.getSale().setAnnualCommission(this.getSale().getAnnualCommission()+(1.5/100)*this.getProjectCost());
+			this.getEngineer().setAnnualTravelExpense(this.getTravelExpenses());
+			return true;
+		}else {
+			return false;
+		}
 	}
 
 	public String getProjectName() {
@@ -32,19 +44,19 @@ public class Project {
 		this.organization = organization;
 	}
 
-	public String getSale() {
+	public Sales getSale() {
 		return sale;
 	}
 
-	public void setSale(String sale) {
+	public void setSale(Sales sale) {
 		this.sale = sale;
 	}
 
-	public String getEngineer() {
-		return engineer;
+	public Operation getEngineer() {
+		return this.engineer;
 	}
 
-	public void setEngineer(String engineer) {
+	public void setEngineer(Operation engineer) {
 		this.engineer = engineer;
 	}
 
@@ -128,5 +140,14 @@ public class Project {
 	public void setImplemented(boolean isImplemented) {
 		this.isImplemented = isImplemented;
 	}
+
+	public int getTravelExpenses() {
+		return travelExpenses;
+	}
+
+	public void setTravelExpenses(int travelExpenses) {
+		this.travelExpenses = travelExpenses;
+	}
+	
 	
 }

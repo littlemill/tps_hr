@@ -3,14 +3,15 @@ package tps_hr;
 import java.util.*;
 
 public abstract class Employee extends TPS {
+
 	protected String id, password;
 	protected String name,surname,nickname,tel,address,status;
 	protected int age, salary;
-	protected Date birthDate, startingDate, resignationDate;
+	protected Calendar birthDate, startingDate, resignationDate;
 	protected ArrayList<Certificate> certificateList;
 	protected ArrayList<Payroll> payrollList;
 	protected ArrayList<TimeSheet> timeSheetList;
-	protected int workYears, maxHolidays, usedHolidays; // calculating holiday entitlement
+	protected int workYears; // calculating holiday entitlement
 	
 	
 	public Employee() {
@@ -23,25 +24,33 @@ public abstract class Employee extends TPS {
 		setStatus("single");
 		setAge(0);
 		setSalary(0);
-		/*setBirthdate("");
-		setStartingdate("");
-		setResignationdate("-"); */
 		certificateList = new ArrayList<Certificate>();
 		payrollList = new ArrayList<Payroll>();
 		timeSheetList = new ArrayList<TimeSheet>();
 	}
-	public Employee(String name, String surname) {
-		this.name = name;
-		this.surname = surname;
-	}
 	
+	public Employee(String name,String surname) {
+		setId("");
+		setName(name);
+		setSurname(surname);
+		setNickname("");		
+		setTel("");
+		setAddress("");
+		setStatus("single");
+		setAge(0);
+		setSalary(0);
+		certificateList = new ArrayList<Certificate>();
+		payrollList = new ArrayList<Payroll>();
+		timeSheetList = new ArrayList<TimeSheet>();
+	}
 	public abstract String toString(); 
 
-	public int workDays(Date date, Date startingDate) {
-			
+	public void calculateWorkYears () {
+		Calendar rightnow = Calendar.getInstance();
+		rightnow.compareTo(startingDate);
 	}
 		
-	void promote(int newSalary) {
+	public void promote(int newSalary) {
 		this.setSalary(newSalary);
 	}
 
@@ -126,20 +135,24 @@ public abstract class Employee extends TPS {
 		this.salary = salary;
 	}
 
-	public Date getBirthDate() {
+	public Calendar getBirthDate() {
 		return birthDate;
 	}
 
 	public void setBirthDate(Date birthDate) {
-		this.birthDate = birthDate;
+		Calendar bd = Calendar.getInstance();
+		bd.setTime(birthDate);
+		this.birthDate = bd;
 	}
 
-	public Date getResignationDate() {
+	public Calendar getResignationDate() {
 		return resignationDate;
 	}
 
 	public void setResignationDate(Date resignationDate) {
-		this.resignationDate = resignationDate;
+		Calendar rd = Calendar.getInstance();
+		rd.setTime(resignationDate);
+		this.resignationDate = rd;
 	}
 
 	public int getWorkYears() {
@@ -150,19 +163,4 @@ public abstract class Employee extends TPS {
 		this.workYears = workYears;
 	}
 
-	public int getMaxHolidays() {
-		return maxHolidays;
-	}
-
-	public void setMaxHolidays(int maxHolidays) {
-		this.maxHolidays = maxHolidays;
-	}
-
-	public int getUsedHolidays() {
-		return usedHolidays;
-	}
-
-	public void setUsedHolidays(int usedHolidays) {
-		this.usedHolidays = usedHolidays;
-	}
 }

@@ -24,6 +24,18 @@ public class TPS {
 	public void addEVP(EVP evp) {
 		this.evpList.add(evp);
 	}
+
+	public Project projectCodeToProject(int projectCode) {
+		if (projectCode > (this.getLatestProjectCode()-1)) {
+			projectCode = this.getLatestProjectCode()-1;
+		}
+		for(int i=0;i<projectList.size();i++) {
+			if(projectList.get(i).getProjectCode() == projectCode) {
+				return projectList.get(i);
+			}
+		}
+		return projectList.get(projectList.size()-1);
+	}
 	
 	public void addOperation(Operation operation) {
 		this.operationList.add(operation);
