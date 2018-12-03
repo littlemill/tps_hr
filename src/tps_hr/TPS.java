@@ -3,6 +3,7 @@ package tps_hr;
 import java.util.ArrayList;
 
 public class TPS {
+	protected ArrayList<CEO> ceoList;
 	protected ArrayList<EVP> evpList;
 	protected ArrayList<Operation> operationList;
 	protected ArrayList<Sales> salesList;
@@ -13,18 +14,15 @@ public class TPS {
 	public int latestProjectCode;
 	
 	public TPS() {
-		evpList = new ArrayList<EVP>();
 		operationList = new ArrayList<Operation>();
+		ceoList = new ArrayList<CEO>();
+		evpList = new ArrayList<EVP>();
 		salesList = new ArrayList<Sales>();
 		gaList = new ArrayList<GA>();
 		financeList = new ArrayList<Finance>();
 		projectList = new ArrayList<Project>();
 		resignedEmployee = new ArrayList<Employee>();
 		this.setLatestProjectCode(0);		
-	}
-	
-	public void addEVP(EVP evp) {
-		this.evpList.add(evp);
 	}
 
 	public Project projectCodeToProject(int projectCode) {
@@ -37,6 +35,14 @@ public class TPS {
 			}
 		}
 		return projectList.get(projectList.size()-1);
+	}
+	
+	public void addCEO(CEO ceo) {
+		this.ceoList.add(ceo);
+	}
+	
+	public void addEVP(EVP evp) {
+		this.evpList.add(evp);
 	}
 	
 	public void addOperation(Operation operation) {

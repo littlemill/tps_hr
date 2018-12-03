@@ -14,6 +14,17 @@ public class Finance extends Employee {
 		else if (month == 3) monthPostfix = "rd";
 		else monthPostfix = "th";
 		
+		data += "CEO: \n";
+		for (int i=0; i<ceoList.size(); i++) {
+			data += "ID: "+ceoList.get(i).getId()+"\nName: "+ceoList.get(i).getName()+" Surname: "
+					+ceoList.get(i).getSurname()+"\n"+year+"'s "+month+monthPostfix+" month payroll: "; //2018's 1st month payroll
+			for (int ii=0; ii<ceoList.get(i).payrollList.size(); ii++) {
+				if (ceoList.get(i).payrollList.get(ii).getMonth() == month && ceoList.get(i).payrollList.get(ii).getYear() == year) {
+					data += ceoList.get(i).payrollList.get(ii).calculatePayroll()+"\n\n";
+					break;
+				}
+			}
+		}
 		data += "EVP: \n";
 		for (int i=0; i<evpList.size(); i++) {
 			data += "ID: "+evpList.get(i).getId()+"\nName: "+evpList.get(i).getName()+" Surname: "

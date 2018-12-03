@@ -12,7 +12,12 @@ public class CEO extends Employee implements Approvable {
 	
 	public String printAllMembers() {
 		String data = "";
-			
+		
+		data += "CEO: \n";
+		for (int i=0; i<ceoList.size(); i++) {
+			data += "ID: "+ceoList.get(i).getId()+"\nName: "+ceoList.get(i).getName()+" Surname: "
+					+ceoList.get(i).getSurname()+"\nSalary: "+ceoList.get(i).getSalary()+"\n\n";
+			}
 		data += "EVP: \n";
 		for (int i=0; i<evpList.size(); i++) {
 			data += "ID: "+evpList.get(i).getId()+"\nName: "+evpList.get(i).getName()+" Surname: "
