@@ -4,11 +4,13 @@ public class Payroll {
 	private int month;
 	private int year;
 	private int salary;
+	private int commission;
 	
-	public Payroll() {
-		setMonth(0);
-		setYear(0);
-		setSalary(0);
+	public Payroll(int month,int year,int salary,int commission) {
+		setMonth(month);
+		setYear(year);
+		setSalary(salary);
+		setCommission(commission);
 	}
 	//getter and setter
 	public int getMonth() {
@@ -33,6 +35,12 @@ public class Payroll {
 	public void setSalary(int salary) {
 		if(salary<0 || salary==0) this.salary = 0;
 		else this.salary = salary;
+	}
+	public int getCommission() {
+		return commission;
+	}
+	public void setCommission(int commission) {
+		this.commission = commission;
 	}
 	
 }

@@ -1,11 +1,10 @@
 package tps_hr;
 
-public class CEO extends Employee {
+public class EVP extends Employee {
 	public void setHolidayEntitlement() {
-		this.holidayEntitlement = 365;
+		this.holidayEntitlement = 10;
 	}
 	public int getHolidayEntitlement() {
 		return this.holidayEntitlement;
 	}
-	
 }

@@ -2,7 +2,7 @@ package tps_hr;
 
 import java.util.*;
 
-public abstract class Employee {
+public class Employee {
 	protected String user;
 	protected String password;
 	protected String name,surname,nickname,tel,address,id,status;
@@ -11,11 +11,12 @@ public abstract class Employee {
 	protected Certificate[] CertificateList;
 	protected Payroll[] PayrollList;
 	protected int holidayEntitlement;
+	protected int workingYear ;
 	
 	
-	public Employee() {
-		setName("");
-		setSurname("");
+	public Employee(String name,String surname) {
+		setName(name);
+		setSurname(surname);
 		setNickname("");
 		setBirthdate("");
 		setTel("");
@@ -115,6 +116,7 @@ public abstract class Employee {
 		return holidayEntitlement;
 	}
 
-	public abstract void setHolidayEntitlement() ;
-	
+	/*public void updateHolidayEntitlement() {
+		if()
+	}*/
 }
