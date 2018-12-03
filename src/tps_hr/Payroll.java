@@ -12,6 +12,9 @@ public class Payroll {
 		setSalary(salary);
 		setCommission(commission);
 	}
+	public int calculatePayroll() {
+		return this.getSalary()+this.getCommission();
+	}
 	//getter and setter
 	public int getMonth() {
 		return month;
