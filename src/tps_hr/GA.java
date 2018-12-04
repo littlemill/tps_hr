@@ -25,6 +25,7 @@ public class GA extends Employee {
 		this.projectCode = projectCode;
 	}
 	
+	@Override
 	public String toString() {
 		return "GA"+"\n"+"Name: "+this.getName()+" Surname: "+this.getSurname()+" ("+nickname+")\n"+
 	            "Birthdate: "+this.getBirthDate().toString()+" Age:"+this.getAge()+" Tel: "+this.getTel()+"\n"+"Address :"+this.getAddress();
