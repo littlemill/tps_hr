@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.chart.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+   <children>
+      <TitledPane animated="false" layoutX="-111.0" layoutY="-135.0" prefHeight="400.0" prefWidth="600.0" text="Holiday Entitlement" textFill="#111079">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <PieChart layoutX="91.0" layoutY="14.0" prefHeight="238.0" prefWidth="416.0" />
+                  <Button layoutX="469.0" layoutY="336.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="116.0" text="Back" />
+                  <Label layoutX="49.0" layoutY="260.0" text="Used" textFill="#d05b5b">
+                     <font>
+                        <Font name="System Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="134.0" layoutY="260.0" text="Max ">
+                     <font>
+                        <Font name="System Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="73.0" layoutY="290.0" text="1" textAlignment="CENTER" textFill="#d05b5b">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="153.0" layoutY="290.0" text="3">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="341.0" prefHeight="17.0" prefWidth="408.0" text="Last Updated :" textFill="#111079" />
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+   </children>
+</AnchorPane>

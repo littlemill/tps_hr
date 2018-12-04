@@ -25,6 +25,14 @@ public class GA extends Employee {
 		this.projectCode = projectCode;
 	}
 	
+	public void addNotification(String header,String note) {
+		this.notification.add(new Notification(header,note,this));
+	}
+	
+	public void deleteNotification(Notification n) {
+		this.notification.remove(n);
+	}
+	
 	@Override
 	public String toString() {
 		return "GA"+"\n"+"Name: "+this.getName()+" Surname: "+this.getSurname()+" ("+nickname+")\n"+

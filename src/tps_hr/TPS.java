@@ -1,5 +1,6 @@
 package tps_hr;
 
+import java.util.Map;
 import java.util.ArrayList;
 
 public class TPS {
@@ -11,6 +12,8 @@ public class TPS {
 	protected ArrayList<Finance> financeList;
 	protected ArrayList<Project> projectList;
 	protected ArrayList<Employee> resignedEmployee;
+	protected ArrayList<Notification> notification;
+	protected Map<String,String> loginInfo;
 	public int latestProjectCode;
 	
 	public TPS() {
@@ -22,6 +25,7 @@ public class TPS {
 		financeList = new ArrayList<Finance>();
 		projectList = new ArrayList<Project>();
 		resignedEmployee = new ArrayList<Employee>();
+		notification = new ArrayList<Notification>();
 		this.setLatestProjectCode(0);		
 	}
 

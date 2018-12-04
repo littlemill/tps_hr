@@ -43,7 +43,7 @@
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="243.0" prefWidth="356.0" />
               </content>
             </ScrollPane>
-            <Label layoutX="211.0" layoutY="61.0" prefHeight="17.0" prefWidth="95.0" text="Annoucement" textFill="#03062f" />
+            <Label layoutX="211.0" layoutY="61.0" prefHeight="17.0" prefWidth="95.0" text="Annoucement" textFill="#111079" />
             <Text layoutX="113.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" text="We provides the best practices solutions for our valued customer." textAlignment="CENTER">
                <fill>
                   <LinearGradient cycleMethod="REFLECT" endX="0.7596153846153846" endY="0.6442307692307693">
