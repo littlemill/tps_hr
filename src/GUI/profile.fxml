@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<TitledPane animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" text="Profile" textFill="#111079" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+  <content>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+         <children>
+            <ImageView fitHeight="107.0" fitWidth="144.0" layoutX="243.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+            <TextArea layoutX="85.0" layoutY="127.0" prefHeight="200.0" prefWidth="428.0" />
+            <ScrollBar layoutX="522.0" layoutY="131.0" orientation="VERTICAL" prefHeight="192.0" prefWidth="17.0" />
+            <Button layoutX="387.0" layoutY="336.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="103.0" text="Edit Profile" />
+            <Button layoutX="501.0" layoutY="336.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="91.0" text="Back " />
+         </children></AnchorPane>
+  </content>
+</TitledPane>

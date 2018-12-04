@@ -47,6 +47,12 @@ public abstract class Employee extends TPS {
 		holiday = new HolidayEntitlement(this);
 	}
 	
+	public void setPasscode(String id,String passcode) {
+		this.id  = id;
+		this.password = passcode;
+		this.loginInfo.put(this.id, this.password);
+	}
+	
 	public void resign() {
 		this.setHasResigned(true);
 		this.setResignationDate(Calendar.getInstance());
