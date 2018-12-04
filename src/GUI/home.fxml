@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.web.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.shape.*?>
@@ -29,13 +30,32 @@
                   <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="152.0" text="TimeSheet" />
                   <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="156.0" text="PayRoll" />
                   <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="152.0" text="Holiday Entitlement" />
-                  <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="153.0" text="Button" />
-                  <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="156.0" text="Exit" />
+                  <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="153.0" text="Edit / View" />
+                  <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="156.0" text="Log out" />
                </children>
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
             </VBox>
+            <Accordion layoutX="340.0" layoutY="117.0" />
+            <ScrollPane layoutX="211.0" layoutY="86.0" prefHeight="235.0" prefWidth="362.0">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="243.0" prefWidth="356.0" />
+              </content>
+            </ScrollPane>
+            <Label layoutX="211.0" layoutY="61.0" prefHeight="17.0" prefWidth="95.0" text="Annoucement" textFill="#03062f" />
+            <Text layoutX="113.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" text="We provides the best practices solutions for our valued customer." textAlignment="CENTER">
+               <fill>
+                  <LinearGradient cycleMethod="REFLECT" endX="0.7596153846153846" endY="0.6442307692307693">
+                     <stops>
+                        <Stop color="#032046" />
+                        <Stop color="#032046" offset="0.007434944237918215" />
+                        <Stop color="#5265cd" offset="0.9962825278810409" />
+                        <Stop color="#5265cd" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
          </children></AnchorPane>
   </content>
 </TitledPane>
