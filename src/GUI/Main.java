@@ -4,6 +4,8 @@ import tps_hr.TPS;
 
 import javafx.fxml.*;
 
+import java.io.IOException;
+
 import javafx.application.Application;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -17,10 +19,10 @@ public class Main extends Application{
 	
 	@FXML
 	private Button LoginBtn;
-	@FXML
 	private TextField id;
-	@FXML
 	private PasswordField password;
+	
+	
 	@Override
 	public void start(Stage stage) {
 		try {
@@ -32,12 +34,14 @@ public class Main extends Application{
 				
 			});
 			
+			stage.setTitle("The Practical Solution Co.Ltd");
 			stage.setScene(scene);
 			stage.show();
 		}catch(Exception e) {
 			e.printStackTrace();
 		} 
 	}
+
 	public static void main(String[] args) {
 		
 		launch(args);
