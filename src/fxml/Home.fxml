@@ -13,7 +13,6 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <VBox alignment="TOP_CENTER" layoutX="14.0" layoutY="34.0" nodeOrientation="LEFT_TO_RIGHT" opacity="0.88" prefHeight="281.0" prefWidth="180.0" spacing="10.0">
@@ -23,12 +22,12 @@
                   <Image url="@../../../../Desktop/TPS-Logo-Full-240x70.png" />
                </image>
             </ImageView>
-            <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="152.0" text="Profile" />
-            <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="152.0" text="TimeSheet" />
-            <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="156.0" text="PayRoll" />
-            <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="152.0" text="Holiday Entitlement" />
-            <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="153.0" text="Edit / View" />
-            <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="156.0" text="Log out" />
+            <Button fx:id="profileBtn" mnemonicParsing="false" prefHeight="27.0" prefWidth="152.0" text="Profile" />
+            <Button fx:id="timeSheetBtn" mnemonicParsing="false" prefHeight="27.0" prefWidth="152.0" text="TimeSheet" />
+            <Button fx:id="payrollBtn" mnemonicParsing="false" prefHeight="27.0" prefWidth="156.0" text="PayRoll" />
+            <Button fx:id="holidayBtn" mnemonicParsing="false" prefHeight="27.0" prefWidth="152.0" text="Holiday Entitlement" />
+            <Button fx:id="editBtn" mnemonicParsing="false" prefHeight="27.0" prefWidth="153.0" text="Edit / View" />
+            <Button fx:id="logOutBtn" mnemonicParsing="false" prefHeight="27.0" prefWidth="156.0" text="Log out" />
          </children>
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -37,7 +36,7 @@
       <Accordion layoutX="340.0" layoutY="117.0" />
       <ScrollPane layoutX="211.0" layoutY="86.0" prefHeight="235.0" prefWidth="362.0">
         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="243.0" prefWidth="356.0" />
+          <AnchorPane fx:id="announcePane" minHeight="0.0" minWidth="0.0" prefHeight="243.0" prefWidth="356.0" />
         </content>
       </ScrollPane>
       <Label layoutX="211.0" layoutY="61.0" prefHeight="17.0" prefWidth="95.0" text="Annoucement" textFill="#03062f" />
