@@ -5,7 +5,7 @@ import java.util.*;
 public abstract class Employee extends TPS {
 
 	protected String id, password;
-	protected String name,surname,nickname,tel,address,status;
+	protected String name,surname,nickname,tel,address;
 	protected int age, salary;
 	protected Calendar birthDate, startingDate, resignationDate;
 	protected ArrayList<Certificate> certificateList;
@@ -22,7 +22,6 @@ public abstract class Employee extends TPS {
 		setNickname("");		
 		setTel("");
 		setAddress("");
-		setStatus("single");
 		setAge(0);
 		setSalary(0);
 		certificateList = new ArrayList<Certificate>();
@@ -38,7 +37,6 @@ public abstract class Employee extends TPS {
 		setNickname("");		
 		setTel("");
 		setAddress("");
-		setStatus("single");
 		setAge(0);
 		setSalary(0);
 		certificateList = new ArrayList<Certificate>();
@@ -126,14 +124,6 @@ public abstract class Employee extends TPS {
 		this.address = address;
 	}
 
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
 	public int getAge() {
 		return age;
 	}
@@ -190,12 +180,16 @@ public abstract class Employee extends TPS {
 		this.resignationDate = resignationDate;
 	}
 
-	public HolidayEntitlement getHoliday() {
-		return holiday;
+	public Calendar getStartingDate() {
+		return startingDate;
 	}
 
-	public void setHoliday(HolidayEntitlement holiday) {
-		this.holiday = holiday;
+	public void setStartingDate(Date startingDate) {
+		Calendar rd = Calendar.getInstance();
+		rd.setTime(startingDate);
+		this.startingDate = rd;
 	}
+	
+
 	
 }
