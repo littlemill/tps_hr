@@ -17,6 +17,8 @@ public abstract class Employee extends TPS {
 	
 	public Employee() {
 		setId("");
+		setPassword("");
+		setPasscode(this.getId(),this.getPassword());
 		setName("");
 		setSurname("");
 		setNickname("");		
@@ -32,6 +34,8 @@ public abstract class Employee extends TPS {
 	
 	public Employee(String name,String surname) {
 		setId("");
+		setPassword("");
+		setPasscode(this.getId(),this.getPassword());
 		setName(name);
 		setSurname(surname);
 		setNickname("");		
@@ -48,7 +52,7 @@ public abstract class Employee extends TPS {
 	public void setPasscode(String id,String passcode) {
 		this.id  = id;
 		this.password = passcode;
-		this.loginInfo.put(this.id, this.password);
+		//this.loginData.addLogin(this.getId(), this.getPassword());
 	}
 	
 	public void resign() {

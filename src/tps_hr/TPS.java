@@ -31,8 +31,9 @@ public class TPS {
 	private int[] sdayL = {1,2,3,4,5,6,7,8};
 	private int[] smonthL = {6,3,3,4,5,6,9,10};
 	private int[] syearL = {105,105,105,105,105,105,105,105};
-	private String[] idL = {"00024","00120","00110","00341","02343","12345","98788","87778"};
-	private String[] passwordL = {"12345","12121","11111","22222","33333","44444","55555","66666"};
+	/*private String[] idL = {"00024","00120","00110","00341","02343","12345","98788","87778"};
+	private String[] passwordL = {"12345","12121","11111","22222","33333","44444","55555","66666"};*/
+	
 			
 	
 	private int initialsize = 8;
@@ -48,6 +49,7 @@ public class TPS {
 		resignedEmployee = new ArrayList<Employee>();
 		notification = new ArrayList<Notification>();
 		this.setLatestProjectCode(0);	
+		//loginData = new login();
 		
 		for(int i=0;i<initialsize;i++) {
 			//CEO
@@ -60,7 +62,7 @@ public class TPS {
 				ceo.setSalary(salaryL[i]);
 				ceo.setBirthDate(new Date(byearL[i],bmonthL[i],bdayL[i]));
 				ceo.setStartingDate(new Date(syearL[i],smonthL[i],sdayL[i]));
-				ceo.setPasscode(idL[i], passwordL[i]);
+				//ceo.setPasscode(idL[i], passwordL[i]);
 				ceoList.add(ceo);
 			}
 			//Operation
@@ -73,7 +75,7 @@ public class TPS {
 				eng.setSalary(salaryL[i]);
 				eng.setBirthDate(new Date(byearL[i],bmonthL[i],bdayL[i]));
 				eng.setStartingDate(new Date(syearL[i],smonthL[i],sdayL[i]));
-				eng.setPasscode(idL[i], passwordL[i]);
+				//eng.setPasscode(idL[i], passwordL[i]);
 				operationList.add(eng);
 			}
 			//EVP
@@ -86,7 +88,7 @@ public class TPS {
 				evp.setSalary(salaryL[i]);
 				evp.setBirthDate(new Date(byearL[i],bmonthL[i],bdayL[i]));
 				evp.setStartingDate(new Date(syearL[i],smonthL[i],sdayL[i]));
-				evp.setPasscode(idL[i], passwordL[i]);
+				//evp.setPasscode(idL[i], passwordL[i]);
 				evpList.add(evp);
 			}
 			//GA
@@ -99,7 +101,7 @@ public class TPS {
 				ga.setSalary(salaryL[i]);
 				ga.setBirthDate(new Date(byearL[i],bmonthL[i],bdayL[i]));
 				ga.setStartingDate(new Date(syearL[i],smonthL[i],sdayL[i]));
-				ga.setPasscode(idL[i], passwordL[i]);
+				//ga.setPasscode(idL[i], passwordL[i]);
 				gaList.add(ga);
 			}
 			//Finance
@@ -112,7 +114,7 @@ public class TPS {
 				fn.setSalary(salaryL[i]);
 				fn.setBirthDate(new Date(byearL[i],bmonthL[i],bdayL[i]));
 				fn.setStartingDate(new Date(syearL[i],smonthL[i],sdayL[i]));
-				fn.setPasscode(idL[i], passwordL[i]);
+				//fn.setPasscode(idL[i], passwordL[i]);
 				financeList.add(fn);
 			}
 			if(type[i] == "Sales") {
@@ -124,7 +126,7 @@ public class TPS {
 				sale.setSalary(salaryL[i]);
 				sale.setBirthDate(new Date(byearL[i],bmonthL[i],bdayL[i]));
 				sale.setStartingDate(new Date(syearL[i],smonthL[i],sdayL[i]));
-				sale.setPasscode(idL[i], passwordL[i]);
+				//sale.setPasscode(idL[i], passwordL[i]);
 				salesList.add(sale);
 			}	
 		}

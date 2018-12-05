@@ -19,7 +19,7 @@
          <children>
             <ImageView fitHeight="55.0" fitWidth="170.0" nodeOrientation="INHERIT">
                <image>
-                  <Image url="@../../../../Desktop/TPS-Logo-Full-240x70.png" />
+                  <Image url="@../picture/TPS-Logo-Full-240x70.png" />
                </image>
             </ImageView>
             <Button fx:id="profileBtn" mnemonicParsing="false" prefHeight="27.0" prefWidth="152.0" text="Profile" />
