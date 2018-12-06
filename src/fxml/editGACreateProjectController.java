@@ -55,6 +55,9 @@ public class editGACreateProjectController extends newMain {
     private Button genBtn;
     
     @FXML
+    private TextField nameTfield;
+    
+    @FXML
     void setOnActionAddAnnoucement(ActionEvent event) {
     	switchScene("EditGAannounce.fxml");
     }
@@ -65,8 +68,18 @@ public class editGACreateProjectController extends newMain {
     }
     
     @FXML
-    void setOnActionGenCode(ActionEvent event) {
-    	codeTfield.setText(this.tps.getLatestProjectCode());
+    void setOnActionGenBtn(ActionEvent event) {
+    	codeTfield.setText(Integer.toString(this.tps.getLatestProjectCode()));
+    }
+    
+    @FXML
+    void setOnActionClearBtn(ActionEvent event) {
+    	codeTfield.setText(null);
+    	costTfield.setText(null);
+    	note.setText(null);
+    	orgTfield.setText(null);
+    	saleTfield.setText(null);
+    	engTfield.setText(null);
     }
     @FXML
     void setOnActionCreatebutton(ActionEvent event) {
@@ -113,8 +126,12 @@ public class editGACreateProjectController extends newMain {
     			alert.setContentText("Engineer name :"+engTfield.getText()+" doesn't exist.\n"+"Please fill the correct name.");
     			alert.show();
     		}
+    		GA ga = (GA) this.user;
     		Project prj = new Project(nameTfield.getText(),sales,engineer);
-    		prj.setProjectCode(this.tps.latestProjectCode);
+    		prj.setProjectCode(ga.generateProjectCode());
+    		prj.setOrganization(orgTfield.getText());
+    		prj.setApprovedbyCEO(true);
+    		prj.setApprovedbyEVP(true);
     		this.tps.addProject(prj);
     	}
     }

@@ -111,14 +111,6 @@ public class Project {
 		this.profit = profit;
 	}
 
-	public boolean isHasProjectCode() {
-		return hasProjectCode;
-	}
-
-	public void setHasProjectCode(boolean hasProjectCode) {
-		this.hasProjectCode = hasProjectCode;
-	}
-
 	public boolean isApprovedbyCEO() {
 		return isApprovedbyCEO;
 	}
