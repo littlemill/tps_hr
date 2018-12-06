@@ -2,6 +2,9 @@ package tps_hr;
 
 public class EVP extends Employee implements Approvable {
 	
+	public EVP() {
+		super();
+	}
 	public EVP(String name, String surname) {
 		super(name, surname);
 	}

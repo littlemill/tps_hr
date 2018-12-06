@@ -1,6 +1,8 @@
 package fxml;
+import tps_hr.*;
 
 import javafx.fxml.FXML;
+
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 
@@ -56,7 +58,24 @@ public class homeController extends newMain {
 
 	    @FXML
 	    void setOnActionforEdit(ActionEvent event) {
-	    	
+	    	if(this.user instanceof Finance) {
+	    		switchScene("editFinance.fxml");
+	    	}
+	    	if(this.user instanceof CEO) {
+	    		this.stage.setscene(editCEO());
+	    	}
+	    	if(this.user instanceof EVP) {
+	    		switchScene("editEVP.fxml");
+	    	}
+	    	if(this.user instanceof GA) {
+	    		switchScene("editGA.fxml");
+	    	}
+	    	if(this.user instanceof Sales) {
+	    		switchScene("editSales.fxml");
+	    	}
+	    	if(this.user instanceof Operation) {
+	    		switchScene("editOperation.fxml");
+	    	}
 	    }
 
 	    @FXML

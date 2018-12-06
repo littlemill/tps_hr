@@ -1,6 +1,9 @@
 package tps_hr;
 
 public class CEO extends Employee implements Approvable {
+	public CEO() {
+		super();
+	}
 	public CEO(String name, String surname) {
 		super(name, surname);
 	}

@@ -1,6 +1,9 @@
 package tps_hr;
 
 public class Finance extends Employee {
+	public Finance() {
+		super();
+	}
 	public Finance(String name, String surname) {
 		super(name, surname);
 	}
