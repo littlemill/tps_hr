@@ -66,7 +66,7 @@
             <HBox alignment="TOP_RIGHT" prefHeight="2.0" prefWidth="315.0" spacing="10.0">
                <children>
                   <Button fx:id="addBtn" contentDisplay="TOP" mnemonicParsing="false" onAction="#setOnActionAddBtn" prefWidth="60.0" text="Add" />
-                  <Button fx:id="cancelBtn" contentDisplay="TOP" mnemonicParsing="false" prefWidth="60.0" text="Cancel" />
+                  <Button fx:id="cancelBtn" contentDisplay="TOP" mnemonicParsing="false" onAction="#setOnActionCancelBtn" prefWidth="60.0" text="Cancel" />
                </children>
             </HBox>
          </children>

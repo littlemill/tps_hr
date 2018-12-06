@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -9,8 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.1">
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml.editSalesController">
    <center>
       <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="15.0" BorderPane.alignment="CENTER">
          <children>
@@ -22,7 +26,7 @@
                      </font>
                   </Label>
                   <TextField fx:id="codeTfield" prefHeight="25.0" prefWidth="110.0" />
-                  <Button fx:id="searchBtn" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" text="Search" />
+                  <Button fx:id="searchBtn" mnemonicParsing="false" onAction="#setOnActionSearchBtn" prefHeight="25.0" prefWidth="82.0" text="Search" />
                </children>
             </HBox>
             <Label fx:id="label" prefHeight="200.0" prefWidth="450.0" />
@@ -35,7 +39,7 @@
    <bottom>
       <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="475.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="backBtn" mnemonicParsing="false" prefWidth="90.0" text="Back">
+            <Button fx:id="backBtn" mnemonicParsing="false" onAction="#setOnActionBackBtn" prefWidth="90.0" text="Back">
                <HBox.margin>
                   <Insets right="80.0" />
                </HBox.margin>
