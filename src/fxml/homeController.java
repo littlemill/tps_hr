@@ -43,7 +43,7 @@ public class homeController extends newMain {
 
 	    @FXML
 	    void setOnActionforTimeSheet(ActionEvent event) {
-	    	
+	    	switchScene("TimeSheet.fxml");
 	    }
 
 	    @FXML
@@ -65,7 +65,7 @@ public class homeController extends newMain {
 	    		this.stage.setscene(editCEO());
 	    	}
 	    	if(this.user instanceof EVP) {
-	    		switchScene("editEVP.fxml");
+	    		this.stage.setScene(editEVP());
 	    	}
 	    	if(this.user instanceof GA) {
 	    		switchScene("editGA.fxml");

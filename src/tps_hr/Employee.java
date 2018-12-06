@@ -193,7 +193,29 @@ public abstract class Employee extends TPS {
 		rd.setTime(startingDate);
 		this.startingDate = rd;
 	}
-	
 
+	public HolidayEntitlement getHoliday() {
+		return holiday;
+	}
+
+	public void setHoliday(HolidayEntitlement holiday) {
+		this.holiday = holiday;
+	}
+
+	public ArrayList<Payroll> getPayrollList() {
+		return payrollList;
+	}
+
+	public void setPayrollList(ArrayList<Payroll> payrollList) {
+		this.payrollList = payrollList;
+	}
+
+	public ArrayList<TimeSheet> getTimeSheetList() {
+		return timeSheetList;
+	}
+
+	public void setTimeSheetList(ArrayList<TimeSheet> timeSheetList) {
+		this.timeSheetList = timeSheetList;
+	}
 	
 }

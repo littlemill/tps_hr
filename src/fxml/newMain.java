@@ -17,9 +17,9 @@ public class newMain extends Application{
 		this.stage = primaryStage;
         try {
         	Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
-        	stage.setTitle("The Practical Solution Co.,Ltd");
-            stage.setScene(new Scene(root, 600, 400));
-            stage.show();
+        	this.stage.setTitle("The Practical Solution Co.,Ltd");
+            this.stage.setScene(new Scene(root, 600, 400));
+            this.stage.show();
         }catch(Exception e) {
         	e.printStackTrace();
         }
@@ -41,6 +41,7 @@ public class newMain extends Application{
         {
             root = (Parent)loader.load();
             this.stage.setScene(new Scene(root));
+            this.stage.show();
         } 
         catch (Exception e)
         {

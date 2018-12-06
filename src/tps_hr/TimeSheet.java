@@ -6,13 +6,46 @@ public class TimeSheet {
 	private Calendar date;
 	private String startTime , endTime;
 	private String note;
+	private Employee user;
 	
-	public TimeSheet(Calendar date,String startTime ,String endTime , String note) {
+	public TimeSheet(Calendar date,String startTime ,String endTime , String note,Employee user) {
 		setDate (Calendar.getInstance());
 		setStartTime(startTime);
 		setEndTime(endTime);
 		setNote(note);
+		setUser(user);
+		this.getUser().timeSheetList.add(this);
+		
 	}
+	
+	public void editTimeSheet(String part,String editedInfo) {
+		if(part.toLowerCase() == "starttime") {
+			setStartTime(editedInfo);
+			setDate(Calendar.getInstance());
+			return;
+		}
+		if(part.toLowerCase() == "endtime") {
+			setEndTime(editedInfo);
+			setDate(Calendar.getInstance());
+			return;
+		}
+		if(part.toLowerCase() == "note") {
+			setNote(editedInfo);
+			setDate(Calendar.getInstance());
+			return;
+		}
+	}
+	
+	public void addNote(String newnote) {
+		setNote(this.getNote()+"\n"+newnote);
+	}
+	
+	@Override
+	public String toString() {
+		return "Last Update:"+date.toString()+"\n"+"Start Time :"+startTime+"\n"+"End Time :"+endTime+"\n"+"Note :" + note;
+	}
+	
+	//getters and setters
 	public Calendar getDate() {
 		return date;
 	}
@@ -45,31 +78,13 @@ public class TimeSheet {
 		this.note = note;
 	}
 	
-	public void editTimeSheet(String part,String editedInfo) {
-		if(part.toLowerCase() == "starttime") {
-			setStartTime(editedInfo);
-			setDate(Calendar.getInstance());
-			return;
-		}
-		if(part.toLowerCase() == "endtime") {
-			setEndTime(editedInfo);
-			setDate(Calendar.getInstance());
-			return;
-		}
-		if(part.toLowerCase() == "note") {
-			setNote(editedInfo);
-			setDate(Calendar.getInstance());
-			return;
-		}
+	public Employee getUser() {
+		return user;
 	}
-	
-	public void addNote(String newnote) {
-		setNote(this.getNote()+"\n"+newnote);
+
+	public void setUser(Employee user) {
+		this.user = user;
 	}
-	
-	@Override
-	public String toString() {
-		return "Last Update:"+date.toString()+"\n"+"Start Time :"+startTime+"\n"+"End Time :"+endTime+"\n"+"Note :" + note;
-	}
+
 	
 }
