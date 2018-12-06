@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml.timesheetController">
    <left>
       <VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="241.0" spacing="30.0" BorderPane.alignment="CENTER">
          <children>
@@ -25,9 +25,9 @@
                   <Insets bottom="35.0" />
                </VBox.margin>
             </ImageView>
-            <Button fx:id="showTimeBtn" mnemonicParsing="false" prefHeight="27.0" prefWidth="179.0" text="Show Time Sheet" />
-            <Button fx:id="createBtn" mnemonicParsing="false" prefWidth="179.0" text="Create New Time Sheet" />
-            <Button fx:id="backBtn" mnemonicParsing="false" prefHeight="25.0" prefWidth="179.0" text="Back" />
+            <Button fx:id="showTimeBtn" mnemonicParsing="false" onAction="#setOnActionShowTimeBtn" prefHeight="27.0" prefWidth="179.0" text="Show Time Sheet" />
+            <Button fx:id="createBtn" mnemonicParsing="false" onAction="#setOnActionCreateNewTimeSheet" prefWidth="179.0" text="Create New Time Sheet" />
+            <Button fx:id="backBtn" mnemonicParsing="false" onAction="#setOnActionBackBtn" prefHeight="25.0" prefWidth="179.0" text="Back" />
          </children>
          <padding>
             <Insets top="50.0" />
