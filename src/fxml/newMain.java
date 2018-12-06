@@ -31,8 +31,7 @@ public class newMain extends Application{
     public void switchScene(String fxmlFile)
     {
 
-        FXMLLoader loader = new FXMLLoader(getClass()
-                .getResource(fxmlFile));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Parent root;
         try 
         {
