@@ -1,90 +1,150 @@
 package tps_hr;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 public class Finance extends Employee {
+	protected ObservableList<String> finance = FXCollections.observableArrayList();
+	public Finance() {
+		super();
+	}
 	public Finance(String name, String surname) {
 		super(name, surname);
 	}
 	
-	public String printAllPayroll(int month, int year) {
+	public ObservableList<String> printAllPayroll(int month, int year) {
 		String data = "";
-		
 		String monthPostfix;
 		if (month == 1) monthPostfix = "st";
 		else if (month == 2) monthPostfix = "nd";
 		else if (month == 3) monthPostfix = "rd";
 		else monthPostfix = "th";
 		
-		data += "CEO: \n";
+		finance.add("CEO:");
 		for (int i=0; i<ceoList.size(); i++) {
+			boolean check = false;
 			data += "ID: "+ceoList.get(i).getId()+"\nName: "+ceoList.get(i).getName()+" Surname: "
 					+ceoList.get(i).getSurname()+"\n"+year+"'s "+month+monthPostfix+" month payroll: "; //2018's 1st month payroll
 			for (int ii=0; ii<ceoList.get(i).payrollList.size(); ii++) {
 				if (ceoList.get(i).payrollList.get(ii).getMonth() == month && ceoList.get(i).payrollList.get(ii).getYear() == year) {
 					data += ceoList.get(i).payrollList.get(ii).calculatePayroll()+"\n\n";
+					finance.add(data);
+					data = "";
+					check = true;
 					break;
 				}
 			}
+			if(!check) {
+				data += "-";
+				finance.add(data);
+				data = "";
+				
+			}
 		}
-		data += "EVP: \n";
+		finance.add("EVP:");
 		for (int i=0; i<evpList.size(); i++) {
+			boolean check = false;
 			data += "ID: "+evpList.get(i).getId()+"\nName: "+evpList.get(i).getName()+" Surname: "
 					+evpList.get(i).getSurname()+"\n"+year+"'s "+month+monthPostfix+" month payroll: "; //2018's 1st month payroll
 			for (int ii=0; ii<evpList.get(i).payrollList.size(); ii++) {
 				if (evpList.get(i).payrollList.get(ii).getMonth() == month && evpList.get(i).payrollList.get(ii).getYear() == year) {
 					data += evpList.get(i).payrollList.get(ii).calculatePayroll()+"\n\n";
+					finance.add(data);
+					data = "";
 					break;
 				}
 			}
+			if(!check) {
+				data += "-";
+				finance.add(data);
+				data = "";
+				
+			}
 		}
-		data += "OPERATION: \n";
+		finance.add("OPERATION:");
 		for (int i=0; i<operationList.size(); i++) {
+			boolean check = false;
 			data += "ID: "+operationList.get(i).getId()+"\nName: "+operationList.get(i).getName()+" Surname: "
 					+operationList.get(i).getSurname()+"\n"+year+"'s "+month+monthPostfix+" month payroll: ";
 			for (int ii=0; ii<operationList.get(i).payrollList.size(); ii++) {
 				if (operationList.get(i).payrollList.get(ii).getMonth() == month && operationList.get(i).payrollList.get(ii).getYear() == year) {
 					data += operationList.get(i).payrollList.get(ii).calculatePayroll()+"\n\n";
+					finance.add(data);
+					data = "";
 					break;
 				}
 			}
+			if(!check) {
+				data += "-";
+				finance.add(data);
+				data = "";
+				
+			}
 		}
 		
-		data += "SALES: \n";
+		finance.add("SALES:");
 		for (int i=0; i<salesList.size(); i++) {
+			boolean check = false;
 			data += "ID: "+salesList.get(i).getId()+"\nName: "+salesList.get(i).getName()+" Surname: "
 					+salesList.get(i).getSurname()+"\n"+year+"'s "+month+monthPostfix+" month payroll: ";
 			for (int ii=0; ii<salesList.get(i).payrollList.size(); ii++) {
 				if (salesList.get(i).payrollList.get(ii).getMonth() == month && salesList.get(i).payrollList.get(ii).getYear() == year) {
 					data += salesList.get(i).payrollList.get(ii).calculatePayroll()+"\n\n";
+					finance.add(data);
+					data = "";
 					break;
 				}
 			}
+			if(!check) {
+				data += "-";
+				finance.add(data);
+				data = "";
+				
+			}
 		}
 		
-		data += "GA: \n";
+		finance.add("GA:");
 		for (int i=0; i<gaList.size(); i++) {
+			boolean check = false;
 			data += "ID: "+gaList.get(i).getId()+"\nName: "+gaList.get(i).getName()+" Surname: "
 					+gaList.get(i).getSurname()+"\n"+year+"'s "+month+monthPostfix+" month payroll: ";
 			for (int ii=0; ii<gaList.get(i).payrollList.size(); ii++) {
 				if (gaList.get(i).payrollList.get(ii).getMonth() == month && gaList.get(i).payrollList.get(ii).getYear() == year) {
 					data += gaList.get(i).payrollList.get(ii).calculatePayroll()+"\n\n";
+					finance.add(data);
+					data = "";
 					break;
 				}
 			}
+			if(!check) {
+				data += "-";
+				finance.add(data);
+				data = "";
+				
+			}
 		}
 		
-		data += "FINANCE: \n";
+		finance.add("FINANCE:");
 		for (int i=0; i<financeList.size(); i++) {
+			boolean check = false;
 			data += "ID: "+financeList.get(i).getId()+"\nName: "+financeList.get(i).getName()+" Surname: "
 					+financeList.get(i).getSurname()+"\n"+year+"'s "+month+monthPostfix+" month payroll: ";
 			for (int ii=0; ii<financeList.get(i).payrollList.size(); ii++) {
 				if (financeList.get(i).payrollList.get(ii).getMonth() == month && financeList.get(i).payrollList.get(ii).getYear() == year) {
 					data += financeList.get(i).payrollList.get(ii).calculatePayroll()+"\n\n";
+					finance.add(data);
+					data = "";
 					break;
 				}
 			}
+			if(!check) {
+				data += "-";
+				finance.add(data);
+				data = "";
+				
+			}
 		}
-		
-		return data;
+		return finance;
 	}
 	
 	public String toString() {

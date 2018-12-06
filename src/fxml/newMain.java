@@ -2,21 +2,24 @@ package fxml;
 
 import tps_hr.*;
 
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 public class newMain extends Application{
-	private Stage stage;
+	protected Stage stage;
+	protected Employee user;
+	protected TPS tps = new TPS();
 	@Override
     public void start(Stage primaryStage) throws Exception{
 		this.stage = primaryStage;
         try {
         	Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
-        	stage.setTitle("The Practical Solution Co.,Ltd");
-            stage.setScene(new Scene(root, 600, 400));
-            stage.show();
+        	this.stage.setTitle("The Practical Solution Co.,Ltd");
+            this.stage.setScene(new Scene(root, 600, 400));
+            this.stage.show();
         }catch(Exception e) {
         	e.printStackTrace();
         }
@@ -37,6 +40,7 @@ public class newMain extends Application{
         {
             root = (Parent)loader.load();
             this.stage.setScene(new Scene(root));
+            this.stage.show();
         } 
         catch (Exception e)
         {

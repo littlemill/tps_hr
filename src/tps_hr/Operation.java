@@ -1,12 +1,19 @@
 package tps_hr;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public class Operation extends Employee {
 	private int annualTravelExpense;
+	private ArrayList<Project> projectHistory;
 	
 	public Operation(String name,String surname) {
 		super(name,surname);
+		projectHistory = new ArrayList<Project>();
+	}
+	
+	public void addHistory(Project project) {
+		projectHistory.add(project);
 	}
 	
 	public void implementProject(Project project,int travelexpense) {

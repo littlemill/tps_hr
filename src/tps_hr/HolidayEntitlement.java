@@ -22,7 +22,10 @@ public class HolidayEntitlement {
 	}	
 	public long decreaseHolidays(Date date1, Date date2) {
 		long diff = date2.getTime() - date1.getTime();
-		return TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
+		long time = TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
+		int t = (int) time;
+		this.setUsedHolidays(this.getUsedHolidays()+t);
+		return time;
 	}//absent for more than 1 day
 	public void reset() {
 		this.setUsedHolidays(0);
