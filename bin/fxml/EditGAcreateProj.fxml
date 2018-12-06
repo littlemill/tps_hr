@@ -50,6 +50,7 @@
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -57,15 +58,22 @@
               </rowConstraints>
                <children>
                   <Label text="Project Code :" />
-                  <TextField fx:id="codeTfield" GridPane.columnIndex="1" />
-                  <Label text="Organization :" GridPane.rowIndex="1" />
-                  <TextField fx:id="orgTfield" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Label text="Engineer (name) :" GridPane.rowIndex="2" />
-                  <TextField fx:id="engTfield" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <Label text="Sales (name) :" GridPane.rowIndex="3" />
-                  <TextField fx:id="saleTfield" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <Label text="Project Cost :" GridPane.rowIndex="4" />
-                  <TextField fx:id="costTfield" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="7.0" GridPane.columnIndex="1">
+                     <children>
+                        <TextField fx:id="codeTfield" />
+                        <Button fx:id="genBtn" mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" text="Gen Code" />
+                     </children>
+                  </HBox>
+                  <Label text="Project Name :" GridPane.rowIndex="1" />
+                  <TextField fx:id="nameTfield" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label text="Organization :" GridPane.rowIndex="2" />
+                  <TextField fx:id="orgTfield" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label text="Engineer (name) :" GridPane.rowIndex="3" />
+                  <TextField fx:id="engTfield" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label text="Sales (name) :" GridPane.rowIndex="4" />
+                  <TextField fx:id="saleTfield" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Label text="Project Cost :" GridPane.rowIndex="5" />
+                  <TextField fx:id="costTfield" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                </children>
             </GridPane>
             <HBox prefHeight="90.0" prefWidth="310.0" spacing="75.0">
