@@ -68,11 +68,12 @@ public class homeController extends newMain {
 	    		switchScene("editFinance.fxml");
 	    	}
 	    	if(this.user instanceof CEO) {
-	    		EditCEO ceopane = new EditCEO();
-	    		this.stage.setscene(ceopane);
-	    	}
+	    		EditCEO ceoScene = new EditCEO();
+	    		this.stage.setScene(ceoScene.ceoScene());
+    	}
 	    	if(this.user instanceof EVP) {
-	    		this.stage.setScene(editEVP());
+	    		EditEVP evpScene = new EditEVP();
+	    		this.stage.setScene(evpScene.evpScene());
 	    	}
 	    	if(this.user instanceof GA) {
 	    		switchScene("EditGA.fxml");

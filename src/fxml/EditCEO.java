@@ -3,6 +3,7 @@ package fxml;
 import tps_hr.*;
 
 import javafx.geometry.Insets;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 
@@ -17,5 +18,10 @@ public class EditCEO extends ScrollPane {
 		
 		label = new Label(this.ceo.printAllMembers());
 		this.getChildren().add(label);
+	}
+	
+	public Scene ceoScene() {
+		Scene scene = new Scene(this.getParent(), 600, 400);
+		return scene;
 	}
 }
