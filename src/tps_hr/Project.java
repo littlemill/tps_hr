@@ -14,7 +14,9 @@ public class Project {
 	public Project(String projectName,Sales sale,Operation engineer){
 		setProjectName(projectName);
 		setSale(sale);
+		this.sale.addHistory(this);
 		setEngineer(engineer);
+		this.engineer.addHistory(this);
 		setStartingDate(Calendar.getInstance());
 	}
 	

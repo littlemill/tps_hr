@@ -2,13 +2,16 @@ package fxml;
 
 import tps_hr.*;
 
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 public class newMain extends Application{
-	private Stage stage;
+	protected Stage stage;
+	protected Employee user;
+	protected TPS tps = new TPS();
 	@Override
     public void start(Stage primaryStage) throws Exception{
 		this.stage = primaryStage;

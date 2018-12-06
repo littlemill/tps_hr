@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
@@ -13,7 +20,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml.homeController">
    <children>
       <VBox alignment="TOP_CENTER" layoutX="14.0" layoutY="34.0" nodeOrientation="LEFT_TO_RIGHT" opacity="0.88" prefHeight="281.0" prefWidth="180.0" spacing="10.0">
          <children>
@@ -22,12 +29,12 @@
                   <Image url="@../picture/TPS-Logo-Full-240x70.png" />
                </image>
             </ImageView>
-            <Button fx:id="profileBtn" mnemonicParsing="false" prefHeight="27.0" prefWidth="152.0" text="Profile" />
-            <Button fx:id="timeSheetBtn" mnemonicParsing="false" prefHeight="27.0" prefWidth="152.0" text="TimeSheet" />
-            <Button fx:id="payrollBtn" mnemonicParsing="false" prefHeight="27.0" prefWidth="156.0" text="PayRoll" />
-            <Button fx:id="holidayBtn" mnemonicParsing="false" prefHeight="27.0" prefWidth="152.0" text="Holiday Entitlement" />
-            <Button fx:id="editBtn" mnemonicParsing="false" prefHeight="27.0" prefWidth="153.0" text="Edit / View" />
-            <Button fx:id="logOutBtn" mnemonicParsing="false" prefHeight="27.0" prefWidth="156.0" text="Log out" />
+            <Button fx:id="profileBtn" mnemonicParsing="false" onAction="#setOnActionforProfile" prefHeight="27.0" prefWidth="152.0" text="Profile" />
+            <Button fx:id="timeSheetBtn" mnemonicParsing="false" onAction="#setOnActionforTimeSheet" prefHeight="27.0" prefWidth="152.0" text="TimeSheet" />
+            <Button fx:id="payrollBtn" mnemonicParsing="false" onAction="#setOnActionforPayroll" prefHeight="27.0" prefWidth="156.0" text="PayRoll" />
+            <Button fx:id="holidayBtn" mnemonicParsing="false" onAction="#setOnActionforHoliday" prefHeight="27.0" prefWidth="152.0" text="Holiday Entitlement" />
+            <Button fx:id="editBtn" mnemonicParsing="false" onAction="#setOnActionforEdit" prefHeight="27.0" prefWidth="153.0" text="Edit / View" />
+            <Button fx:id="logOutBtn" mnemonicParsing="false" onAction="#setOnActionforLogOut" prefHeight="27.0" prefWidth="156.0" text="Log out" />
          </children>
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
