@@ -57,4 +57,7 @@ public class createTimeSheetController extends newMain{
     		alert.setContentText("TimeSheet was created at"+Calendar.getInstance().toString());
     	}
     }
+    void setOnActionBackBtn(ActionEvent event) {
+    	switchScene("TimeSheet.fxml");
+    }
 }

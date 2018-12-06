@@ -1,9 +1,11 @@
 package tps_hr;
 
+
 import java.util.*;
 
 public abstract class Employee extends TPS {
-
+	
+	protected String photourl;
 	protected String id, password;
 	protected String name,surname,nickname,tel,address;
 	protected int age, salary;
@@ -217,5 +219,14 @@ public abstract class Employee extends TPS {
 	public void setTimeSheetList(ArrayList<TimeSheet> timeSheetList) {
 		this.timeSheetList = timeSheetList;
 	}
+
+	public String getPhotourl() {
+		return photourl;
+	}
+
+	public void setPhotourl(String photourl) {
+		this.photourl = photourl;
+	}
+	
 	
 }

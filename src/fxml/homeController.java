@@ -4,6 +4,8 @@ import tps_hr.*;
 import javafx.fxml.FXML;
 
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.layout.AnchorPane;
 
 import javafx.fxml.FXML;
@@ -17,6 +19,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.*;
 
 public class homeController extends newMain {
@@ -39,8 +43,10 @@ public class homeController extends newMain {
 	    private Button logOutBtn;
 
 	    @FXML
-	    private AnchorPane announcePane;
-
+	    private ListView<String> notificationList;
+	    
+	    private ObservableList<String> notificationData = FXCollections.observableArrayList();
+	    
 	    @FXML
 	    void setOnActionforTimeSheet(ActionEvent event) {
 	    	switchScene("TimeSheet.fxml");
@@ -85,6 +91,31 @@ public class homeController extends newMain {
 	    @FXML
 	    void setOnActionforLogOut(ActionEvent event) {
 	    	System.exit(0);
+	    }
+	    
+	    @FXML 
+	    void showNotification() {
+	    	if(this.tps.getNotification().isEmpty()) notificationData.add("No updated news");
+	    	else {
+	    		for(Notification noti : this.tps.getNotification()) {
+		    		notificationData.add(noti.toString());
+		    	}
+	    	}
+	    	notificationList.setItems(notificationData);
+	    }
+	    @Override
+	    public void start(Stage primaryStage) throws Exception{
+			this.stage = primaryStage;
+	        try {
+	        	showNotification();
+	        }catch(Exception e) {
+	        	e.printStackTrace();
+	        }
+	        
+	    }
+
+	    public static void main(String[] args) {
+	        launch(args);
 	    }
 
 }

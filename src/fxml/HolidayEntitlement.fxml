@@ -25,7 +25,7 @@
             <Font size="29.0" />
          </font>
       </Label>
-      <Button fx:id="backBtn" layoutX="435.0" layoutY="345.0" mnemonicParsing="false" onAction="#setOnActionRefreshBtn" prefHeight="27.0" prefWidth="116.0" text="Back" />
+      <Button fx:id="backBtn" layoutX="435.0" layoutY="345.0" mnemonicParsing="false" onAction="#setOnActionBackBtn" prefHeight="27.0" prefWidth="116.0" text="Back" />
       <Label layoutX="52.0" layoutY="273.0" text="Used" textFill="#d05b5b">
          <font>
             <Font name="System Bold" size="25.0" />

@@ -33,7 +33,7 @@ public class TPS {
 	private int[] syearL = {105,105,105,105,105,105,105,105};
 	private String[] idL = {"00024","00120","00110","00341","02343","12345","98788","87778"};
 	private String[] passwordL = {"12345","12121","11111","22222","33333","44444","55555","66666"};
-	
+	private String[] urlL = {"file:///Users/romnalink./git/tps_hr/src/picture/mass.jpg","file:///Users/romnalink./git/tps_hr/src/picture/romnalin.jpg","file:///Users/romnalink./git/tps_hr/src/picture/shin.jpg","file:///Users/romnalink./git/tps_hr/src/picture/lalida.jpg","file:///Users/romnalink./git/tps_hr/src/picture/sutiwat.jpg","file:///Users/romnalink./git/tps_hr/src/picture/pichaya.jpg","file:///Users/romnalink./git/tps_hr/src/picture/methawee.jpg","file:///Users/romnalink./git/tps_hr/src/picture/chalisa.jpg"};
 			
 	
 	private int initialsize = 8;
@@ -63,6 +63,7 @@ public class TPS {
 				ceo.setBirthDate(new Date(byearL[i],bmonthL[i],bdayL[i]));
 				ceo.setStartingDate(new Date(syearL[i],smonthL[i],sdayL[i]));
 				ceo.setPasscode(idL[i], passwordL[i]);
+				ceo.setPhotourl(urlL[i]);
 				ceoList.add(ceo);
 			}
 			//Operation
@@ -76,6 +77,7 @@ public class TPS {
 				eng.setBirthDate(new Date(byearL[i],bmonthL[i],bdayL[i]));
 				eng.setStartingDate(new Date(syearL[i],smonthL[i],sdayL[i]));
 				eng.setPasscode(idL[i], passwordL[i]);
+				eng.setPhotourl(urlL[i]);
 				operationList.add(eng);
 			}
 			//EVP
@@ -89,6 +91,7 @@ public class TPS {
 				evp.setBirthDate(new Date(byearL[i],bmonthL[i],bdayL[i]));
 				evp.setStartingDate(new Date(syearL[i],smonthL[i],sdayL[i]));
 				evp.setPasscode(idL[i], passwordL[i]);
+				evp.setPhotourl(urlL[i]);
 				evpList.add(evp);
 			}
 			//GA
@@ -102,6 +105,7 @@ public class TPS {
 				ga.setBirthDate(new Date(byearL[i],bmonthL[i],bdayL[i]));
 				ga.setStartingDate(new Date(syearL[i],smonthL[i],sdayL[i]));
 				ga.setPasscode(idL[i], passwordL[i]);
+				ga.setPhotourl(urlL[i]);
 				gaList.add(ga);
 			}
 			//Finance
@@ -114,7 +118,8 @@ public class TPS {
 				fn.setSalary(salaryL[i]);
 				fn.setBirthDate(new Date(byearL[i],bmonthL[i],bdayL[i]));
 				fn.setStartingDate(new Date(syearL[i],smonthL[i],sdayL[i]));
-				//fn.setPasscode(idL[i], passwordL[i]);
+				fn.setPasscode(idL[i], passwordL[i]);
+				fn.setPhotourl(urlL[i]);
 				financeList.add(fn);
 			}
 			if(type[i] == "Sales") {
@@ -127,6 +132,7 @@ public class TPS {
 				sale.setBirthDate(new Date(byearL[i],bmonthL[i],bdayL[i]));
 				sale.setStartingDate(new Date(syearL[i],smonthL[i],sdayL[i]));
 				sale.setPasscode(idL[i], passwordL[i]);
+				sale.setPhotourl(urlL[i]);
 				salesList.add(sale);
 			}	
 		}
@@ -236,6 +242,14 @@ public class TPS {
 
 	public void setFinanceList(ArrayList<Finance> financeList) {
 		this.financeList = financeList;
+	}
+
+	public ArrayList<Notification> getNotification() {
+		return notification;
+	}
+
+	public void setNotification(ArrayList<Notification> notification) {
+		this.notification = notification;
 	}
 	
 	
