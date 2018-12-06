@@ -3,11 +3,13 @@ package fxml;
 import tps_hr.*;
 
 
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+
 public class newMain extends Application{
 	protected Stage stage;
 	protected Employee user;
