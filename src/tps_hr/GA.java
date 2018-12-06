@@ -1,28 +1,15 @@
 package tps_hr;
 
 public class GA extends Employee {
-	private int projectCode;
 	
 	public GA(String name, String surname) {
 		super(name, surname);
 	}
 	
-	public boolean generateProjectCode(Project projectName) {
-		if (projectName.isHasProjectCode()) return false;
-		else {
-		projectName.setProjectCode(this.getLatestProjectCode());
+	public int generateProjectCode() {
+		int projectCode = this.getLatestProjectCode();
 		this.setLatestProjectCode(this.getLatestProjectCode()+1);
-		projectName.setHasProjectCode(true);
-		return true;
-		}
-	}
-
-	public int getProjectCode() {
 		return projectCode;
-	}
-
-	public void setProjectCode(int projectCode) {
-		this.projectCode = projectCode;
 	}
 	
 	public void addNotification(String header,String note) {

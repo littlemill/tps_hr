@@ -6,6 +6,9 @@ public class Sales extends Employee {
 	private double annualCommission;
 	private ArrayList<Project> projectHistory;
 	
+	public Sales() {
+		super();
+	}
 	public Sales(String name, String surname) {
 		super(name, surname);
 		projectHistory = new ArrayList<Project>();

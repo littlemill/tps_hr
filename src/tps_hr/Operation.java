@@ -7,6 +7,9 @@ public class Operation extends Employee {
 	private int annualTravelExpense;
 	private ArrayList<Project> projectHistory;
 	
+	public Operation() {
+		super();
+	}
 	public Operation(String name,String surname) {
 		super(name,surname);
 		projectHistory = new ArrayList<Project>();

@@ -79,8 +79,8 @@
                   <Label prefHeight="17.0" prefWidth="158.0" text="This project is approved by :" />
                   <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0">
                      <children>
-                        <CheckBox mnemonicParsing="false" text="CEO" />
-                        <CheckBox mnemonicParsing="false" text="EVP" />
+                        <CheckBox fx:id="ceoCheck" mnemonicParsing="false" text="CEO" />
+                        <CheckBox fx:id="evpCheck" mnemonicParsing="false" text="EVP" />
                      </children>
                   </VBox>
                </children>
