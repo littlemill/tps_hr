@@ -99,7 +99,7 @@ public class loginController extends newMain{
 		    			}
 		    		
 	    	
-		    			switchScene("Home.fxml");
+		    			newMain.sceneManager.switchScene("Home.fxml");
 		    		}catch(Exception e) {
 		    			e.printStackTrace();
 		    		}

@@ -72,7 +72,7 @@ public class editFinanceController extends newMain {
 	}
 	
 	void setOnActionBackBtn(ActionEvent event) {
-		switchScene("Home.fxml");
+		newMain.sceneManager.switchScene("Home.fxml");
 	}
 	
 	void setOnActionSearchBtn(ActionEvent event) {

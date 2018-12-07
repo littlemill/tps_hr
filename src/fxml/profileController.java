@@ -33,7 +33,7 @@ public class profileController extends newMain {
 	
 	@FXML
 	void setOnActionBackBtn(ActionEvent event) {
-		switchScene("Home.fxml");
+		newMain.sceneManager.switchScene("Home.fxml");
 	}
 }
 

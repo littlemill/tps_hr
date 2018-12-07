@@ -44,12 +44,12 @@ public class editGAanounceController extends newMain {
     }
     @FXML
     void setOnActionCreateProject(ActionEvent event) {
-    	switchScene("EditGAcreateProj.fxml");
+    	newMain.sceneManager.switchScene("EditGAcreateProj.fxml");
     }
     
     @FXML
     void setOnActionBackBtn(ActionEvent event) {
-    	switchScene("Home.fxml");
+    	newMain.sceneManager.switchScene("Home.fxml");
     }
     
     @FXML

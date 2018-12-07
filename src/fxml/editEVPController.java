@@ -24,6 +24,6 @@ public class editEVPController extends newMain {
     
     @FXML
     void setOnActionBackBtn(ActionEvent event) {
-    	switchScene("Home.fxml");
+    	newMain.sceneManager.switchScene("Home.fxml");
     }
 }

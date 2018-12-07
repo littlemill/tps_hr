@@ -39,17 +39,17 @@ public class homeController extends newMain {
 	    
 	    @FXML
 	    void setOnActionforTimeSheet(ActionEvent event) {
-	    	switchScene("TimeSheet.fxml");
+	    	newMain.sceneManager.switchScene("TimeSheet.fxml");
 	    }
 
 	    @FXML
 	    void setOnActionforProfile(ActionEvent event) {
-	    	switchScene("Profile.fxml");
+	    	newMain.sceneManager.switchScene("Profile.fxml");
 	    }
 
 	    @FXML
 	    void setOnActionforPayroll(ActionEvent event) {
-	    	switchScene("Payroll.fxml");
+	    	newMain.sceneManager.switchScene("Payroll.fxml");
 	    }
 
 	    @FXML
@@ -58,24 +58,24 @@ public class homeController extends newMain {
 	    		String id = newMain.user.getId();
     			char checkid = id.charAt(0);
     			if(checkid == '0') { //0-ceo
-    				switchScene("editCEO.fxml");
+    				newMain.sceneManager.switchScene("editCEO.fxml");
     			}
     			if(checkid == '1') { //1-evp
-    				switchScene("editEVP.fxml");
+    				newMain.sceneManager.switchScene("editEVP.fxml");
     			}
     			if(checkid == '2') { //2-sale
-    				switchScene("editSales.fxml");
+    				newMain.sceneManager.switchScene("editSales.fxml");
     			}
     			if(checkid == '3') { //3-engineer
-    				switchScene("editOperation.fxml");
+    				newMain.sceneManager.switchScene("editOperation.fxml");
     			}
     			if(checkid == '4') { //4-ga
-    	    		switchScene("EditGA.fxml");
+    				newMain.sceneManager.switchScene("EditGA.fxml");
     			}
     			if(checkid == '5') {
-    				switchScene("editFinance.fxml");
+    				newMain.sceneManager.switchScene("editFinance.fxml");
     			}
-    			switchScene("Home.fxml");
+    			newMain.sceneManager.switchScene("Home.fxml");
     		}catch(Exception e) {
     			e.printStackTrace();
     		}
@@ -83,7 +83,7 @@ public class homeController extends newMain {
 
 	    @FXML
 	    void setOnActionforHoliday(ActionEvent event) {
-	    	switchScene("HolidayEntitilement.fxml");
+	    	newMain.sceneManager.switchScene("HolidayEntitilement.fxml");
 	    }
 	    @FXML
 	    void setOnActionforLogOut(ActionEvent event) {

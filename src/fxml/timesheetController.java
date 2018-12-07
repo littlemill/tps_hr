@@ -22,12 +22,12 @@ public class timesheetController extends newMain {
     
     @FXML
     void setOnActionCreateNewTimeSheet(ActionEvent event) {
-    	switchScene("createTimeSheet.fxml");
+    	newMain.sceneManager.switchScene("createTimeSheet.fxml");
     }
     
     @FXML
     void setOnActionBackBtn(ActionEvent event) {
-    	switchScene("Home.fxml");
+    	newMain.sceneManager.switchScene("Home.fxml");
     }
     
     @FXML

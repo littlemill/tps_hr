@@ -58,6 +58,6 @@ public class createTimeSheetController extends newMain{
     	}
     }
     void setOnActionBackBtn(ActionEvent event) {
-    	switchScene("TimeSheet.fxml");
+    	newMain.sceneManager.switchScene("TimeSheet.fxml");
     }
 }

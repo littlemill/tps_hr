@@ -51,7 +51,7 @@ public class payrollController extends newMain{
 		show();
 	}
 	void setOnActionBackBtn(ActionEvent event) {
-		switchScene("Home.fxml");
+		newMain.sceneManager.switchScene("Home.fxml");
 	}
 }
 	
