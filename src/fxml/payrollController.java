@@ -2,40 +2,37 @@ package fxml;
 
 import java.util.ArrayList;
 
+
 import tps_hr.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.stage.Stage;
 
 public class payrollController extends newMain{
 	@FXML
     private Button backBtn;
 	@FXML
-	private TableView table;
+	private TableView<Payroll> table;
 	@FXML
-	private TableColumn Month;
+	private TableColumn<Payroll,String> Month;
 	@FXML 
-	private TableColumn Year;
+	private TableColumn<Payroll,String> Year;
 	@FXML
-	private TableColumn Salary;
+	private TableColumn<Payroll,String> Salary;
 	@FXML
-	private TableColumn Commission;
+	private TableColumn<Payroll,String> Commission;
 	@FXML
-	private TableColumn Total;
+	private TableColumn<Payroll,String> Total;
 	@FXML
 	private Button showBtn;
 	@FXML
 	public void show() {
-		ArrayList<Payroll> payrollList = this.user.getPayrollList();
+		ArrayList<Payroll> payrollList = newMain.user.getPayrollList();
 		ObservableList<Payroll> data = FXCollections.observableArrayList();
 		table.setEditable(false);
 		for(Payroll p :payrollList) {

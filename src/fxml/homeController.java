@@ -2,30 +2,19 @@ package fxml;
 import tps_hr.*;
 
 
+
+
 import javafx.fxml.FXML;
 
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import javafx.scene.layout.AnchorPane;
-
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
-import javafx.scene.control.Alert.AlertType;
-import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.*;
 
 public class homeController extends newMain {
-	 @FXML
+	 
+		@FXML
 	    private Button timeSheetBtn;
 
 	    @FXML
@@ -64,25 +53,32 @@ public class homeController extends newMain {
 	    }
 
 	    @FXML
-	    void setOnActionforEdit(ActionEvent event) {
-	    	if(this.user instanceof Finance) {
-	    		switchScene("editFinance.fxml");
-	    	}
-	    	if(this.user instanceof CEO) {
-	    		switchScene("editCEO.fxml");
-    	}
-	    	if(this.user instanceof EVP) {
-	    		switchScene("editEVP.fxml");
-	    	}
-	    	if(this.user instanceof GA) {
-	    		switchScene("EditGA.fxml");
-	    	}
-	    	if(this.user instanceof Sales) {
-	    		switchScene("editSales.fxml");
-	    	}
-	    	if(this.user instanceof Operation) {
-	    		switchScene("editOperation.fxml");
-	    	}
+	    void setOnActionforEdit(ActionEvent event){
+	    	try{
+	    		String id = newMain.user.getId();
+    			char checkid = id.charAt(0);
+    			if(checkid == '0') { //0-ceo
+    				switchScene("editCEO.fxml");
+    			}
+    			if(checkid == '1') { //1-evp
+    				switchScene("editEVP.fxml");
+    			}
+    			if(checkid == '2') { //2-sale
+    				switchScene("editSales.fxml");
+    			}
+    			if(checkid == '3') { //3-engineer
+    				switchScene("editOperation.fxml");
+    			}
+    			if(checkid == '4') { //4-ga
+    	    		switchScene("EditGA.fxml");
+    			}
+    			if(checkid == '5') {
+    				switchScene("editFinance.fxml");
+    			}
+    			switchScene("Home.fxml");
+    		}catch(Exception e) {
+    			e.printStackTrace();
+    		}
 	    }
 
 	    @FXML
@@ -96,27 +92,13 @@ public class homeController extends newMain {
 	    
 	    @FXML 
 	    void showNotification() {
-	    	if(this.tps.getNotification().isEmpty()) notificationData.add("No updated news");
+	    	if(newMain.tps.getNotification().isEmpty()) notificationData.add("No updated news");
 	    	else {
-	    		for(Notification noti : this.tps.getNotification()) {
+	    		for(Notification noti : newMain.tps.getNotification()) {
 		    		notificationData.add(noti.toString());
 		    	}
 	    	}
 	    	notificationList.setItems(notificationData);
-	    }
-	    @Override
-	    public void start(Stage primaryStage) throws Exception{
-			this.stage = primaryStage;
-	        try {
-	        	showNotification();
-	        }catch(Exception e) {
-	        	e.printStackTrace();
-	        }
-	        
-	    }
-
-	    public static void main(String[] args) {
-	        launch(args);
 	    }
 
 }

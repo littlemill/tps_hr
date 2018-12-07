@@ -11,18 +11,18 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class newMain extends Application{
-	protected Stage stage;
-	protected Employee user;
-	protected TPS tps = new TPS();
+	public static Stage stage;
+	public static Employee user;
+	public static TPS tps = new TPS();
 	
 	@Override
     public void start(Stage primaryStage) throws Exception{
-		this.stage = primaryStage;
+		newMain.stage = primaryStage;
         try {
         	Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
-        	this.stage.setTitle("The Practical Solution Co.,Ltd");
-            this.stage.setScene(new Scene(root, 600, 400));
-            this.stage.show();
+        	newMain.stage.setTitle("The Practical Solution Co.,Ltd");
+            newMain.stage.setScene(new Scene(root, 600, 400));
+            newMain.stage.show();
         }catch(Exception e) {
         	e.printStackTrace();
         }
@@ -42,8 +42,8 @@ public class newMain extends Application{
         try 
         {
             root = (Parent)loader.load();
-            this.stage.setScene(new Scene(root));
-            this.stage.show();
+            newMain.stage.setScene(new Scene(root));
+            newMain.stage.show();
         } 
         catch (Exception e)
         {
@@ -51,5 +51,5 @@ public class newMain extends Application{
         }
 
     }
-
+    
 }

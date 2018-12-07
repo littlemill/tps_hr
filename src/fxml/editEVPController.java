@@ -18,7 +18,7 @@ public class editEVPController extends newMain {
     
     @FXML
     void setOnActionShowAllMemberBtn(ActionEvent event) {
-    	EVP evp = (EVP) this.user;
+    	EVP evp = (EVP) newMain.user;
     	Label.setText(evp.printOperationMembers());
     }
     

@@ -1,15 +1,10 @@
 package fxml;
 
 import javafx.fxml.FXML;
+
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.MenuButton;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
-import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
 import javafx.event.*;
 
 import tps_hr.*;
@@ -81,7 +76,7 @@ public class editFinanceController extends newMain {
 	}
 	
 	void setOnActionSearchBtn(ActionEvent event) {
-		Finance user = (Finance) this.user;
+		Finance user = (Finance) newMain.user;
 		financeList.setItems(user.printAllPayroll(month1,year1));
 	}
 	

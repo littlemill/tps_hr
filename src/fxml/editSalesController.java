@@ -30,13 +30,13 @@ public class editSalesController extends newMain {
 	    		alert.show();
 	    	}else {
 	    		int prjCode = Integer.parseInt(codeTfield.getText());
-	        	if(prjCode>this.tps.getLatestProjectCode()) {
+	        	if(prjCode>newMain.tps.getLatestProjectCode()) {
 	        		Alert alert = new Alert(AlertType.ERROR);
 	        		alert.setContentText("Invalid Project Code");
 	        		alert.show();
 	        	}
-	        	Project prj = this.tps.projectCodeToProject(prjCode);
-	        	this.label.setText(prj.toString());
+	        	Project prj = newMain.tps.projectCodeToProject(prjCode);
+	        	label.setText(prj.toString());
 	    	}
 	 }
 	 

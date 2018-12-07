@@ -45,12 +45,12 @@ public class editOperationController extends newMain {
     		alert.show();
     	}else {
     		int prjCode = Integer.parseInt(codeTfield.getText());
-        	if(prjCode>this.tps.getLatestProjectCode()) {
+        	if(prjCode>newMain.tps.getLatestProjectCode()) {
         		Alert alert = new Alert(AlertType.ERROR);
         		alert.setContentText("Invalid Project Code");
         		alert.show();
         	}
-        	Project prj = this.tps.projectCodeToProject(prjCode);
+        	Project prj = newMain.tps.projectCodeToProject(prjCode);
         	label.setText(prj.toString());
     	}
     }
@@ -63,12 +63,12 @@ public class editOperationController extends newMain {
     		alert.show();
     	}else {
     		int prjCode = Integer.parseInt(codeTfield.getText());
-        	if(prjCode>this.tps.getLatestProjectCode()) {
+        	if(prjCode>newMain.tps.getLatestProjectCode()) {
         		Alert alert = new Alert(AlertType.ERROR);
         		alert.setContentText("Invalid Project Code");
         		alert.show();
         	}
-        	Project prj = this.tps.projectCodeToProject(prjCode);
+        	Project prj = newMain.tps.projectCodeToProject(prjCode);
         	prj.setTravelExpenses(Integer.parseInt(expenseTfield.getText()));
         	prj.getEngineer().setAnnualTravelExpense(prj.getEngineer().getAnnualTravelExpense()+Integer.parseInt(expenseTfield.getText()));
         	expenseTfield.setDisable(true);
@@ -89,12 +89,12 @@ public class editOperationController extends newMain {
         		alert.show();
         	}else {
         		int prjCode = Integer.parseInt(codeTfield.getText());
-            	if(prjCode>this.tps.getLatestProjectCode()) {
+            	if(prjCode>newMain.tps.getLatestProjectCode()) {
             		Alert alert = new Alert(AlertType.ERROR);
             		alert.setContentText("Invalid Project Code");
             		alert.show();
             	}
-            	Project prj = this.tps.projectCodeToProject(prjCode);
+            	Project prj = newMain.tps.projectCodeToProject(prjCode);
             	prj.setImplemented(true);
         	}
     	}

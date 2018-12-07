@@ -70,7 +70,7 @@ public class editGACreateProjectController extends newMain {
     
     @FXML
     void setOnActionGenBtn(ActionEvent event) {
-    	codeTfield.setText(Integer.toString(this.tps.getLatestProjectCode()));
+    	codeTfield.setText(Integer.toString(newMain.tps.getLatestProjectCode()));
     }
     
     @FXML
@@ -103,7 +103,7 @@ public class editGACreateProjectController extends newMain {
     		boolean findeng = false;
     		Sales sales = new Sales();
     		Operation engineer = new Operation();
-    		for(Sales s:this.tps.getSalesList()) {
+    		for(Sales s:newMain.tps.getSalesList()) {
     			if(s.getName().equals(saleTfield.getText())) {
     				sales = s;
     				findsale = true;
@@ -115,7 +115,7 @@ public class editGACreateProjectController extends newMain {
     			alert.setContentText("Sales name :"+saleTfield.getText()+" doesn't exist.\n"+"Please fill the correct name.");
     			alert.show();
     		}
-    		for(Operation e:this.tps.getOperationList()) {
+    		for(Operation e: newMain.tps.getOperationList()) {
     			if(e.getName().equals(engTfield.getText())) {
     				engineer = e;
     				findeng = true;
@@ -127,13 +127,13 @@ public class editGACreateProjectController extends newMain {
     			alert.setContentText("Engineer name :"+engTfield.getText()+" doesn't exist.\n"+"Please fill the correct name.");
     			alert.show();
     		}
-    		GA ga = (GA) this.user;
+    		GA ga = (GA) newMain.user;
     		Project prj = new Project(nameTfield.getText(),sales,engineer);
     		prj.setProjectCode(ga.generateProjectCode());
     		prj.setOrganization(orgTfield.getText());
     		prj.setApprovedbyCEO(true);
     		prj.setApprovedbyEVP(true);
-    		this.tps.addProject(prj);
+    		newMain.tps.addProject(prj);
     	}
     }
 

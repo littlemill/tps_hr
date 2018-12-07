@@ -32,8 +32,8 @@ public class timesheetController extends newMain {
     
     @FXML
     void setOnActionShowTimeBtn(ActionEvent event) {
-    	String data = "TimeSheet: " +this.user.getName()+" "+this.user.getSurname()+"\n";
-    	for(TimeSheet ts:this.user.getTimeSheetList()) {
+    	String data = "TimeSheet: " +newMain.user.getName()+" "+newMain.user.getSurname()+"\n";
+    	for(TimeSheet ts:newMain.user.getTimeSheetList()) {
     		data+=ts.toString()+"\n";
     	}
     	label.setText(data);

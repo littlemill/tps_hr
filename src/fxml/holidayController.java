@@ -36,10 +36,10 @@ public class holidayController extends newMain{
     	
     	Calendar rightnow = Calendar.getInstance();
     	updateLbl.setText(updateLbl.getText()+ rightnow.toString());
-    	used = this.user.getHoliday().getUsedHolidays();
-    	max =  this.user.getHoliday().getmaxHolidays();
-    	this.usedLbl.setText(Integer.toString(used));
-    	this.maxLbl.setText(Integer.toString(max));
+    	used = newMain.user.getHoliday().getUsedHolidays();
+    	max =  newMain.user.getHoliday().getmaxHolidays();
+    	usedLbl.setText(Integer.toString(used));
+    	maxLbl.setText(Integer.toString(max));
     	pieChartData = FXCollections.observableArrayList(new PieChart.Data("max",max),new PieChart.Data("used",used));
     	pieChart = new PieChart(pieChartData);
     }

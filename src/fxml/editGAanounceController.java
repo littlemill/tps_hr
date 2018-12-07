@@ -37,6 +37,12 @@ public class editGAanounceController extends newMain {
     private TextArea announcement;
     
     @FXML
+    void setOnActionAddAnnouncement(ActionEvent event) {
+    	Alert alert = new Alert(AlertType.INFORMATION);
+    	alert.setContentText("You are already in 'Add Annoucement' page.");
+    	alert.show();
+    }
+    @FXML
     void setOnActionCreateProject(ActionEvent event) {
     	switchScene("EditGAcreateProj.fxml");
     }
@@ -54,7 +60,7 @@ public class editGAanounceController extends newMain {
     		alert.show();
     	}
     	else {
-    		GA ga = (GA) this.user;
+    		GA ga = (GA) newMain.user;
     		ga.addNotification(headerTfield.getText(), announcement.getText());
     	}
     }

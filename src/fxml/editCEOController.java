@@ -7,7 +7,7 @@ import javafx.scene.control.Label;
 import tps_hr.CEO;
 
 
-public class editCEOController extends newMain{
+public class editCEOController extends newMain {
 	@FXML
     private Label Label;
 
@@ -19,7 +19,7 @@ public class editCEOController extends newMain{
     
     @FXML
     void setOnActionShowAllMemberBtn(ActionEvent event) {
-    	CEO ceo = (CEO) this.user;
+    	CEO ceo = (CEO) newMain.user;
     	Label.setText(ceo.printAllMembers());
     }
     

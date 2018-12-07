@@ -26,9 +26,9 @@ public class profileController extends newMain {
 	
 	@FXML
 	void setOnActionShowProfile(ActionEvent event) {
-		image = new Image(this.user.getPhotourl());
+		image = new Image(newMain.user.getPhotourl());
 		userImage.setImage(image);
-		profileTextArea.setText(this.user.toString());
+		profileTextArea.setText(newMain.user.toString());
 	}
 	
 	@FXML

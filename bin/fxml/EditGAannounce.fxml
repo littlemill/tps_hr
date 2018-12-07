@@ -30,7 +30,7 @@
                   <Insets bottom="20.0" />
                </VBox.margin>
             </ImageView>
-            <Button fx:id="announceBtn" mnemonicParsing="false" prefWidth="150.0" text="Add Announcement" />
+            <Button fx:id="announceBtn" mnemonicParsing="false" onAction="#setOnActionAddAnnouncement" prefWidth="150.0" text="Add Announcement" />
             <Button fx:id="createProjBtn" mnemonicParsing="false" onAction="#setOnActionCreateProject" prefWidth="150.0" text="Create Project" />
             <Button fx:id="backBtn" mnemonicParsing="false" onAction="#setOnActionBackBtn" prefWidth="150.0" text="Back" />
          </children>
@@ -44,7 +44,7 @@
          <children>
             <HBox prefHeight="12.0" prefWidth="315.0" spacing="15.0">
                <children>
-                  <Label prefHeight="19.0" prefWidth="51.0" text="Header :">
+                  <Label prefHeight="19.0" prefWidth="60.0" text="Header :">
                      <font>
                         <Font size="13.0" />
                      </font>
@@ -65,8 +65,8 @@
             </HBox>
             <HBox alignment="TOP_RIGHT" prefHeight="2.0" prefWidth="315.0" spacing="10.0">
                <children>
-                  <Button fx:id="addBtn" contentDisplay="TOP" mnemonicParsing="false" onAction="#setOnActionAddBtn" prefWidth="60.0" text="Add" />
-                  <Button fx:id="cancelBtn" contentDisplay="TOP" mnemonicParsing="false" onAction="#setOnActionCancelBtn" prefWidth="60.0" text="Cancel" />
+                  <Button fx:id="addBtn" contentDisplay="TOP" mnemonicParsing="false" onAction="#setOnActionAddBtn" prefWidth="80.0" text="Add" />
+                  <Button fx:id="cancelBtn" contentDisplay="TOP" mnemonicParsing="false" onAction="#setOnActionCancelBtn" prefWidth="80.0" text="Cancel" />
                </children>
             </HBox>
          </children>

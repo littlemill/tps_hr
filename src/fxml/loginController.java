@@ -1,17 +1,15 @@
 package fxml;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
-import javafx.event.*;
+
 
 import java.util.Map;
 
@@ -47,7 +45,7 @@ public class loginController extends newMain{
 	    			if(checkid == '0') { //0-ceo
 	    				for(CEO e: tps.getCeoList()) {
 	    					if( id == e.getId()) {
-	    						this.user = (Employee) e;
+	    						newMain.user = (Employee) e;
 	    						break;
 	    					}
 	    				}
@@ -55,7 +53,7 @@ public class loginController extends newMain{
 	    			if(checkid == '1') { //1-evp
 	    				for(EVP e:tps.getEvpList()) {
 	    					if(id == e.getId()) {
-	    						this.user = (Employee) e;
+	    						newMain.user = (Employee) e;
 	    						break;
 	    					}
 	    				}
@@ -63,7 +61,7 @@ public class loginController extends newMain{
 	    			if(checkid == '2') { //2-sale
 	    				for(Sales s:tps.getSalesList()) {
 	    					if(id == s.getId()) {
-	    						this.user =  (Employee) s;
+	    						newMain.user = (Employee) s;
 	    						break;
 	    					}
 	    				}
@@ -71,7 +69,7 @@ public class loginController extends newMain{
 	    			if(checkid == '3') { //3-engineer
 	    				for(Operation o:tps.getOperationList()) {
 	    					if(id == o.getId()) {
-	    						this.user = (Employee) o;
+	    						newMain.user = (Employee) o;
 	    						break;
 	    					}
 	    				}
@@ -79,7 +77,7 @@ public class loginController extends newMain{
 	    			if(checkid == '4') { //4-ga
 	    				for(GA g:tps.getGaList()) {
 	    					if(id == g.getId()) {
-	    						this.user = (Employee) g;
+	    						newMain.user = (Employee) g;
 	    						break;
 	    					}
 	    				}
@@ -87,7 +85,7 @@ public class loginController extends newMain{
 	    			if(checkid == '5') {
 	    				for(Finance f:tps.getFinanceList()) {
 	    					if(id == f.getId()) {
-	    						this.user = (Employee) f;
+	    						newMain.user = (Employee) f;
 	    						break;
 	    					}
 	    				}
