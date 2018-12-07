@@ -1,5 +1,7 @@
 package tps_hr;
 
+import java.util.ArrayList;
+
 import fxml.newMain;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -13,22 +15,50 @@ public class Finance extends Employee {
 		super(name, surname);
 	}
 	
-	public ObservableList<String> printAllPayroll(int month, int year) {
+	private void addToFinance(EmployeeType type, int month, int year, String monthPostfix) {
 		String data = "";
-		String monthPostfix;
-		if (month == 1) monthPostfix = "st";
-		else if (month == 2) monthPostfix = "nd";
-		else if (month == 3) monthPostfix = "rd";
-		else monthPostfix = "th";
 		
-		finance.add("CEO:");
+		ArrayList list = new ArrayList();
+		
+		switch (type) {
+			case CEO: 
+				finance.add("CEO: \n");
+				list = (ArrayList<CEO>) newMain.tps.getCeoList();
+				break;
+			case EVP: 
+				finance.add("EVP: \n");
+				list = (ArrayList<EVP>) newMain.tps.getEvpList();
+				break;
+			case Finance: 
+				finance.add("FINANCE: \n");
+				list = (ArrayList<Finance>) newMain.tps.getFinanceList();
+				break;
+			case GA: 
+				finance.add("GA: \n");
+				list = (ArrayList<GA>) newMain.tps.getGaList();
+				break;
+			case Sales: 
+				finance.add("SALES: \n");
+				list = (ArrayList<Sales>) newMain.tps.getSalesList();
+				break;
+			case Engineer: 
+				finance.add("OPERATION: \n");
+				list = (ArrayList<Operation>) newMain.tps.getOperationList();
+				break;
+			default:
+				finance.add("CEO: \n");
+				list = (ArrayList<CEO>) newMain.tps.getCeoList();
+		}
+		
 		for (int i=0; i<newMain.tps.ceoList.size(); i++) {
 			boolean check = false;
-			data += "ID: "+newMain.tps.ceoList.get(i).getId()+"\nName: "+newMain.tps.ceoList.get(i).getName()+" Surname: "
-					+newMain.tps.ceoList.get(i).getSurname()+"\n"+year+"'s "+month+monthPostfix+" month payroll: "; //2018's 1st month payroll
-			for (int ii=0; ii<newMain.tps.ceoList.get(i).payrollList.size(); ii++) {
-				if (newMain.tps.ceoList.get(i).payrollList.get(ii).getMonth() == month && newMain.tps.ceoList.get(i).payrollList.get(ii).getYear() == year) {
-					data += newMain.tps.ceoList.get(i).payrollList.get(ii).calculatePayroll()+"\n\n";
+			Employee employee = (Employee) list.get(i);
+			
+			data += "ID: "+employee.getId()+"\nName: "+employee.getName()+" Surname: "
+					+employee.getSurname()+"\n"+year+"'s "+month+monthPostfix+" month payroll: "; //2018's 1st month payroll
+			for (int ii=0; ii<employee.payrollList.size(); ii++) {
+				if (employee.payrollList.get(ii).getMonth() == month && employee.payrollList.get(ii).getYear() == year) {
+					data += employee.payrollList.get(ii).calculatePayroll()+"\n\n";
 					finance.add(data);
 					data = "";
 					check = true;
@@ -38,113 +68,21 @@ public class Finance extends Employee {
 			if(!check) {
 				data += "-";
 				finance.add(data);
-				data = "";
-				
 			}
 		}
-		finance.add("EVP:");
-		for (int i=0; i<newMain.tps.evpList.size(); i++) {
-			boolean check = false;
-			data += "ID: "+newMain.tps.evpList.get(i).getId()+"\nName: "+newMain.tps.evpList.get(i).getName()+" Surname: "
-					+newMain.tps.evpList.get(i).getSurname()+"\n"+year+"'s "+month+monthPostfix+" month payroll: "; //2018's 1st month payroll
-			for (int ii=0; ii<newMain.tps.evpList.get(i).payrollList.size(); ii++) {
-				if (newMain.tps.evpList.get(i).payrollList.get(ii).getMonth() == month && newMain.tps.evpList.get(i).payrollList.get(ii).getYear() == year) {
-					data += newMain.tps.evpList.get(i).payrollList.get(ii).calculatePayroll()+"\n\n";
-					finance.add(data);
-					data = "";
-					break;
-				}
-			}
-			if(!check) {
-				data += "-";
-				finance.add(data);
-				data = "";
-				
-			}
-		}
-		finance.add("OPERATION:");
-		for (int i=0; i<newMain.tps.operationList.size(); i++) {
-			boolean check = false;
-			data += "ID: "+newMain.tps.operationList.get(i).getId()+"\nName: "+newMain.tps.operationList.get(i).getName()+" Surname: "
-					+newMain.tps.operationList.get(i).getSurname()+"\n"+year+"'s "+month+monthPostfix+" month payroll: ";
-			for (int ii=0; ii<newMain.tps.operationList.get(i).payrollList.size(); ii++) {
-				if (newMain.tps.operationList.get(i).payrollList.get(ii).getMonth() == month && newMain.tps.operationList.get(i).payrollList.get(ii).getYear() == year) {
-					data += newMain.tps.operationList.get(i).payrollList.get(ii).calculatePayroll()+"\n\n";
-					finance.add(data);
-					data = "";
-					break;
-				}
-			}
-			if(!check) {
-				data += "-";
-				finance.add(data);
-				data = "";
-				
-			}
+	}
+	
+	public ObservableList<String> printAllPayroll(int month, int year) {
+		String monthPostfix;
+		if (month == 1) monthPostfix = "st";
+		else if (month == 2) monthPostfix = "nd";
+		else if (month == 3) monthPostfix = "rd";
+		else monthPostfix = "th";
+		
+		for (EmployeeType type : EmployeeType.values()) {
+			addToFinance(type, month, year, monthPostfix);
 		}
 		
-		finance.add("SALES:");
-		for (int i=0; i<newMain.tps.salesList.size(); i++) {
-			boolean check = false;
-			data += "ID: "+newMain.tps.salesList.get(i).getId()+"\nName: "+newMain.tps.salesList.get(i).getName()+" Surname: "
-					+newMain.tps.salesList.get(i).getSurname()+"\n"+year+"'s "+month+monthPostfix+" month payroll: ";
-			for (int ii=0; ii<newMain.tps.salesList.get(i).payrollList.size(); ii++) {
-				if (newMain.tps.salesList.get(i).payrollList.get(ii).getMonth() == month && newMain.tps.salesList.get(i).payrollList.get(ii).getYear() == year) {
-					data += newMain.tps.salesList.get(i).payrollList.get(ii).calculatePayroll()+"\n\n";
-					finance.add(data);
-					data = "";
-					break;
-				}
-			}
-			if(!check) {
-				data += "-";
-				finance.add(data);
-				data = "";
-				
-			}
-		}
-		
-		finance.add("GA:");
-		for (int i=0; i<newMain.tps.gaList.size(); i++) {
-			boolean check = false;
-			data += "ID: "+newMain.tps.gaList.get(i).getId()+"\nName: "+newMain.tps.gaList.get(i).getName()+" Surname: "
-					+newMain.tps.gaList.get(i).getSurname()+"\n"+year+"'s "+month+monthPostfix+" month payroll: ";
-			for (int ii=0; ii<newMain.tps.gaList.get(i).payrollList.size(); ii++) {
-				if (newMain.tps.gaList.get(i).payrollList.get(ii).getMonth() == month && newMain.tps.gaList.get(i).payrollList.get(ii).getYear() == year) {
-					data += newMain.tps.gaList.get(i).payrollList.get(ii).calculatePayroll()+"\n\n";
-					finance.add(data);
-					data = "";
-					break;
-				}
-			}
-			if(!check) {
-				data += "-";
-				finance.add(data);
-				data = "";
-				
-			}
-		}
-		
-		finance.add("FINANCE:");
-		for (int i=0; i<newMain.tps.financeList.size(); i++) {
-			boolean check = false;
-			data += "ID: "+newMain.tps.financeList.get(i).getId()+"\nName: "+newMain.tps.financeList.get(i).getName()+" Surname: "
-					+newMain.tps.financeList.get(i).getSurname()+"\n"+year+"'s "+month+monthPostfix+" month payroll: ";
-			for (int ii=0; ii<newMain.tps.financeList.get(i).payrollList.size(); ii++) {
-				if (newMain.tps.financeList.get(i).payrollList.get(ii).getMonth() == month && newMain.tps.financeList.get(i).payrollList.get(ii).getYear() == year) {
-					data += newMain.tps.financeList.get(i).payrollList.get(ii).calculatePayroll()+"\n\n";
-					finance.add(data);
-					data = "";
-					break;
-				}
-			}
-			if(!check) {
-				data += "-";
-				finance.add(data);
-				data = "";
-				
-			}
-		}
 		return finance;
 	}
 	

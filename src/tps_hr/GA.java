@@ -4,6 +4,10 @@ import fxml.newMain;
 
 public class GA extends Employee {
 	
+	public GA() {
+		super();
+	}
+	
 	public GA(String name, String surname) {
 		super(name, surname);
 	}

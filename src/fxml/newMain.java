@@ -14,6 +14,7 @@ public class newMain extends Application{
 	public static Stage stage;
 	public static Employee user;
 	public static TPS tps = new TPS();
+	
 	public static Login login = new Login();
 	
 	@Override
@@ -35,19 +36,15 @@ public class newMain extends Application{
         launch(args);
     }
     
-    public void switchScene(String fxmlFile)
-    {
-
+    public void switchScene(String fxmlFile) {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Parent root;
-        try 
-        {
+        try {
             root = (Parent)loader.load();
             newMain.stage.setScene(new Scene(root));
             newMain.stage.show();
         } 
-        catch (Exception e)
-        {
+        catch (Exception e) {
             e.printStackTrace();
         }
 

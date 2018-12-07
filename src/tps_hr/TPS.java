@@ -1,6 +1,9 @@
 package tps_hr;
 
 import java.util.Map;
+
+import fxml.newMain;
+
 import java.util.Date;
 import java.util.ArrayList;
 
@@ -52,95 +55,54 @@ public class TPS {
 		//loginData = new login();
 		
 		for(int i=0;i<initialsize;i++) {
-			//CEO
-			if(type[i] == "CEO") {
-				CEO ceo = new CEO(nameL[i],surnameL[i]);
-				ceo.setNickname(nicknameL[i]);
-				ceo.setTel(telL[i]);
-				ceo.setAddress(addressL[i]);
-				ceo.setAge(ageL[i]);
-				ceo.setSalary(salaryL[i]);
-				ceo.setBirthDate(new Date(byearL[i],bmonthL[i],bdayL[i]));
-				ceo.setStartingDate(new Date(syearL[i],smonthL[i],sdayL[i]));
-				ceo.setId(idL[i]);
-				ceo.setPassword(passwordL[i]);
-				ceo.setPhotourl(urlL[i]);
-				ceoList.add(ceo);
+
+			EmployeeType etype = EmployeeType.valueOf(type[i]);
+			Employee employee;
+			ArrayList list = new ArrayList();
+			
+			switch (etype) {
+				case CEO: 
+					employee = new CEO();
+					list = (ArrayList<CEO>) ceoList;
+					break;
+				case EVP: 
+					employee = new EVP();
+					list = (ArrayList<EVP>) evpList;
+					break;
+				case Finance: 
+					employee = new Finance();
+					list = (ArrayList<Finance>) financeList;
+					break;
+				case GA: 
+					employee = new GA();
+					list = (ArrayList<GA>) gaList;
+					break;
+				case Sales: 
+					employee = new Sales();
+					list = (ArrayList<Sales>) salesList;
+					break;
+				case Engineer: 
+					employee = new Operation();
+					list = (ArrayList<Operation>) operationList;
+					break;
+				default:
+					employee = new CEO();
+					list = (ArrayList<CEO>) ceoList;
 			}
-			//Operation
-			if(type[i] == "Engineer") {
-				Operation eng = new Operation(nameL[i],surnameL[i]);
-				eng.setNickname(nicknameL[i]);
-				eng.setTel(telL[i]);
-				eng.setAddress(addressL[i]);
-				eng.setAge(ageL[i]);
-				eng.setSalary(salaryL[i]);
-				eng.setBirthDate(new Date(byearL[i],bmonthL[i],bdayL[i]));
-				eng.setStartingDate(new Date(syearL[i],smonthL[i],sdayL[i]));
-				eng.setId(idL[i]);
-				eng.setPassword(passwordL[i]);
-				eng.setPhotourl(urlL[i]);
-				operationList.add(eng);
-			}
-			//EVP
-			if(type[i] == "EVP") {
-				EVP evp = new EVP(nameL[i],surnameL[i]);
-				evp.setNickname(nicknameL[i]);
-				evp.setTel(telL[i]);
-				evp.setAddress(addressL[i]);
-				evp.setAge(ageL[i]);
-				evp.setSalary(salaryL[i]);
-				evp.setBirthDate(new Date(byearL[i],bmonthL[i],bdayL[i]));
-				evp.setStartingDate(new Date(syearL[i],smonthL[i],sdayL[i]));
-				evp.setId(idL[i]);
-				evp.setPassword(passwordL[i]);
-				evp.setPhotourl(urlL[i]);
-				evpList.add(evp);
-			}
-			//GA
-			if(type[i] == "GA") {
-				GA ga = new GA(nameL[i],surnameL[i]);
-				ga.setNickname(nicknameL[i]);
-				ga.setTel(telL[i]);
-				ga.setAddress(addressL[i]);
-				ga.setAge(ageL[i]);
-				ga.setSalary(salaryL[i]);
-				ga.setBirthDate(new Date(byearL[i],bmonthL[i],bdayL[i]));
-				ga.setStartingDate(new Date(syearL[i],smonthL[i],sdayL[i]));
-				ga.setId(idL[i]);
-				ga.setPassword(passwordL[i]);
-				ga.setPhotourl(urlL[i]);
-				gaList.add(ga);
-			}
-			//Finance
-			if(type[i] == "Finance") {
-				Finance fn = new Finance(nameL[i],surnameL[i]);
-				fn.setNickname(nicknameL[i]);
-				fn.setTel(telL[i]);
-				fn.setAddress(addressL[i]);
-				fn.setAge(ageL[i]);
-				fn.setSalary(salaryL[i]);
-				fn.setBirthDate(new Date(byearL[i],bmonthL[i],bdayL[i]));
-				fn.setStartingDate(new Date(syearL[i],smonthL[i],sdayL[i]));
-				fn.setId(idL[i]);
-				fn.setPassword(passwordL[i]);
-				fn.setPhotourl(urlL[i]);
-				financeList.add(fn);
-			}
-			if(type[i] == "Sales") {
-				Sales sale = new Sales(nameL[i],surnameL[i]);
-				sale.setNickname(nicknameL[i]);
-				sale.setTel(telL[i]);
-				sale.setAddress(addressL[i]);
-				sale.setAge(ageL[i]);
-				sale.setSalary(salaryL[i]);
-				sale.setBirthDate(new Date(byearL[i],bmonthL[i],bdayL[i]));
-				sale.setStartingDate(new Date(syearL[i],smonthL[i],sdayL[i]));
-				sale.setId(idL[i]);
-				sale.setPassword(passwordL[i]);
-				sale.setPhotourl(urlL[i]);
-				salesList.add(sale);
-			}	
+			
+			employee.setName(nameL[i]);
+			employee.setSurname(surnameL[i]);
+			employee.setNickname(nicknameL[i]);
+			employee.setTel(telL[i]);
+			employee.setAddress(addressL[i]);
+			employee.setAge(ageL[i]);
+			employee.setSalary(salaryL[i]);
+			employee.setBirthDate(new Date(byearL[i],bmonthL[i],bdayL[i]));
+			employee.setStartingDate(new Date(syearL[i],smonthL[i],sdayL[i]));
+			employee.setId(idL[i]);
+			employee.setPassword(passwordL[i]);
+			employee.setPhotourl(urlL[i]);
+			list.add(employee);
 		}
 	}
 
