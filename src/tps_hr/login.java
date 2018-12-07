@@ -5,7 +5,7 @@ import java.util.Map;
 public class login {
 	
 	private Map<String,String> loginInfo;
-	private String[] idL = {"00024","00120","00110","00341","02343","12345","98788","87778"};
+	private String[] idL = {"30024","00120","30110","20341","42343","12345","28788","57778"};
 	private String[] passwordL = {"12345","12121","11111","22222","33333","44444","55555","66666"};
 	private int initialsize = 8;
 	
