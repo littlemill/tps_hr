@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml.editCEOController">
+   <children>
+      <ScrollPane layoutX="42.0" layoutY="51.0" prefHeight="298.0" prefWidth="516.0">
+         <content>
+            <Label fx:id="Label" />
+         </content>
+      </ScrollPane>
+      <Button fx:id="showAllMemberBtn" layoutX="288.0" layoutY="359.0" mnemonicParsing="false" onAction="#setOnActionShowAllMemberBtn" prefWidth="130.0" text="Show All member" />
+      <Button fx:id="backBtn" layoutX="428.0" layoutY="359.0" mnemonicParsing="false" onAction="#setOnActionBackBtn" prefHeight="27.0" prefWidth="130.0" text="Back" />
+   </children>
+</AnchorPane>

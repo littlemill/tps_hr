@@ -25,8 +25,8 @@
                   <Insets bottom="35.0" />
                </VBox.margin>
             </ImageView>
-            <Button fx:id="showTimeBtn" mnemonicParsing="false" onAction="#setOnActionShowTimeBtn" prefHeight="27.0" prefWidth="179.0" text="Show Time Sheet" />
-            <Button fx:id="createBtn" mnemonicParsing="false" onAction="#setOnActionCreateNewTimeSheet" prefWidth="179.0" text="Create New Time Sheet" />
+            <Button fx:id="showTimeBtn" mnemonicParsing="false" onAction="#setOnActionShowTimeBtn" prefHeight="27.0" prefWidth="179.0" text="Show Timesheet" />
+            <Button fx:id="createBtn" mnemonicParsing="false" onAction="#setOnActionCreateNewTimeSheet" prefWidth="179.0" text="Create New Timesheet" />
             <Button fx:id="backBtn" mnemonicParsing="false" onAction="#setOnActionBackBtn" prefHeight="25.0" prefWidth="179.0" text="Back" />
          </children>
          <padding>

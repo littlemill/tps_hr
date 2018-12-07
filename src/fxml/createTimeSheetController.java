@@ -50,9 +50,9 @@ public class createTimeSheetController extends newMain{
     		alert.show();
     	}
     	else {
-    		if(noteTarea.getText() == "") noteTarea.setText("-");
+    		if(noteTarea.getText() == null) noteTarea.setText("-");
     		TimeSheet TS = new TimeSheet(Calendar.getInstance(),startTimeTfield.getText(),endTimeTfield.getText(),noteTarea.getText(),this.user);
-    		Alert alert = new Alert(AlertType.INFORMATION);
+    		this.user.getTimeSheetList().add(TS);    		Alert alert = new Alert(AlertType.INFORMATION);
     		alert.setTitle("Your Time Sheet has been confirmed");
     		alert.setContentText("TimeSheet was created at"+Calendar.getInstance().toString());
     	}

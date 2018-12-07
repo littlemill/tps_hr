@@ -1,6 +1,7 @@
 package fxml;
 import tps_hr.*;
 
+
 import javafx.fxml.FXML;
 
 import javafx.scene.control.Button;
@@ -68,12 +69,10 @@ public class homeController extends newMain {
 	    		switchScene("editFinance.fxml");
 	    	}
 	    	if(this.user instanceof CEO) {
-	    		EditCEO ceoScene = new EditCEO();
-	    		this.stage.setScene(ceoScene.ceoScene());
+	    		switchScene("editCEO.fxml");
     	}
 	    	if(this.user instanceof EVP) {
-	    		EditEVP evpScene = new EditEVP();
-	    		this.stage.setScene(evpScene.evpScene());
+	    		switchScene("editEVP.fxml");
 	    	}
 	    	if(this.user instanceof GA) {
 	    		switchScene("EditGA.fxml");
