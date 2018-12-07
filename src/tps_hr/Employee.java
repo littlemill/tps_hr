@@ -3,7 +3,9 @@ package tps_hr;
 
 import java.util.*;
 
-public abstract class Employee extends TPS {
+import fxml.newMain;
+
+public abstract class Employee {
 	
 	protected String photourl;
 	protected String id, password;
@@ -60,7 +62,7 @@ public abstract class Employee extends TPS {
 	public void resign() {
 		this.setHasResigned(true);
 		this.setResignationDate(Calendar.getInstance());
-		this.resignedEmployee.add(this);
+		newMain.tps.resignedEmployee.add(this);
 	}
 	public abstract String toString(); 
 
