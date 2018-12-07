@@ -130,6 +130,8 @@ public class editGACreateProjectController extends newMain {
     		GA ga = (GA) newMain.user;
     		Project prj = new Project(nameTfield.getText(),sales,engineer);
     		prj.setProjectCode(ga.generateProjectCode());
+    		newMain.tps.getCeoList().get(0).approveProject(prj.getProjectCode());
+    		newMain.tps.getEvpList().get(0).approveProject(prj.getProjectCode());
     		prj.setOrganization(orgTfield.getText());
     		prj.setApprovedbyCEO(true);
     		prj.setApprovedbyEVP(true);

@@ -3,7 +3,9 @@ package tps_hr;
 
 import java.util.*;
 
-public abstract class Employee extends TPS {
+import fxml.newMain;
+
+public abstract class Employee {
 	
 	protected String photourl;
 	protected String id, password;
@@ -20,7 +22,6 @@ public abstract class Employee extends TPS {
 	public Employee() {
 		setId("");
 		setPassword("");
-		setPasscode(this.getId(),this.getPassword());
 		setName("");
 		setSurname("");
 		setNickname("");		
@@ -37,7 +38,6 @@ public abstract class Employee extends TPS {
 	public Employee(String name,String surname) {
 		setId("");
 		setPassword("");
-		setPasscode(this.getId(),this.getPassword());
 		setName(name);
 		setSurname(surname);
 		setNickname("");		
@@ -51,16 +51,11 @@ public abstract class Employee extends TPS {
 		holiday = new HolidayEntitlement(this);
 	}
 	
-	public void setPasscode(String id,String passcode) {
-		this.id  = id;
-		this.password = passcode;
-		//this.loginData.addLogin(this.getId(), this.getPassword());
-	}
 	
 	public void resign() {
 		this.setHasResigned(true);
 		this.setResignationDate(Calendar.getInstance());
-		this.resignedEmployee.add(this);
+		newMain.tps.resignedEmployee.add(this);
 	}
 	public abstract String toString(); 
 

@@ -1,5 +1,7 @@
 package tps_hr;
 
+import fxml.newMain;
+
 public class EVP extends Employee implements Approvable {
 	
 	public EVP() {
@@ -9,15 +11,15 @@ public class EVP extends Employee implements Approvable {
 		super(name, surname);
 	}
 	public void approveProject(int projectCode) {
-		Project a = projectCodeToProject(projectCode);
+		Project a = newMain.tps.projectCodeToProject(projectCode);
 		a.setApprovedbyEVP(true);
 	}
 	
 	public String printOperationMembers() {
 		String data = "";
-		for (int i=0; i<operationList.size(); i++) {
-			data += "ID: "+operationList.get(i).getId()+"\nName: "+operationList.get(i).getName()+" Surname: "
-					+operationList.get(i).getSurname()+"\nSalary: "+operationList.get(i).getSalary()+"\n\n";
+		for (int i=0; i<newMain.tps.operationList.size(); i++) {
+			data += "ID: "+newMain.tps.operationList.get(i).getId()+"\nName: "+newMain.tps.operationList.get(i).getName()+" Surname: "
+					+newMain.tps.operationList.get(i).getSurname()+"\nSalary: "+newMain.tps.operationList.get(i).getSalary()+"\n\n";
 			}
 		return data;
 	}

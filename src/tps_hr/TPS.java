@@ -62,7 +62,8 @@ public class TPS {
 				ceo.setSalary(salaryL[i]);
 				ceo.setBirthDate(new Date(byearL[i],bmonthL[i],bdayL[i]));
 				ceo.setStartingDate(new Date(syearL[i],smonthL[i],sdayL[i]));
-				ceo.setPasscode(idL[i], passwordL[i]);
+				ceo.setId(idL[i]);
+				ceo.setPassword(passwordL[i]);
 				ceo.setPhotourl(urlL[i]);
 				ceoList.add(ceo);
 			}
@@ -76,7 +77,8 @@ public class TPS {
 				eng.setSalary(salaryL[i]);
 				eng.setBirthDate(new Date(byearL[i],bmonthL[i],bdayL[i]));
 				eng.setStartingDate(new Date(syearL[i],smonthL[i],sdayL[i]));
-				eng.setPasscode(idL[i], passwordL[i]);
+				eng.setId(idL[i]);
+				eng.setPassword(passwordL[i]);
 				eng.setPhotourl(urlL[i]);
 				operationList.add(eng);
 			}
@@ -90,7 +92,8 @@ public class TPS {
 				evp.setSalary(salaryL[i]);
 				evp.setBirthDate(new Date(byearL[i],bmonthL[i],bdayL[i]));
 				evp.setStartingDate(new Date(syearL[i],smonthL[i],sdayL[i]));
-				evp.setPasscode(idL[i], passwordL[i]);
+				evp.setId(idL[i]);
+				evp.setPassword(passwordL[i]);
 				evp.setPhotourl(urlL[i]);
 				evpList.add(evp);
 			}
@@ -104,7 +107,8 @@ public class TPS {
 				ga.setSalary(salaryL[i]);
 				ga.setBirthDate(new Date(byearL[i],bmonthL[i],bdayL[i]));
 				ga.setStartingDate(new Date(syearL[i],smonthL[i],sdayL[i]));
-				ga.setPasscode(idL[i], passwordL[i]);
+				ga.setId(idL[i]);
+				ga.setPassword(passwordL[i]);
 				ga.setPhotourl(urlL[i]);
 				gaList.add(ga);
 			}
@@ -118,7 +122,8 @@ public class TPS {
 				fn.setSalary(salaryL[i]);
 				fn.setBirthDate(new Date(byearL[i],bmonthL[i],bdayL[i]));
 				fn.setStartingDate(new Date(syearL[i],smonthL[i],sdayL[i]));
-				fn.setPasscode(idL[i], passwordL[i]);
+				fn.setId(idL[i]);
+				fn.setPassword(passwordL[i]);
 				fn.setPhotourl(urlL[i]);
 				financeList.add(fn);
 			}
@@ -131,7 +136,8 @@ public class TPS {
 				sale.setSalary(salaryL[i]);
 				sale.setBirthDate(new Date(byearL[i],bmonthL[i],bdayL[i]));
 				sale.setStartingDate(new Date(syearL[i],smonthL[i],sdayL[i]));
-				sale.setPasscode(idL[i], passwordL[i]);
+				sale.setId(idL[i]);
+				sale.setPassword(passwordL[i]);
 				sale.setPhotourl(urlL[i]);
 				salesList.add(sale);
 			}	

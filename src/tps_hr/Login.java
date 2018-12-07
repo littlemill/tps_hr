@@ -1,17 +1,18 @@
 package tps_hr;
 
+import java.util.HashMap;
 import java.util.Map;
 
-public class login {
+public class Login {
 	
-	private Map<String,String> loginInfo;
+	private Map<String,String> loginInfo = new HashMap();
 	private String[] idL = {"30024","00120","30110","20341","42343","12345","28788","57778"};
 	private String[] passwordL = {"12345","12121","11111","22222","33333","44444","55555","66666"};
 	private int initialsize = 8;
 	
-	public login() {
+	public Login() {
 		for(int i = 0 ; i<initialsize ;i++) {
-			this.loginInfo.replace(idL[i], passwordL[i]);
+			loginInfo.put(idL[i], passwordL[i]);
 		}
 	}
 	

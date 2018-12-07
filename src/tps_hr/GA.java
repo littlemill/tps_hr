@@ -1,5 +1,7 @@
 package tps_hr;
 
+import fxml.newMain;
+
 public class GA extends Employee {
 	
 	public GA(String name, String surname) {
@@ -7,17 +9,13 @@ public class GA extends Employee {
 	}
 	
 	public int generateProjectCode() {
-		int projectCode = this.getLatestProjectCode();
-		this.setLatestProjectCode(this.getLatestProjectCode()+1);
+		int projectCode = newMain.tps.getLatestProjectCode();
+		newMain.tps.setLatestProjectCode(newMain.tps.getLatestProjectCode()+1);
 		return projectCode;
 	}
 	
 	public void addNotification(String header,String note) {
-		this.notification.add(new Notification(header,note,this));
-	}
-	
-	public void deleteNotification(Notification n) {
-		this.notification.remove(n);
+		newMain.tps.notification.add(new Notification(header,note,this));
 	}
 	
 	@Override

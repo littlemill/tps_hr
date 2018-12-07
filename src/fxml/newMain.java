@@ -14,6 +14,7 @@ public class newMain extends Application{
 	public static Stage stage;
 	public static Employee user;
 	public static TPS tps = new TPS();
+	public static Login login = new Login();
 	
 	@Override
     public void start(Stage primaryStage) throws Exception{
