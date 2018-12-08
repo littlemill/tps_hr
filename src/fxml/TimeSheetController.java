@@ -8,7 +8,7 @@ import javafx.scene.control.Label;
 
 import tps_hr.*;
 
-public class timesheetController {
+public class TimeSheetController {
 	@FXML
     private Button backBtn;
 
@@ -23,24 +23,30 @@ public class timesheetController {
     
     @FXML
     void setOnActionCreateNewTimeSheet(ActionEvent event) {
-    	newMain.switchScene("createTimeSheet.fxml");
+    	Main.startThread();
+    	Main.switchScene("CreateTimeSheet.fxml");
+    	Main.stopThread();
     }
     
     @FXML
     void setOnActionBackBtn(ActionEvent event) {
-    	newMain.switchScene("Home.fxml");
+    	Main.startThread();
+    	Main.switchScene("Home.fxml");
+    	Main.stopThread();
     }
     
     @FXML
     void setOnActionShowTimeBtn(ActionEvent event) {
-    	String data = "TimeSheet: "+newMain.user.getName()+" "+newMain.user.getSurname()+"\n";
-    	if(newMain.user.getTimeSheetList().isEmpty()) {
+    	Main.startThread();
+    	String data = "TimeSheet: "+Main.user.getName()+" "+Main.user.getSurname()+"\n";
+    	if(Main.user.getTimeSheetList().isEmpty()) {
     		data += "No Timesheet to be shown.";
     	}else {
-    		for(TimeSheet ts: newMain.user.getTimeSheetList()) {
+    		for(TimeSheet ts: Main.user.getTimeSheetList()) {
     			data+=ts.toString()+"\n";
     		}
     	}
     	label.setText(data);
+    	Main.stopThread();
     }
 }

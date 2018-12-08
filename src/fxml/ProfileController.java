@@ -16,7 +16,7 @@ import javafx.scene.image.ImageView;
 import tps_hr.*;
 
 
-public class profileController  {
+public class ProfileController  {
 	@FXML
 	private TextArea profileTextArea;
 
@@ -33,38 +33,41 @@ public class profileController  {
 	
 	@FXML
 	void setOnActionShowProfile(ActionEvent event) {
-		EmployeeType type = newMain.user.getType();
+		Main.startThread();
+		EmployeeType type = Main.user.getType();
 		Employee employee;
-		userImage.setImage(new Image("/picture/"+newMain.user.getName().toLowerCase()+".jpg"));
+		userImage.setImage(new Image("/picture/"+Main.user.getName().toLowerCase()+".jpg"));
 		switch (type) {
 			case CEO: 
-				employee = (CEO) newMain.user;
+				employee = (CEO) Main.user;
 				break;
 			case EVP: 
-				employee = (EVP) newMain.user;
+				employee = (EVP) Main.user;
 				break;
 			case Finance: 
-				employee = (Finance) newMain.user;
+				employee = (Finance) Main.user;
 				break;
 			case GA: 
-				employee = (GA) newMain.user;
+				employee = (GA) Main.user;
 				break;
 			case Sales: 
-				employee = (Sales) newMain.user;
+				employee = (Sales) Main.user;
 				break;
 			case Engineer: 
-				employee = (Operation) newMain.user;
+				employee = (Operation) Main.user;
 				break;
 			default:
-				employee = (CEO) newMain.user;
+				employee = (CEO) Main.user;
 		}
 		profileTextArea.setText(employee.toString());
-
+		Main.stopThread();
 	}
 	
 	@FXML
 	void setOnActionBackBtn(ActionEvent event) {
-		newMain.switchScene("Home.fxml");
+		Main.startThread();
+		Main.switchScene("Home.fxml");
+		Main.stopThread();
 	}
 }
 

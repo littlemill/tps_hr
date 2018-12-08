@@ -13,7 +13,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-public class payrollController {
+public class PayrollController {
 	@FXML
     private Button backBtn;
 	@FXML
@@ -32,7 +32,7 @@ public class payrollController {
 	private Button showBtn;
 	@FXML
 	public void show() {
-		ArrayList<Payroll> payrollList = newMain.user.getPayrollList();
+		ArrayList<Payroll> payrollList = Main.user.getPayrollList();
 		ObservableList<Payroll> data = FXCollections.observableArrayList();
 		table.setEditable(false);
 		for(Payroll p :payrollList) {
@@ -48,11 +48,15 @@ public class payrollController {
 	}
 	@FXML
 	void setOnActionShowBtn(ActionEvent event) {
+		Main.stopThread();
 		show();
+		Main.startThread();
 	}
 	@FXML
 	void setOnActionBackBtn(ActionEvent event) {
-		newMain.switchScene("Home.fxml");
+		Main.stopThread();
+		Main.switchScene("Home.fxml");
+		Main.startThread();
 	}
 }
 	

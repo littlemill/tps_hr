@@ -10,7 +10,7 @@ import javafx.scene.control.TextField;
 import tps_hr.GA;
 import javafx.scene.control.Alert.AlertType;
 
-public class editGAanounceController {
+public class EditGAanounceController {
 
     @FXML
     private Button announceBtn;
@@ -44,29 +44,37 @@ public class editGAanounceController {
     }
     @FXML
     void setOnActionCreateProject(ActionEvent event) {
-    	newMain.switchScene("EditGAcreateProj.fxml");
+    	Main.stopThread();
+    	Main.startThread();
+    	Main.switchScene("EditGAcreateProj.fxml");
     }
     
     @FXML
     void setOnActionBackBtn(ActionEvent event) {
-    	newMain.switchScene("Home.fxml");
+    	Main.stopThread();
+    	Main.switchScene("Home.fxml");
+    	Main.startThread();
     }
     
     @FXML
     void setOnActionAddBtn(ActionEvent event) {
+    	Main.stopThread();
     	if (headerTfield.getText().equals(null) || announcement.getText().equals(null) || authorTfield.getText().equals(null)) {
     		Alert alert = new Alert(AlertType.WARNING);
     		alert.setContentText("In order to complete the task, Please fill in all the details.");
     		alert.show();
+    		Main.startThread();
     	}
     	else {
-    		GA ga = (GA) newMain.user;
+    		GA ga = (GA) Main.user;
     		ga.addNotification(headerTfield.getText(), announcement.getText());
+    		Main.startThread();
     	}
     }
     
     @FXML
     void setOnActionCancelBtn(ActionEvent event) {
+    	Main.stopThread();
     	Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
     	alert.setTitle("Cancel the task");
     	alert.setHeaderText("Your announcement wil not be added");
@@ -79,9 +87,11 @@ public class editGAanounceController {
     	        	headerTfield.setText(null);
     	        	announcement.setText(null);
     	        	authorTfield.setText(null);
+    	        	Main.startThread();
     	        }
     	        else {
     	        	alert.close();
+    	        	Main.startThread();
     	        }
     	});
     }

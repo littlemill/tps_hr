@@ -12,7 +12,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
-public class editGACreateProjectController {
+public class EditGACreateProjectController {
 	@FXML
     private TextField codeTfield;
 
@@ -60,50 +60,62 @@ public class editGACreateProjectController {
     
     @FXML
     void setOnActionAddAnnoucement(ActionEvent event) {
-    	newMain.switchScene("EditGAannounce.fxml");
+    	Main.stopThread();
+    	Main.switchScene("EditGAannounce.fxml");
+    	Main.startThread();
     }
     
     @FXML
     void setOnActionBackBtn(ActionEvent event) {
-    	newMain.switchScene("Home.fxml");
+    	Main.stopThread();
+    	Main.switchScene("Home.fxml");
+    	Main.startThread();
     }
     
     @FXML
     void setOnActionGenBtn(ActionEvent event) {
-    	codeTfield.setText(Integer.toString(newMain.tps.getLatestProjectCode()));
+    	Main.stopThread();
+    	codeTfield.setText(Integer.toString(Main.tps.getLatestProjectCode()));
+    	Main.startThread();
     }
     
     @FXML
     void setOnActionClearBtn(ActionEvent event) {
+    	Main.stopThread();
     	codeTfield.setText(null);
     	costTfield.setText(null);
     	note.setText(null);
     	orgTfield.setText(null);
     	saleTfield.setText(null);
     	engTfield.setText(null);
+    	Main.startThread();
     }
     @FXML
     void setOnActionCreatebutton(ActionEvent event) {
+    	Main.stopThread();
     	if(!ceoCheck.isSelected()&&!evpCheck.isSelected()) {
     		Alert alert = new Alert(AlertType.WARNING);
     		alert.setContentText("Please get the project approved by CEO and EVP");
     		alert.show();
+    		Main.startThread();
     	}
     	if(!evpCheck.isSelected()) {
     		Alert alert = new Alert(AlertType.WARNING);
     		alert.setContentText("Please get the project approved by EVP");
     		alert.show();
+    		Main.startThread();
     	}
     	if(!ceoCheck.isSelected()) {
     		Alert alert = new Alert(AlertType.WARNING);
     		alert.setContentText("Please get the project approved by CEO");
     		alert.show();
+    		Main.startThread();
     	}else {
     		boolean findsale = false;
     		boolean findeng = false;
     		Sales sales = new Sales();
     		Operation engineer = new Operation();
-    		for(Sales s:newMain.tps.getSalesList()) {
+    		for(Sales s:Main.tps.getSalesList()) {
     			if(s.getName().equals(saleTfield.getText())) {
     				sales = s;
     				findsale = true;
@@ -114,8 +126,9 @@ public class editGACreateProjectController {
     			Alert alert = new Alert(AlertType.ERROR);
     			alert.setContentText("Sales name :"+saleTfield.getText()+" doesn't exist.\n"+"Please fill the correct name.");
     			alert.show();
+    			Main.startThread();
     		}
-    		for(Operation e: newMain.tps.getOperationList()) {
+    		for(Operation e: Main.tps.getOperationList()) {
     			if(e.getName().equals(engTfield.getText())) {
     				engineer = e;
     				findeng = true;
@@ -126,16 +139,18 @@ public class editGACreateProjectController {
     			Alert alert = new Alert(AlertType.ERROR);
     			alert.setContentText("Engineer name :"+engTfield.getText()+" doesn't exist.\n"+"Please fill the correct name.");
     			alert.show();
+    			Main.startThread();
     		}
-    		GA ga = (GA) newMain.user;
+    		GA ga = (GA) Main.user;
     		Project prj = new Project(nameTfield.getText(),sales,engineer);
     		prj.setProjectCode(ga.generateProjectCode());
-    		newMain.tps.getCeoList().get(0).approveProject(prj.getProjectCode());
-    		newMain.tps.getEvpList().get(0).approveProject(prj.getProjectCode());
+    		Main.tps.getCeoList().get(0).approveProject(prj.getProjectCode());
+    		Main.tps.getEvpList().get(0).approveProject(prj.getProjectCode());
     		prj.setOrganization(orgTfield.getText());
     		prj.setApprovedbyCEO(true);
     		prj.setApprovedbyEVP(true);
-    		newMain.tps.addProject(prj);
+    		Main.tps.addProject(prj);
+    		Main.startThread();
     	}
     }
 

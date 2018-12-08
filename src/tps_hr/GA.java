@@ -1,6 +1,6 @@
 package tps_hr;
 
-import fxml.newMain;
+import fxml.Main;
 
 public class GA extends Employee {
 	
@@ -13,21 +13,21 @@ public class GA extends Employee {
 	}
 	
 	public int generateProjectCode() {
-		int projectCode = newMain.tps.getLatestProjectCode();
-		newMain.tps.setLatestProjectCode(newMain.tps.getLatestProjectCode()+1);
+		int projectCode = Main.tps.getLatestProjectCode();
+		Main.tps.setLatestProjectCode(Main.tps.getLatestProjectCode()+1);
 		return projectCode;
 	}
 	
 	public void addNotification(String header,String note) {
-		newMain.tps.notification.add(new Notification(header,note,this));
+		Main.tps.notification.add(new Notification(header,note,this));
 	}
 	
 	@Override
 	public String toString() {
 		String data;
-		data = "GA"+"\n"+"Name: "+this.getName()+" Surname: "+this.getSurname()+"\n"+"NickName :"+this.getNickname()+"\n"+
-	            "Birthdate: "+this.getBirthDate()+"\n"+"Age:"+this.getAge()+" Tel: "+this.getTel()+"\n"+"Address :"+this.getAddress()
-	            +"\n"+"Starting Date:"+this.getStartingDate().getTime().toString()+"\n"+"Certificate :";
+		data = "GA"+"\n"+"Name: "+this.getName()+" Surname: "+this.getSurname()+"\n"+"NickName : "+this.getNickname()+"\n"+
+	            "Birthdate: "+this.getBirthDate()+"\n"+"Age: "+this.getAge()+" Tel: "+this.getTel()+"\n"+"Address : "+this.getAddress()
+	            +"\n"+"Starting Date: "+this.getStartingDate().getTime().toString()+"\n"+"Certificate : ";
 		if(this.getCertificateList().isEmpty()) {
 			data+= "-";
 		}else {

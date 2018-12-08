@@ -3,7 +3,7 @@ package tps_hr;
 
 import java.util.*;
 
-import fxml.newMain;
+import fxml.Main;
 
 public abstract class Employee {
 	
@@ -56,7 +56,7 @@ public abstract class Employee {
 	public void resign() {
 		this.setHasResigned(true);
 		this.setResignationDate();
-		newMain.tps.resignedEmployee.add(this);
+		Main.tps.resignedEmployee.add(this);
 	}
 	public abstract String toString(); 
 

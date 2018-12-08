@@ -38,9 +38,9 @@ public class Operation extends Employee {
 	@Override
 	public String toString() {
 		String data;
-		data = "Operation"+"\n"+"Name: "+this.getName()+" Surname: "+this.getSurname()+"\n"+"NickName :"+this.getNickname()+"\n"+
-	            "Birthdate: "+this.getBirthDate()+"\n"+"Age:"+this.getAge()+" Tel: "+this.getTel()+"\n"+"Address :"+this.getAddress()
-	            +"\n"+"Starting Date:"+this.getStartingDate().getTime().toString()+"\n"+"Certificate :";
+		data = "Operation"+"\n"+"Name: "+this.getName()+" Surname: "+this.getSurname()+"\n"+"NickName : "+this.getNickname()+"\n"+
+	            "Birthdate: "+this.getBirthDate()+"\n"+"Age: "+this.getAge()+" Tel: "+this.getTel()+"\n"+"Address : "+this.getAddress()
+	            +"\n"+"Starting Date: "+this.getStartingDate().getTime().toString()+"\n"+"Certificate : ";
 		if(this.getCertificateList().isEmpty()) {
 			data+= "-";
 		}else {

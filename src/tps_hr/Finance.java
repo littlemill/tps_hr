@@ -2,7 +2,7 @@ package tps_hr;
 
 import java.util.ArrayList;
 
-import fxml.newMain;
+import fxml.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -21,33 +21,33 @@ public class Finance extends Employee {
 		switch (type) {
 			case CEO: 
 				finance.add("CEO: \n");
-				list = (ArrayList<CEO>) newMain.tps.getCeoList();
+				list = (ArrayList<CEO>) Main.tps.getCeoList();
 				break;
 			case EVP: 
 				finance.add("EVP: \n");
-				list = (ArrayList<EVP>) newMain.tps.getEvpList();
+				list = (ArrayList<EVP>) Main.tps.getEvpList();
 				break;
 			case Finance: 
 				finance.add("FINANCE: \n");
-				list = (ArrayList<Finance>) newMain.tps.getFinanceList();
+				list = (ArrayList<Finance>) Main.tps.getFinanceList();
 				break;
 			case GA: 
 				finance.add("GA: \n");
-				list = (ArrayList<GA>) newMain.tps.getGaList();
+				list = (ArrayList<GA>) Main.tps.getGaList();
 				break;
 			case Sales: 
 				finance.add("SALES: \n");
-				list = (ArrayList<Sales>) newMain.tps.getSalesList();
+				list = (ArrayList<Sales>) Main.tps.getSalesList();
 				break;
 			case Engineer: 
 				finance.add("OPERATION: \n");
-				list = (ArrayList<Operation>) newMain.tps.getOperationList();
+				list = (ArrayList<Operation>) Main.tps.getOperationList();
 				break;
 			default:
 				finance.add("CEO: \n");
-				list = (ArrayList<CEO>) newMain.tps.getCeoList();
+				list = (ArrayList<CEO>) Main.tps.getCeoList();
 		}
-		for(int i=0;i<newMain.tps.ceoList.size();i++) {
+		for(int i=0;i<Main.tps.ceoList.size();i++) {
 			boolean check = false;
 			Employee employee = (Employee) list.get(i);
  			
@@ -86,9 +86,9 @@ public class Finance extends Employee {
 	
 	public String toString() {
 		String data;
-		data = "Finance"+"\n"+"Name: "+this.getName()+" Surname: "+this.getSurname()+"\n"+"NickName :"+this.getNickname()+"\n"+
-	            "Birthdate: "+this.getBirthDate()+"\n"+"Age:"+this.getAge()+" Tel: "+this.getTel()+"\n"+"Address :"+this.getAddress()
-	            +"\n"+"Starting Date:"+this.getStartingDate().getTime().toString()+"\n"+"Certificate :";
+		data = "Finance"+"\n"+"Name: "+this.getName()+" Surname: "+this.getSurname()+"\n"+"NickName : "+this.getNickname()+"\n"+
+	            "Birthdate: "+this.getBirthDate()+"\n"+"Age: "+this.getAge()+" Tel: "+this.getTel()+"\n"+"Address : "+this.getAddress()
+	            +"\n"+"Starting Date: "+this.getStartingDate().getTime().toString()+"\n"+"Certificate : ";
 		if(this.getCertificateList().isEmpty()) {
 			data+= "-";
 		}else {

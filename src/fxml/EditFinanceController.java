@@ -9,7 +9,7 @@ import javafx.event.*;
 
 import tps_hr.*;
 
-public class editFinanceController {
+public class EditFinanceController {
 	@FXML
 	private MenuButton yearMenu;
 	@FXML
@@ -27,12 +27,15 @@ public class editFinanceController {
 	private int month1;
 	
 	void setOnActionYearMenu(ActionEvent event) {
+		Main.startThread();
 		year = this.yearMenu.getText();
 		year1 = Integer.parseInt(year);
 		yearMenu.setText(year);
+		Main.stopThread();
 	}
 	
 	void setOnActionMonthMenu(ActionEvent event) {
+		Main.stopThread();
 		month = this.monthMenu.getText();
 		if(month.equals("January")) {
 			month1 = 1;
@@ -69,15 +72,20 @@ public class editFinanceController {
 		}
 		else month1 = 12;
 		monthMenu.setText(month);
+		Main.stopThread();
 	}
 	
 	void setOnActionBackBtn(ActionEvent event) {
-		newMain.switchScene("Home.fxml");
+		Main.stopThread();
+		Main.switchScene("Home.fxml");
+		Main.startThread();
 	}
 	
 	void setOnActionSearchBtn(ActionEvent event) {
-		Finance user = (Finance) newMain.user;
+		Main.stopThread();
+		Finance user = (Finance) Main.user;
 		financeList.setItems(user.printAllPayroll(month1,year1));
+		Main.startThread();
 	}
 	
 }

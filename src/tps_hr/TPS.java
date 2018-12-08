@@ -4,7 +4,7 @@ import java.util.Map;
 import java.util.Date;
 import java.util.ArrayList;
 
-import fxml.newMain;
+import fxml.Main;
 
 public class TPS {
 	protected ArrayList<CEO> ceoList;
@@ -35,12 +35,14 @@ public class TPS {
 	private int[] syearL = {105,105,105,105,105,105,105,105};
 	private String[] idL = {"30024","00120","30110","20341","42343","12345","28788","57778"};
 	private String[] passwordL = {"12345","12121","11111","22222","33333","44444","55555","66666"};
-	private String[] urlL = {"mass.jpg","romnalin.jpg","shin.jpg","lalida.jpg","sutiwat.jpg","pichaya.jpg","methawee.jpg","chalisa.jpg"};
 	private String[] startTimeL = {"08:00","11:00","10:00","13:00","13:00","9:00","13:00","14:00"};
 	private String[] endTimeL = {"10:00","12:00","11:00","15:00","14:00","15:00","15:00","16:00"};
 	private String[] noteL = {"meeting at TPS office","project conference at PTT","implement project at Satriwithaya School","meeting at TPS","project conference at SCG","network conference at Mandarin Oriental Hotel BKK","project at Chula","finance member meeting at TPS"};
 	private String[] notificationL = {"WELCOME","Welcome to TPS Application"};
 	
+	private int[] monthPayroll = {1,1,1,2,2,2,3,3};
+	private int[] yearPayroll = {2018,2018,2018,2018,2018,2018,2018,2018};
+	private int[] commissionPayroll = {0,0,0,30000,0,0,25000,0};
 	private int initialsize = 8;
 	
 	public TPS() {
@@ -102,6 +104,7 @@ public class TPS {
  			employee.setStartingDate(syearL[i],smonthL[i],sdayL[i]);
  			employee.setId(idL[i]);
  			employee.setPassword(passwordL[i]);
+ 			employee.getPayrollList().add(new Payroll(monthPayroll[i],yearPayroll[i],employee.getSalary(),commissionPayroll[i]));
  			employee.getTimeSheetList().add(new TimeSheet(startTimeL[i],endTimeL[i],noteL[i],employee));
  			if(employee.getType() == EmployeeType.valueOf("GA")) {
  				GA ga = (GA) employee;

@@ -12,7 +12,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.*;
 
-public class homeController {
+public class HomeController {
 	 
 		@FXML
 	    private Button timeSheetBtn;
@@ -39,42 +39,52 @@ public class homeController {
 	    
 	    @FXML
 	    void setOnActionforTimeSheet(ActionEvent event) {
-	    	newMain.switchScene("TimeSheet.fxml");
+	    	Main.switchScene("TimeSheet.fxml");
+	    	Main.stopThread();
+	    	Main.startThread();
 	    }
 
 	    @FXML
 	    void setOnActionforProfile(ActionEvent event) {
-	    	newMain.switchScene("Profile.fxml");
+	    	Main.switchScene("Profile.fxml");
+	    	Main.stopThread();
+	    	Main.startThread();
 	    }
 
 	    @FXML
 	    void setOnActionforPayroll(ActionEvent event) {
-	    	newMain.switchScene("Payroll.fxml");
+	    	Main.switchScene("Payroll.fxml");
+	    	Main.stopThread();
+	    	Main.startThread();
 	    }
 
 	    @FXML
 	    void setOnActionforEdit(ActionEvent event){
 	    	try{
-	    		String id = newMain.user.getId();
+	    		Main.stopThread();
+	    		String id = Main.user.getId();
+	    		String path = "";
     			char checkid = id.charAt(0);
     			if(checkid == '0') { //0-ceo
-    				newMain.switchScene("editCEO.fxml");
+    				path = "EditCEO.fxml";
     			}
     			if(checkid == '1') { //1-evp
-    				newMain.switchScene("editEVP.fxml");
+    				path = "EditEVP.fxml";
     			}
     			if(checkid == '2') { //2-sale
-    				newMain.switchScene("editSales.fxml");
+    				path = "EditSales.fxml";
     			}
     			if(checkid == '3') { //3-engineer
-    				newMain.switchScene("editOperation.fxml");
+    				path = "EditOperation.fxml";
     			}
     			if(checkid == '4') { //4-ga
-    	    		newMain.switchScene("EditGA.fxml");
+    				path = "EditGA.fxml";
     			}
     			if(checkid == '5') {
-    				newMain.switchScene("editFinance.fxml");
+    				path = "EditFinance.fxml";
     			}
+    			Main.switchScene(path);
+    			Main.startThread();
     		}catch(Exception e) {
     			e.printStackTrace();
     		}
@@ -82,7 +92,9 @@ public class homeController {
 
 	    @FXML
 	    void setOnActionforHoliday(ActionEvent event) {
-	    	newMain.switchScene("HolidayEntitlement.fxml");
+	    	Main.switchScene("HolidayEntitlement.fxml");
+	    	Main.stopThread();
+	    	Main.startThread();
 	    }
 	    @FXML
 	    void setOnActionforLogOut(ActionEvent event) {
@@ -91,11 +103,13 @@ public class homeController {
 	    
 	    @FXML 
 	    public void showNotification() {
-	    	if(newMain.tps.getNotification().isEmpty()) {
+	    	Main.stopThread();
+	    	Main.startThread();
+	    	if(Main.tps.getNotification().isEmpty()) {
 	    		notificationData.add("No updated news");
 	    	}
 	    	else {
-	    		for(Notification noti : newMain.tps.getNotification()) {
+	    		for(Notification noti : Main.tps.getNotification()) {
 		    		notificationData.add(noti.toString());
 		    	}
 	    	}

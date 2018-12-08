@@ -10,7 +10,7 @@ import javafx.scene.control.Label;
 
 import java.util.Calendar;
 
-public class holidayController {
+public class HolidayController {
 	@FXML
     private Button backBtn;
 
@@ -36,8 +36,8 @@ public class holidayController {
     	
     	Calendar rightnow = Calendar.getInstance();
     	updateLbl.setText(updateLbl.getText()+ rightnow.toString());
-    	used = newMain.user.getHoliday().getUsedHolidays();
-    	max =  newMain.user.getHoliday().getmaxHolidays();
+    	used = Main.user.getHoliday().getUsedHolidays();
+    	max =  Main.user.getHoliday().getmaxHolidays();
     	usedLbl.setText(Integer.toString(used));
     	maxLbl.setText(Integer.toString(max));
     	pieChartData = FXCollections.observableArrayList(new PieChart.Data("max",max),new PieChart.Data("used",used));
@@ -45,12 +45,16 @@ public class holidayController {
     }
     @FXML
     void setOnActionBackBtn(ActionEvent event) {
-    	newMain.switchScene("Home.fxml");
+    	Main.stopThread();
+    	Main.switchScene("Home.fxml");
+    	Main.startThread();
     }
 
     @FXML
     void setOnActionRefreshBtn(ActionEvent event) {
+    	Main.stopThread();
     	update();
+    	Main.startThread();
     }
 }
 

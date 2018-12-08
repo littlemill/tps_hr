@@ -12,7 +12,7 @@ public class CEO extends Employee implements Approvable {
 	}
 	
 	public void approveProject(int projectCode) {
-		Project a = newMain.tps.projectCodeToProject(projectCode);
+		Project a = Main.tps.projectCodeToProject(projectCode);
 		a.setApprovedbyCEO(true);
 	}
 	
@@ -24,31 +24,31 @@ public class CEO extends Employee implements Approvable {
  		switch (type) {
  			case CEO: 
  				data += "CEO: \n";
- 				list = (ArrayList<CEO>) newMain.tps.getCeoList();
+ 				list = (ArrayList<CEO>) Main.tps.getCeoList();
  				break;
  			case EVP: 
  				data += "EVP: \n";
- 				list = (ArrayList<EVP>) newMain.tps.getEvpList();
+ 				list = (ArrayList<EVP>) Main.tps.getEvpList();
  				break;
  			case Finance: 
  				data += "FINANCE: \n";
- 				list = (ArrayList<Finance>) newMain.tps.getFinanceList();
+ 				list = (ArrayList<Finance>) Main.tps.getFinanceList();
  				break;
  			case GA: 
  				data += "GA: \n";
- 				list = (ArrayList<GA>) newMain.tps.getGaList();
+ 				list = (ArrayList<GA>) Main.tps.getGaList();
  				break;
  			case Sales: 
  				data += "SALES: \n";
- 				list = (ArrayList<Sales>) newMain.tps.getSalesList();
+ 				list = (ArrayList<Sales>) Main.tps.getSalesList();
  				break;
  			case Engineer: 
  				data += "OPERATION: \n";
- 				list = (ArrayList<Operation>) newMain.tps.getOperationList();
+ 				list = (ArrayList<Operation>) Main.tps.getOperationList();
  				break;
  			default:
  				data += "CEO: \n";
- 				list = (ArrayList<CEO>) newMain.tps.getCeoList();
+ 				list = (ArrayList<CEO>) Main.tps.getCeoList();
  		}
  		
  		for (int i=0; i<list.size(); i++) {
@@ -70,9 +70,9 @@ public class CEO extends Employee implements Approvable {
 	
 	public String toString() {
 		String data;
-		data = "CEO"+"\n"+"Name: "+this.getName()+" Surname: "+this.getSurname()+"\n"+"NickName :"+this.getNickname()+"\n"+
-	            "Birthdate: "+this.getBirthDate()+"\n"+"Age:"+this.getAge()+" Tel: "+this.getTel()+"\n"+"Address :"+this.getAddress()
-	            +"\n"+"Starting Date:"+this.getStartingDate().getTime().toString()+"\n"+"Certificate :";
+		data = "CEO"+"\n"+"Name: "+this.getName()+" Surname: "+this.getSurname()+"\n"+"NickName : "+this.getNickname()+"\n"+
+	            "Birthdate: "+this.getBirthDate()+"\n"+"Age: "+this.getAge()+" Tel: "+this.getTel()+"\n"+"Address :"+this.getAddress()
+	            +"\n"+"Starting Date: "+this.getStartingDate().getTime().toString()+"\n"+"Certificate : ";
 		if(this.getCertificateList().isEmpty()) {
 			data+= "-";
 		}else {
