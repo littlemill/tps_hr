@@ -7,11 +7,12 @@ import fxml.newMain;
 
 public abstract class Employee {
 	
-	protected String photourl;
+	protected EmployeeType type;
 	protected String id, password;
 	protected String name,surname,nickname,tel,address;
 	protected int age, salary;
-	protected Calendar birthDate, startingDate, resignationDate;
+	protected String birthDate;
+	protected Calendar startingDate, resignationDate;
 	protected ArrayList<Certificate> certificateList;
 	protected ArrayList<Payroll> payrollList;
 	protected ArrayList<TimeSheet> timeSheetList;
@@ -54,7 +55,7 @@ public abstract class Employee {
 	
 	public void resign() {
 		this.setHasResigned(true);
-		this.setResignationDate(Calendar.getInstance());
+		this.setResignationDate();
 		newMain.tps.resignedEmployee.add(this);
 	}
 	public abstract String toString(); 
@@ -141,23 +142,24 @@ public abstract class Employee {
 		this.salary = salary;
 	}
 
-	public Calendar getBirthDate() {
+	public String getBirthDate() {
 		return birthDate;
 	}
 
-	public void setBirthDate(Date birthDate) {
-		Calendar bd = Calendar.getInstance();
-		bd.setTime(birthDate);
-		this.birthDate = bd;
+	public void setBirthDate(int year,int month,int date) {
+		String yearS,monthS,dateS;
+		yearS = Integer.toString(year);
+		monthS = Integer.toString(month);
+		dateS = Integer.toString(date);
+		this.birthDate = dateS+"/"+monthS+"/"+yearS;
 	}
 
 	public Calendar getResignationDate() {
 		return resignationDate;
 	}
 
-	public void setResignationDate(Date resignationDate) {
+	public void setResignationDate() {
 		Calendar rd = Calendar.getInstance();
-		rd.setTime(resignationDate);
 		this.resignationDate = rd;
 	}
 
@@ -177,17 +179,13 @@ public abstract class Employee {
 		this.hasResigned = hasResigned;
 	}
 
-	public void setResignationDate(Calendar resignationDate) {
-		this.resignationDate = resignationDate;
-	}
-
 	public Calendar getStartingDate() {
 		return startingDate;
 	}
 
-	public void setStartingDate(Date startingDate) {
+	public void setStartingDate(int year,int month,int date) {
 		Calendar rd = Calendar.getInstance();
-		rd.setTime(startingDate);
+		rd.set(year,month,date);
 		this.startingDate = rd;
 	}
 
@@ -215,13 +213,19 @@ public abstract class Employee {
 		this.timeSheetList = timeSheetList;
 	}
 
-	public String getPhotourl() {
-		return photourl;
+	public EmployeeType getType() {
+		return type;
 	}
 
-	public void setPhotourl(String photourl) {
-		this.photourl = photourl;
+	public void setType(EmployeeType type) {
+		this.type = type;
 	}
-	
-	
+
+	public ArrayList<Certificate> getCertificateList() {
+		return certificateList;
+	}
+
+	public void setCertificateList(ArrayList<Certificate> certificateList) {
+		this.certificateList = certificateList;
+	}
 }

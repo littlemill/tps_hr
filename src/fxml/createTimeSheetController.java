@@ -13,7 +13,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
-public class createTimeSheetController extends newMain{
+public class createTimeSheetController {
 	@FXML
     private Button submitBtn;
 
@@ -58,6 +58,6 @@ public class createTimeSheetController extends newMain{
     	}
     }
     void setOnActionBackBtn(ActionEvent event) {
-    	switchScene("TimeSheet.fxml");
+    	newMain.switchScene("TimeSheet.fxml");
     }
 }

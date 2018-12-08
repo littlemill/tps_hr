@@ -43,7 +43,7 @@
       <Accordion layoutX="340.0" layoutY="117.0" />
       <ScrollPane layoutX="211.0" layoutY="86.0" prefHeight="235.0" prefWidth="362.0">
          <content>
-            <ListView fx:id="notificationList" prefHeight="234.0" prefWidth="362.0" />
+            <ListView fx:id="notificationList" onEditStart="#showNotification" onScroll="#showNotification" prefHeight="234.0" prefWidth="362.0" />
          </content>
       </ScrollPane>
       <Label layoutX="211.0" layoutY="61.0" prefHeight="17.0" prefWidth="95.0" text="Annoucement" textFill="#03062f" />

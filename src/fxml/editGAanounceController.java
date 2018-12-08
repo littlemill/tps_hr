@@ -10,7 +10,7 @@ import javafx.scene.control.TextField;
 import tps_hr.GA;
 import javafx.scene.control.Alert.AlertType;
 
-public class editGAanounceController extends newMain {
+public class editGAanounceController {
 
     @FXML
     private Button announceBtn;
@@ -44,12 +44,12 @@ public class editGAanounceController extends newMain {
     }
     @FXML
     void setOnActionCreateProject(ActionEvent event) {
-    	switchScene("EditGAcreateProj.fxml");
+    	newMain.switchScene("EditGAcreateProj.fxml");
     }
     
     @FXML
     void setOnActionBackBtn(ActionEvent event) {
-    	switchScene("Home.fxml");
+    	newMain.switchScene("Home.fxml");
     }
     
     @FXML

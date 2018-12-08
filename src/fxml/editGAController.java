@@ -4,7 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
-public class editGAController extends newMain {
+public class editGAController {
 	@FXML
     private Button announceBtn;
 
@@ -16,16 +16,16 @@ public class editGAController extends newMain {
     
     @FXML
     void setOnActionAnnounceBtn(ActionEvent event) {
-    	switchScene("EditGAannounce.fxml");
+    	newMain.switchScene("EditGAannounce.fxml");
     }
     
     @FXML
     void setOnActionCreatePrj(ActionEvent event) {
-    	switchScene("EditGAcreateProj.fxml");
+    	newMain.switchScene("EditGAcreateProj.fxml");
     }
     
     @FXML
     void setOnActionBackBtn(ActionEvent event) {
-    	switchScene("Home.fxml");
+    	newMain.switchScene("Home.fxml");
     }
 }

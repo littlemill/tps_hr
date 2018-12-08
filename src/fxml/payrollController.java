@@ -13,7 +13,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-public class payrollController extends newMain{
+public class payrollController {
 	@FXML
     private Button backBtn;
 	@FXML
@@ -51,7 +51,7 @@ public class payrollController extends newMain{
 		show();
 	}
 	void setOnActionBackBtn(ActionEvent event) {
-		switchScene("Home.fxml");
+		newMain.switchScene("Home.fxml");
 	}
 }
 	

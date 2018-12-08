@@ -10,7 +10,7 @@ import javafx.scene.control.Label;
 
 import java.util.Calendar;
 
-public class holidayController extends newMain{
+public class holidayController {
 	@FXML
     private Button backBtn;
 
@@ -45,7 +45,7 @@ public class holidayController extends newMain{
     }
     @FXML
     void setOnActionBackBtn(ActionEvent event) {
-    	switchScene("Home.fxml");
+    	newMain.switchScene("Home.fxml");
     }
 
     @FXML

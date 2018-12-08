@@ -6,9 +6,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import tps_hr.EVP;
 
-public class editEVPController extends newMain {
+public class editEVPController {
 	@FXML
-    private Label Label;
+    private Label label;
 
     @FXML
     private Button backBtn;
@@ -19,11 +19,11 @@ public class editEVPController extends newMain {
     @FXML
     void setOnActionShowAllMemberBtn(ActionEvent event) {
     	EVP evp = (EVP) newMain.user;
-    	Label.setText(evp.printOperationMembers());
+    	label.setText(evp.printOperationMembers());
     }
     
     @FXML
     void setOnActionBackBtn(ActionEvent event) {
-    	switchScene("Home.fxml");
+    	newMain.switchScene("Home.fxml");
     }
 }

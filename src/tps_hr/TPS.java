@@ -4,6 +4,8 @@ import java.util.Map;
 import java.util.Date;
 import java.util.ArrayList;
 
+import fxml.newMain;
+
 public class TPS {
 	protected ArrayList<CEO> ceoList;
 	protected ArrayList<EVP> evpList;
@@ -27,13 +29,13 @@ public class TPS {
 	private int[] salaryL = {25000,100000,35000,30000,20000,80000,30000,24000};
 	private int[] bdayL = {17,12,16,24,31,19,6,8};
 	private int[] bmonthL = {10,10,3,2,7,3,4,4};
-	private int[] byearL = {98,99,99,99,98,99,99,99}; 
+	private int[] byearL = {1998,1999,1999,1999,1998,1999,1999,1999}; 
 	private int[] sdayL = {1,2,3,4,5,6,7,8};
 	private int[] smonthL = {6,3,3,4,5,6,9,10};
 	private int[] syearL = {105,105,105,105,105,105,105,105};
-	private String[] idL = {"00024","00120","00110","00341","02343","12345","98788","87778"};
+	private String[] idL = {"30024","00120","30110","20341","42343","12345","28788","57778"};
 	private String[] passwordL = {"12345","12121","11111","22222","33333","44444","55555","66666"};
-	private String[] urlL = {"file:///Users/romnalink./git/tps_hr/src/picture/mass.jpg","file:///Users/romnalink./git/tps_hr/src/picture/romnalin.jpg","file:///Users/romnalink./git/tps_hr/src/picture/shin.jpg","file:///Users/romnalink./git/tps_hr/src/picture/lalida.jpg","file:///Users/romnalink./git/tps_hr/src/picture/sutiwat.jpg","file:///Users/romnalink./git/tps_hr/src/picture/pichaya.jpg","file:///Users/romnalink./git/tps_hr/src/picture/methawee.jpg","file:///Users/romnalink./git/tps_hr/src/picture/chalisa.jpg"};
+	private String[] urlL = {"mass.jpg","romnalin.jpg","shin.jpg","lalida.jpg","sutiwat.jpg","pichaya.jpg","methawee.jpg","chalisa.jpg"};
 			
 	
 	private int initialsize = 8;
@@ -52,96 +54,53 @@ public class TPS {
 		//loginData = new login();
 		
 		for(int i=0;i<initialsize;i++) {
-			//CEO
-			if(type[i] == "CEO") {
-				CEO ceo = new CEO(nameL[i],surnameL[i]);
-				ceo.setNickname(nicknameL[i]);
-				ceo.setTel(telL[i]);
-				ceo.setAddress(addressL[i]);
-				ceo.setAge(ageL[i]);
-				ceo.setSalary(salaryL[i]);
-				ceo.setBirthDate(new Date(byearL[i],bmonthL[i],bdayL[i]));
-				ceo.setStartingDate(new Date(syearL[i],smonthL[i],sdayL[i]));
-				ceo.setId(idL[i]);
-				ceo.setPassword(passwordL[i]);
-				ceo.setPhotourl(urlL[i]);
-				ceoList.add(ceo);
-			}
-			//Operation
-			if(type[i] == "Engineer") {
-				Operation eng = new Operation(nameL[i],surnameL[i]);
-				eng.setNickname(nicknameL[i]);
-				eng.setTel(telL[i]);
-				eng.setAddress(addressL[i]);
-				eng.setAge(ageL[i]);
-				eng.setSalary(salaryL[i]);
-				eng.setBirthDate(new Date(byearL[i],bmonthL[i],bdayL[i]));
-				eng.setStartingDate(new Date(syearL[i],smonthL[i],sdayL[i]));
-				eng.setId(idL[i]);
-				eng.setPassword(passwordL[i]);
-				eng.setPhotourl(urlL[i]);
-				operationList.add(eng);
-			}
-			//EVP
-			if(type[i] == "EVP") {
-				EVP evp = new EVP(nameL[i],surnameL[i]);
-				evp.setNickname(nicknameL[i]);
-				evp.setTel(telL[i]);
-				evp.setAddress(addressL[i]);
-				evp.setAge(ageL[i]);
-				evp.setSalary(salaryL[i]);
-				evp.setBirthDate(new Date(byearL[i],bmonthL[i],bdayL[i]));
-				evp.setStartingDate(new Date(syearL[i],smonthL[i],sdayL[i]));
-				evp.setId(idL[i]);
-				evp.setPassword(passwordL[i]);
-				evp.setPhotourl(urlL[i]);
-				evpList.add(evp);
-			}
-			//GA
-			if(type[i] == "GA") {
-				GA ga = new GA(nameL[i],surnameL[i]);
-				ga.setNickname(nicknameL[i]);
-				ga.setTel(telL[i]);
-				ga.setAddress(addressL[i]);
-				ga.setAge(ageL[i]);
-				ga.setSalary(salaryL[i]);
-				ga.setBirthDate(new Date(byearL[i],bmonthL[i],bdayL[i]));
-				ga.setStartingDate(new Date(syearL[i],smonthL[i],sdayL[i]));
-				ga.setId(idL[i]);
-				ga.setPassword(passwordL[i]);
-				ga.setPhotourl(urlL[i]);
-				gaList.add(ga);
-			}
-			//Finance
-			if(type[i] == "Finance") {
-				Finance fn = new Finance(nameL[i],surnameL[i]);
-				fn.setNickname(nicknameL[i]);
-				fn.setTel(telL[i]);
-				fn.setAddress(addressL[i]);
-				fn.setAge(ageL[i]);
-				fn.setSalary(salaryL[i]);
-				fn.setBirthDate(new Date(byearL[i],bmonthL[i],bdayL[i]));
-				fn.setStartingDate(new Date(syearL[i],smonthL[i],sdayL[i]));
-				fn.setId(idL[i]);
-				fn.setPassword(passwordL[i]);
-				fn.setPhotourl(urlL[i]);
-				financeList.add(fn);
-			}
-			if(type[i] == "Sales") {
-				Sales sale = new Sales(nameL[i],surnameL[i]);
-				sale.setNickname(nicknameL[i]);
-				sale.setTel(telL[i]);
-				sale.setAddress(addressL[i]);
-				sale.setAge(ageL[i]);
-				sale.setSalary(salaryL[i]);
-				sale.setBirthDate(new Date(byearL[i],bmonthL[i],bdayL[i]));
-				sale.setStartingDate(new Date(syearL[i],smonthL[i],sdayL[i]));
-				sale.setId(idL[i]);
-				sale.setPassword(passwordL[i]);
-				sale.setPhotourl(urlL[i]);
-				salesList.add(sale);
-			}	
-		}
+			EmployeeType etype = EmployeeType.valueOf(type[i]);
+ 			Employee employee;
+ 			ArrayList list = new ArrayList();
+ 			
+ 			switch (etype) {
+ 				case CEO: 
+ 					employee = new CEO();
+ 					list = (ArrayList<CEO>) ceoList;
+ 					break;
+ 				case EVP: 
+ 					employee = new EVP();
+ 					list = (ArrayList<EVP>) evpList;
+ 					break;
+ 				case Finance: 
+ 					employee = new Finance();
+ 					list = (ArrayList<Finance>) financeList;
+ 					break;
+ 				case GA: 
+ 					employee = new GA();
+ 					list = (ArrayList<GA>) gaList;
+ 					break;
+ 				case Sales: 
+ 					employee = new Sales();
+ 					list = (ArrayList<Sales>) salesList;
+ 					break;
+ 				case Engineer: 
+ 					employee = new Operation();
+ 					list = (ArrayList<Operation>) operationList;
+ 					break;
+ 				default:
+ 					employee = new CEO();
+ 					list = (ArrayList<CEO>) ceoList;
+ 			}
+ 			employee.setType(etype);
+ 			employee.setName(nameL[i]);
+ 			employee.setSurname(surnameL[i]);
+ 			employee.setNickname(nicknameL[i]);
+ 			employee.setTel(telL[i]);
+ 			employee.setAddress(addressL[i]);
+ 			employee.setAge(ageL[i]);
+ 			employee.setSalary(salaryL[i]);
+ 			employee.setBirthDate(byearL[i],bmonthL[i],bdayL[i]);
+ 			employee.setStartingDate(syearL[i],smonthL[i],sdayL[i]);
+ 			employee.setId(idL[i]);
+ 			employee.setPassword(passwordL[i]);
+ 			list.add(employee);
+		}	
 	}
 
 	public Project projectCodeToProject(int projectCode) {

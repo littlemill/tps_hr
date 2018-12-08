@@ -9,7 +9,7 @@ import javafx.event.*;
 
 import tps_hr.*;
 
-public class editFinanceController extends newMain {
+public class editFinanceController {
 	@FXML
 	private MenuButton yearMenu;
 	@FXML
@@ -72,7 +72,7 @@ public class editFinanceController extends newMain {
 	}
 	
 	void setOnActionBackBtn(ActionEvent event) {
-		switchScene("Home.fxml");
+		newMain.switchScene("Home.fxml");
 	}
 	
 	void setOnActionSearchBtn(ActionEvent event) {

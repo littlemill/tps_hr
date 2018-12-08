@@ -1,6 +1,7 @@
 package tps_hr;
 
 import fxml.*;
+import java.util.ArrayList;
 
 public class CEO extends Employee implements Approvable {
 	public CEO() {
@@ -15,44 +16,71 @@ public class CEO extends Employee implements Approvable {
 		a.setApprovedbyCEO(true);
 	}
 	
+	private String printMembers(EmployeeType type) {
+ 		String data = new String();
+ 		
+ 		ArrayList list = new ArrayList();
+ 		
+ 		switch (type) {
+ 			case CEO: 
+ 				data += "CEO: \n";
+ 				list = (ArrayList<CEO>) newMain.tps.getCeoList();
+ 				break;
+ 			case EVP: 
+ 				data += "EVP: \n";
+ 				list = (ArrayList<EVP>) newMain.tps.getEvpList();
+ 				break;
+ 			case Finance: 
+ 				data += "FINANCE: \n";
+ 				list = (ArrayList<Finance>) newMain.tps.getFinanceList();
+ 				break;
+ 			case GA: 
+ 				data += "GA: \n";
+ 				list = (ArrayList<GA>) newMain.tps.getGaList();
+ 				break;
+ 			case Sales: 
+ 				data += "SALES: \n";
+ 				list = (ArrayList<Sales>) newMain.tps.getSalesList();
+ 				break;
+ 			case Engineer: 
+ 				data += "OPERATION: \n";
+ 				list = (ArrayList<Operation>) newMain.tps.getOperationList();
+ 				break;
+ 			default:
+ 				data += "CEO: \n";
+ 				list = (ArrayList<CEO>) newMain.tps.getCeoList();
+ 		}
+ 		
+ 		for (int i=0; i<list.size(); i++) {
+ 			Employee employee = (Employee) list.get(i);
+ 			data += "ID: "+employee.getId()+"\nName: "+employee.getName()+" Surname: "
+ 					+employee.getSurname()+"\nSalary: "+employee.getSalary()+"\n\n";
+ 		}
+ 		
+ 		return data;
+ 	}
+ 	
 	public String printAllMembers() {
 		String data = "";
-		
-		data += "CEO: \n";
-		for (int i=0; i<newMain.tps.ceoList.size(); i++) {
-			data += "ID: "+newMain.tps.ceoList.get(i).getId()+"\nName: "+newMain.tps.ceoList.get(i).getName()+" Surname: "
-					+newMain.tps.ceoList.get(i).getSurname()+"\nSalary: "+newMain.tps.ceoList.get(i).getSalary()+"\n\n";
-			}
-		data += "EVP: \n";
-		for (int i=0; i<newMain.tps.evpList.size(); i++) {
-			data += "ID: "+newMain.tps.evpList.get(i).getId()+"\nName: "+newMain.tps.evpList.get(i).getName()+" Surname: "
-					+newMain.tps.evpList.get(i).getSurname()+"\nSalary: "+newMain.tps.evpList.get(i).getSalary()+"\n\n";
-			}
-		data += "OPERATION: \n";
-		for (int i=0; i<newMain.tps.operationList.size(); i++) {
-			data += "ID: "+newMain.tps.operationList.get(i).getId()+"\nName: "+newMain.tps.operationList.get(i).getName()+" Surname: "
-					+newMain.tps.operationList.get(i).getSurname()+"\nSalary: "+newMain.tps.operationList.get(i).getSalary()+"\n\n";
-			}
-		data += "SALES: \n";
-		for (int i=0; i<newMain.tps.salesList.size(); i++) {
-			data += "ID: "+newMain.tps.salesList.get(i).getId()+"\nName: "+newMain.tps.salesList.get(i).getName()+" Surname: "
-					+newMain.tps.salesList.get(i).getSurname()+"\nSalary: "+newMain.tps.salesList.get(i).getSalary()+"\n\n";
-			}
-		data += "GA: \n";
-		for (int i=0; i<newMain.tps.gaList.size(); i++) {
-			data += "ID: "+newMain.tps.gaList.get(i).getId()+"\nName: "+newMain.tps.gaList.get(i).getName()+" Surname: "
-					+newMain.tps.gaList.get(i).getSurname()+"\nSalary: "+newMain.tps.gaList.get(i).getSalary()+"\n\n";
-			}
-		data += "FINANCE: \n";
-		for (int i=0; i<newMain.tps.financeList.size(); i++) {
-			data += "ID: "+newMain.tps.financeList.get(i).getId()+"\nName: "+newMain.tps.financeList.get(i).getName()+" Surname: "
-					+newMain.tps.financeList.get(i).getSurname()+"\nSalary: "+newMain.tps.financeList.get(i).getSalary()+"\n\n";
-			}
+		for ( EmployeeType type : EmployeeType.values()) {
+ 			data += printMembers(type);
+ 		}
 		return data;
 	}
 	
 	public String toString() {
-		return "CEO"+"\n"+"Name: "+this.getName()+" Surname: "+this.getSurname()+"\n"+
-	            "Birthdate: "+this.getBirthDate().toString()+" Age:"+this.getAge()+" Tel: "+this.getTel()+"\n"+"Address :"+this.getAddress();
+		String data;
+		data = "CEO"+"\n"+"Name: "+this.getName()+" Surname: "+this.getSurname()+"\n"+"NickName :"+this.getNickname()+"\n"+
+	            "Birthdate: "+this.getBirthDate()+"\n"+"Age:"+this.getAge()+" Tel: "+this.getTel()+"\n"+"Address :"+this.getAddress()
+	            +"\n"+"Starting Date:"+this.getStartingDate().getTime().toString()+"\n"+"Certificate :";
+		if(this.getCertificateList().isEmpty()) {
+			data+= "-";
+		}else {
+			data+="\n";
+			for(int i=0;i<this.getCertificateList().size();i++) {
+				data+=this.getCertificateList().get(i).toString();
+			}
+		}
+		return data;
 	}
 }

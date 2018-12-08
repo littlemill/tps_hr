@@ -9,7 +9,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import tps_hr.Project;
 
-public class editSalesController extends newMain {
+public class editSalesController {
 	 @FXML
 	 private TextField codeTfield;
 
@@ -42,7 +42,7 @@ public class editSalesController extends newMain {
 	 
 	 @FXML
 	 void setOnActionBackBtn(ActionEvent event) {
-		 switchScene("Home.fxml");
+		 newMain.switchScene("Home.fxml");
 	 }
 
 }

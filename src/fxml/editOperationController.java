@@ -11,7 +11,7 @@ import javafx.scene.control.Alert.AlertType;
 
 import tps_hr.*;
 
-public class editOperationController extends newMain {
+public class editOperationController {
 	@FXML
     private TextField codeTfield;
 
@@ -102,7 +102,7 @@ public class editOperationController extends newMain {
     
     @FXML
     void setOnActionBackBtn(ActionEvent event) {
-    	switchScene("Home.fxml");
+    	newMain.switchScene("Home.fxml");
     }
 }
 

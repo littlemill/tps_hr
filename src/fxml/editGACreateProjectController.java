@@ -12,7 +12,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
-public class editGACreateProjectController extends newMain {
+public class editGACreateProjectController {
 	@FXML
     private TextField codeTfield;
 
@@ -60,12 +60,12 @@ public class editGACreateProjectController extends newMain {
     
     @FXML
     void setOnActionAddAnnoucement(ActionEvent event) {
-    	switchScene("EditGAannounce.fxml");
+    	newMain.switchScene("EditGAannounce.fxml");
     }
     
     @FXML
     void setOnActionBackBtn(ActionEvent event) {
-    	switchScene("Home.fxml");
+    	newMain.switchScene("Home.fxml");
     }
     
     @FXML

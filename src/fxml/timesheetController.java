@@ -1,13 +1,14 @@
 package fxml;
 
 import javafx.event.ActionEvent;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 import tps_hr.*;
 
-public class timesheetController extends newMain {
+public class timesheetController {
 	@FXML
     private Button backBtn;
 
@@ -22,19 +23,25 @@ public class timesheetController extends newMain {
     
     @FXML
     void setOnActionCreateNewTimeSheet(ActionEvent event) {
-    	switchScene("createTimeSheet.fxml");
+    	//newMain.switchScene("createTimeSheet.fxml");
+    	System.out.println("createTimeSheets");
     }
     
     @FXML
     void setOnActionBackBtn(ActionEvent event) {
-    	switchScene("Home.fxml");
+    	newMain.switchScene("Home.fxml");
     }
     
     @FXML
     void setOnActionShowTimeBtn(ActionEvent event) {
-    	String data = "TimeSheet: " +newMain.user.getName()+" "+newMain.user.getSurname()+"\n";
-    	for(TimeSheet ts:newMain.user.getTimeSheetList()) {
-    		data+=ts.toString()+"\n";
+    	System.out.println(newMain.user.getName());
+    	String data = "TimeSheet: "+newMain.user.getName()+" "+newMain.user.getSurname()+"\n";
+    	if(newMain.user.getTimeSheetList().isEmpty()) {
+    		data += "No Timesheet to be shown.";
+    	}else {
+    		for(TimeSheet ts: newMain.user.getTimeSheetList()) {
+    			data+=ts.toString()+"\n";
+    		}
     	}
     	label.setText(data);
     }

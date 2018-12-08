@@ -7,9 +7,9 @@ import javafx.scene.control.Label;
 import tps_hr.CEO;
 
 
-public class editCEOController extends newMain {
+public class editCEOController {
 	@FXML
-    private Label Label;
+    private Label label;
 
     @FXML
     private Button backBtn;
@@ -20,11 +20,11 @@ public class editCEOController extends newMain {
     @FXML
     void setOnActionShowAllMemberBtn(ActionEvent event) {
     	CEO ceo = (CEO) newMain.user;
-    	Label.setText(ceo.printAllMembers());
+    	label.setText(ceo.printAllMembers());
     }
     
     @FXML
     void setOnActionBackBtn(ActionEvent event) {
-    	switchScene("Home.fxml");
+    	newMain.switchScene("Home.fxml");
     }
 }

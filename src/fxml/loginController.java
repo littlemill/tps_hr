@@ -17,7 +17,7 @@ import java.util.Map;
 import tps_hr.*;
 
 
-public class loginController extends newMain{
+public class loginController {
 	    @FXML
 	    private TextField idTfield;
 
@@ -37,6 +37,7 @@ public class loginController extends newMain{
 	    	Map<String,String> check = lgin.getLoginInfo();
 	    	String id = idTfield.getText();
 	    	String pass = password.getText();
+	    	
 	    	if(!check.containsKey(id)) {
 	    		Alert alert = new Alert(AlertType.ERROR);
 				alert.setContentText("Login fail");
@@ -51,7 +52,7 @@ public class loginController extends newMain{
 		    			char checkid = id.charAt(0);
 		    			if(checkid == '0') { //0-ceo
 		    				for(CEO e: newMain.tps.getCeoList()) {
-		    					if( id == e.getId()) {
+		    					if(id.equals(e.getId())) {
 		    						newMain.user = (Employee) e;
 		    						break;
 		    					}
@@ -59,7 +60,7 @@ public class loginController extends newMain{
 		    			}
 		    			if(checkid == '1') { //1-evp
 		    				for(EVP e:newMain.tps.getEvpList()) {
-		    					if(id == e.getId()) {
+		    					if(id.equals(e.getId())) {
 		    						newMain.user = (Employee) e;
 		    						break;
 		    					}
@@ -67,7 +68,7 @@ public class loginController extends newMain{
 		    			}
 		    			if(checkid == '2') { //2-sale
 		    				for(Sales s:newMain.tps.getSalesList()) {
-		    					if(id == s.getId()) {
+		    					if(id.equals(s.getId())) {
 		    						newMain.user = (Employee) s;
 		    						break;
 		    					}
@@ -75,7 +76,7 @@ public class loginController extends newMain{
 		    			}
 		    			if(checkid == '3') { //3-engineer
 		    				for(Operation o:newMain.tps.getOperationList()) {
-		    					if(id == o.getId()) {
+		    					if(id.equals(o.getId())) {
 		    						newMain.user = (Employee) o;
 		    						break;
 		    					}
@@ -83,23 +84,21 @@ public class loginController extends newMain{
 		    			}
 		    			if(checkid == '4') { //4-ga
 		    				for(GA g:newMain.tps.getGaList()) {
-		    					if(id == g.getId()) {
+		    					if(id.equals(g.getId())) {
 		    						newMain.user = (Employee) g;
 		    						break;
 		    					}
 		    				}
 		    			}
 		    			if(checkid == '5') {
-		    				for(Finance f:tps.getFinanceList()) {
-		    					if(id == f.getId()) {
+		    				for(Finance f:newMain.tps.getFinanceList()) {
+		    					if(id.equals(f.getId())) {
 		    						newMain.user = (Employee) f;
 		    						break;
 		    					}
 		    				}
 		    			}
-		    		
-	    	
-		    			switchScene("Home.fxml");
+		    			newMain.switchScene("Home.fxml");
 		    		}catch(Exception e) {
 		    			e.printStackTrace();
 		    		}

@@ -14,6 +14,6 @@
       </ScrollPane>
       <Button fx:id="showAllMemberBtn" layoutX="221.0" layoutY="359.0" mnemonicParsing="false" onAction="#setOnActionShowAllMemberBtn" prefWidth="200.0" text="Show All Operation members" />
       <Button fx:id="backBtn" layoutX="428.0" layoutY="359.0" mnemonicParsing="false" onAction="#setOnActionBackBtn" prefHeight="27.0" prefWidth="130.0" text="Back" />
-      <Label layoutX="42.0" layoutY="26.0" text="Show All Operation Members" />
+      <Label fx:id="label" layoutX="42.0" layoutY="26.0" text="Show All Operation Members" />
    </children>
 </AnchorPane>

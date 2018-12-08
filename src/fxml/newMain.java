@@ -2,9 +2,9 @@ package fxml;
 
 import tps_hr.*;
 
-
-
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -35,13 +35,12 @@ public class newMain extends Application{
         launch(args);
     }
     
-    public void switchScene(String fxmlFile)
+    public static void switchScene(String fxmlFile)
     {
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
+        FXMLLoader loader = new FXMLLoader(newMain.class.getResource(fxmlFile));
         Parent root;
-        try 
-        {
+        try {
             root = (Parent)loader.load();
             newMain.stage.setScene(new Scene(root));
             newMain.stage.show();
