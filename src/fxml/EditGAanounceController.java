@@ -59,7 +59,7 @@ public class EditGAanounceController {
     @FXML
     void setOnActionAddBtn(ActionEvent event) {
     	Main.stopThread();
-    	if (headerTfield.getText().equals(null) || announcement.getText().equals(null) || authorTfield.getText().equals(null)) {
+    	if (headerTfield.getText().equals("") || announcement.getText().equals("") || authorTfield.getText().equals("")) {
     		Alert alert = new Alert(AlertType.WARNING);
     		alert.setContentText("In order to complete the task, Please fill in all the details.");
     		alert.show();
@@ -79,20 +79,11 @@ public class EditGAanounceController {
     	alert.setTitle("Cancel the task");
     	alert.setHeaderText("Your announcement wil not be added");
     	alert.setContentText("Are you sure to cancel this announcement?");
-    	ButtonType okButton = new ButtonType("Yes", ButtonData.YES);
-    	ButtonType noButton = new ButtonType("No", ButtonData.NO);
-    	alert.getButtonTypes().setAll(okButton, noButton);
-    	alert.showAndWait().ifPresent(type -> {
-    	        if (type == ButtonType.OK) {
-    	        	headerTfield.setText(null);
-    	        	announcement.setText(null);
-    	        	authorTfield.setText(null);
-    	        	Main.startThread();
-    	        }
-    	        else {
-    	        	alert.close();
-    	        	Main.startThread();
-    	        }
+    	alert.showAndWait().filter(ButtonType.OK::equals).ifPresent(type -> {
+    	    headerTfield.setText("");
+    	    announcement.setText("");
+    	    authorTfield.setText("");
+    	    Main.startThread();
     	});
     }
 

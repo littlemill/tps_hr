@@ -26,6 +26,7 @@ public class EditFinanceController {
 	private String month;
 	private int month1;
 	
+	@FXML
 	void setOnActionYearMenu(ActionEvent event) {
 		Main.startThread();
 		year = this.yearMenu.getText();
@@ -34,6 +35,7 @@ public class EditFinanceController {
 		Main.stopThread();
 	}
 	
+	@FXML
 	void setOnActionMonthMenu(ActionEvent event) {
 		Main.stopThread();
 		month = this.monthMenu.getText();
@@ -75,12 +77,14 @@ public class EditFinanceController {
 		Main.stopThread();
 	}
 	
+	@FXML
 	void setOnActionBackBtn(ActionEvent event) {
 		Main.stopThread();
 		Main.switchScene("Home.fxml");
 		Main.startThread();
 	}
 	
+	@FXML
 	void setOnActionSearchBtn(ActionEvent event) {
 		Main.stopThread();
 		Finance user = (Finance) Main.user;

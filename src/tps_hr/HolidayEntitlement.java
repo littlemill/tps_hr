@@ -6,16 +6,9 @@ import java.util.concurrent.TimeUnit;
 public class HolidayEntitlement {
 	private int maxHolidays , usedHolidays;
 	
-	public HolidayEntitlement(Employee e) {
-		if(e.getWorkYears() >= 1 && e.getWorkYears() < 3) {
-			this.setMaxHolidays(3);
-		}
-		if(e.getWorkYears() >=3 && e.getWorkYears()<5) {
-			this.setMaxHolidays(6);
-		}
-		if(e.getWorkYears()>5) {
-			this.setMaxHolidays(8);
-		}
+	public HolidayEntitlement() {
+		setMaxHolidays(1);
+		reset();
 	}
 	public int calculateHolidayEntitlement(int maxHolidays, int usedHolidays) {
 		return maxHolidays-usedHolidays;
@@ -33,8 +26,16 @@ public class HolidayEntitlement {
 	public int getmaxHolidays() {
 		return this.maxHolidays;
 	}
-	public void setMaxHolidays(int max) {
-		this.maxHolidays = max;
+	public void setMaxHolidays(int workyear) {
+		if(workyear >= 0 && workyear < 3) {
+			this.maxHolidays = 3;
+		}
+		if(workyear >= 3 && workyear < 5) {
+			this.maxHolidays = 6;
+		}
+		if(workyear>5) {
+			this.maxHolidays = 8;
+		}
 	}
 	public int getUsedHolidays() {
 		return usedHolidays;

@@ -7,11 +7,16 @@ public class Payroll {
 	private int year;
 	private int salary;
 	private int commission;
-	private SimpleStringProperty Month;
+	private String Month;
+	private String Year;
+	private String Salary;
+	private String Commission;
+	private String Total;
+	/*private SimpleStringProperty Month;
 	private SimpleStringProperty Year;
 	private SimpleStringProperty Salary;
 	private SimpleStringProperty Commission;
-	private SimpleStringProperty Total;
+	private SimpleStringProperty Total;*/
 	
 	public Payroll(int month,int year,int salary,int commission) {
 		setMonth(month);
@@ -21,7 +26,7 @@ public class Payroll {
 		calculatePayroll();
 	}
 	public int calculatePayroll() {
-		this.Total = new SimpleStringProperty(Integer.toString(this.getSalary()+this.getCommission()));
+		this.Total = Integer.toString(this.getSalary()+this.getCommission());
 		return this.getSalary()+this.getCommission();
 	}
 	//getter and setter
@@ -34,14 +39,14 @@ public class Payroll {
 		}else {
 			this.month = month;
 		}
-		this.Month = new SimpleStringProperty(Integer.toString(this.month));
+		this.Month = Integer.toString(this.month);
 	}
 	public int getYear() {
 		return year;
 	}
 	public void setYear(int year) {
 		this.year = year;
-		this.Year = new SimpleStringProperty(Integer.toString(this.year));
+		this.Year = Integer.toString(this.year);
 	}
 	public int getSalary() {
 		return salary;
@@ -49,14 +54,14 @@ public class Payroll {
 	public void setSalary(int salary) {
 		if(salary<0 || salary==0) this.salary = 0;
 		else this.salary = salary;
-		this.Salary = new SimpleStringProperty(Integer.toString(this.salary));
+		this.Salary = Integer.toString(this.salary);
 	}
 	public int getCommission() {
 		return commission;
 	}
 	public void setCommission(int commission) {
 		this.commission = commission;
-		this.Commission = new SimpleStringProperty(Integer.toString(this.commission));
+		this.Commission = Integer.toString(this.commission);
 	}
 	
 }

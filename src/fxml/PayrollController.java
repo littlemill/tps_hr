@@ -19,32 +19,33 @@ public class PayrollController {
 	@FXML
 	private TableView<Payroll> table;
 	@FXML
-	private TableColumn<Payroll,String> Month;
+	private TableColumn Month;
 	@FXML 
-	private TableColumn<Payroll,String> Year;
+	private TableColumn Year;
 	@FXML
-	private TableColumn<Payroll,String> Salary;
+	private TableColumn Salary;
 	@FXML
-	private TableColumn<Payroll,String> Commission;
+	private TableColumn Commission;
 	@FXML
-	private TableColumn<Payroll,String> Total;
+	private TableColumn Total;
 	@FXML
 	private Button showBtn;
 	@FXML
 	public void show() {
 		ArrayList<Payroll> payrollList = Main.user.getPayrollList();
 		ObservableList<Payroll> data = FXCollections.observableArrayList();
-		table.setEditable(false);
+		table.setEditable(true);
 		for(Payroll p :payrollList) {
 			data.add(p);
 		}
-		Month.setCellValueFactory(new PropertyValueFactory<Payroll,String>("Month"));
-		Year.setCellValueFactory(new PropertyValueFactory<Payroll,String>("Year"));
+		table.setItems(data);
+		/*Month.setCellValueFactory(new PropertyValueFactory<Payroll,String>("month"));
+		Year.setCellValueFactory(new PropertyValueFactory<Payroll,String>("year"));
 		Salary.setCellValueFactory(new PropertyValueFactory<Payroll,String>("Salary"));
 		Commission.setCellValueFactory(new PropertyValueFactory<Payroll,String>("Commission"));
 		Total.setCellValueFactory(new PropertyValueFactory<Payroll,String>("Total"));
 		table.setItems(data);
-		table.getColumns().addAll(Month,Year,Salary,Commission,Total);
+		table.getColumns().addAll(Month,Year,Salary,Commission,Total);*/
 	}
 	@FXML
 	void setOnActionShowBtn(ActionEvent event) {

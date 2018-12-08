@@ -20,7 +20,7 @@
       </Label>
       <Label fx:id="updateLbl" layoutX="27.0" layoutY="364.0" prefHeight="17.0" prefWidth="408.0" text="Last Updated :" textFill="#111079" />
       <PieChart fx:id="pieChart" layoutX="92.0" layoutY="35.0" prefHeight="238.0" prefWidth="416.0" />
-      <Label fx:id="maxLbl" layoutX="162.0" layoutY="302.0" text="3">
+      <Label fx:id="maxLbl" layoutX="162.0" layoutY="302.0">
          <font>
             <Font size="29.0" />
          </font>
@@ -31,7 +31,7 @@
             <Font name="System Bold" size="25.0" />
          </font>
       </Label>
-      <Label fx:id="usedLbl" layoutX="74.0" layoutY="302.0" text="1" textAlignment="CENTER" textFill="#d05b5b">
+      <Label fx:id="usedLbl" layoutX="74.0" layoutY="302.0" textAlignment="CENTER" textFill="#d05b5b">
          <font>
             <Font size="29.0" />
          </font>

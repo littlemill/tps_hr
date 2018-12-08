@@ -24,7 +24,7 @@
          <children>
             <ImageView fitHeight="64.0" fitWidth="200.0">
                <image>
-                  <Image url="@../../res/picture/TPS-Logo-Full-240x70.png" />
+                  <Image url="@../picture/TPS-Logo-Full-240x70.png" />
                </image>
                <VBox.margin>
                   <Insets bottom="20.0" />

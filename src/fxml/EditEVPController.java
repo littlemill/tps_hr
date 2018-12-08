@@ -4,11 +4,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.text.Text;
 import tps_hr.EVP;
 
 public class EditEVPController {
 	@FXML
-    private Label label;
+    private Text text;
 
     @FXML
     private Button backBtn;
@@ -20,7 +21,7 @@ public class EditEVPController {
     void setOnActionShowAllMemberBtn(ActionEvent event) {
     	Main.stopThread();
     	EVP evp = (EVP) Main.user;
-    	label.setText(evp.printOperationMembers());
+    	text.setText(evp.printOperationMembers());
     	Main.startThread();
     }
     

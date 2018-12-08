@@ -22,15 +22,7 @@ public class Sales extends Employee {
 		String data;
 		data = "Sales"+"\n"+"Name: "+this.getName()+" Surname: "+this.getSurname()+"\n"+"NickName :"+this.getNickname()+"\n"+
 	            "Birthdate: "+this.getBirthDate()+"\n"+"Age:"+this.getAge()+" Tel: "+this.getTel()+"\n"+"Address :"+this.getAddress()
-	            +"\n"+"Starting Date:"+this.getStartingDate().getTime().toString()+"\n"+"Certificate :";
-		if(this.getCertificateList().isEmpty()) {
-			data+= "-";
-		}else {
-			data+="\n";
-			for(int i=0;i<this.getCertificateList().size();i++) {
-				data+=this.getCertificateList().get(i).toString();
-			}
-		}
+	            +"\n"+"Starting Date:"+this.getStartingDate().getTime().toString()+"\n";
 		return data;
 	}
 

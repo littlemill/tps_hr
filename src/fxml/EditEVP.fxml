@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
@@ -9,7 +10,7 @@
    <children>
       <ScrollPane layoutX="42.0" layoutY="51.0" prefHeight="298.0" prefWidth="516.0">
          <content>
-            <Label fx:id="Label" />
+            <Text fx:id="text" strokeType="OUTSIDE" strokeWidth="0.0" />
          </content>
       </ScrollPane>
       <Button fx:id="showAllMemberBtn" layoutX="221.0" layoutY="359.0" mnemonicParsing="false" onAction="#setOnActionShowAllMemberBtn" prefWidth="200.0" text="Show All Operation members" />

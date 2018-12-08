@@ -12,11 +12,11 @@
    <children>
       <TableView fx:id="table" layoutX="50.0" layoutY="52.0" prefHeight="251.0" prefWidth="500.0">
         <columns>
-          <TableColumn prefWidth="100.0" text="Month" />
-          <TableColumn prefWidth="100.0" text="Year" />
-            <TableColumn prefWidth="100.0" text="Salary" />
-            <TableColumn prefWidth="100.0" text="Commission" />
-            <TableColumn prefWidth="100.0" text="Total" />
+          <TableColumn fx:id="Month" prefWidth="100.0" text="Month" />
+          <TableColumn fx:id="Year" prefWidth="100.0" text="Year" />
+            <TableColumn fx:id="Salary" prefWidth="100.0" text="Salary" />
+            <TableColumn fx:id="Commission" prefWidth="100.0" text="Commission" />
+            <TableColumn fx:id="Total" prefWidth="100.0" text="Total" />
         </columns>
       </TableView>
       <Button fx:id="backBtn" layoutX="460.0" layoutY="322.0" mnemonicParsing="false" onAction="#setOnActionBackBtn" prefHeight="25.0" prefWidth="90.0" text="Back" />

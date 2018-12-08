@@ -65,7 +65,7 @@ public class Main extends Application{
 			while (true) {
 				try {
 					//Main.alertcheck = false;
-					Thread.sleep(5000);
+					Thread.sleep(600000);
 					Platform.runLater(new Runnable() {
 					    @Override
 					    public void run() {

@@ -39,7 +39,8 @@ public class TPS {
 	private String[] endTimeL = {"10:00","12:00","11:00","15:00","14:00","15:00","15:00","16:00"};
 	private String[] noteL = {"meeting at TPS office","project conference at PTT","implement project at Satriwithaya School","meeting at TPS","project conference at SCG","network conference at Mandarin Oriental Hotel BKK","project at Chula","finance member meeting at TPS"};
 	private String[] notificationL = {"WELCOME","Welcome to TPS Application"};
-	
+	private int[] workYearsL = {2,9,9,2,3,4,5,6};
+	private int[] usedHolidayL = {1,3,2,2,2,2,3,1};
 	private int[] monthPayroll = {1,1,1,2,2,2,3,3};
 	private int[] yearPayroll = {2018,2018,2018,2018,2018,2018,2018,2018};
 	private int[] commissionPayroll = {0,0,0,30000,0,0,25000,0};
@@ -110,6 +111,9 @@ public class TPS {
  				GA ga = (GA) employee;
  				this.getNotification().add(new Notification(notificationL[0],notificationL[1],ga));
  			}
+ 			employee.setWorkYears(workYearsL[i]);
+ 			employee.getHoliday().setMaxHolidays(employee.getWorkYears());
+ 			employee.getHoliday().setUsedHolidays(usedHolidayL[i]);
  			list.add(employee);
 		}	
 	}

@@ -13,7 +13,6 @@ public abstract class Employee {
 	protected int age, salary;
 	protected String birthDate;
 	protected Calendar startingDate, resignationDate;
-	protected ArrayList<Certificate> certificateList;
 	protected ArrayList<Payroll> payrollList;
 	protected ArrayList<TimeSheet> timeSheetList;
 	protected int workYears; // calculating holiday entitlement
@@ -30,10 +29,9 @@ public abstract class Employee {
 		setAddress("");
 		setAge(0);
 		setSalary(0);
-		certificateList = new ArrayList<Certificate>();
 		payrollList = new ArrayList<Payroll>();
 		timeSheetList = new ArrayList<TimeSheet>();
-		holiday = new HolidayEntitlement(this);
+		holiday = new HolidayEntitlement();
 	}
 	
 	public Employee(String name,String surname) {
@@ -46,10 +44,9 @@ public abstract class Employee {
 		setAddress("");
 		setAge(0);
 		setSalary(0);
-		certificateList = new ArrayList<Certificate>();
 		payrollList = new ArrayList<Payroll>();
 		timeSheetList = new ArrayList<TimeSheet>();
-		holiday = new HolidayEntitlement(this);
+		holiday = new HolidayEntitlement();
 	}
 	
 	
@@ -219,13 +216,5 @@ public abstract class Employee {
 
 	public void setType(EmployeeType type) {
 		this.type = type;
-	}
-
-	public ArrayList<Certificate> getCertificateList() {
-		return certificateList;
-	}
-
-	public void setCertificateList(ArrayList<Certificate> certificateList) {
-		this.certificateList = certificateList;
 	}
 }

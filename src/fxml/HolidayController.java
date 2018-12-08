@@ -29,18 +29,20 @@ public class HolidayController {
     @FXML
     private PieChart pieChart;
     
-    private ObservableList<PieChart.Data> pieChartData;
+    private ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList();
     @FXML    
     void update() {
     	int used,max;
     	
     	Calendar rightnow = Calendar.getInstance();
-    	updateLbl.setText(updateLbl.getText()+ rightnow.toString());
+    	updateLbl.setText(updateLbl.getText()+ rightnow.getTime().toString());
     	used = Main.user.getHoliday().getUsedHolidays();
     	max =  Main.user.getHoliday().getmaxHolidays();
     	usedLbl.setText(Integer.toString(used));
     	maxLbl.setText(Integer.toString(max));
-    	pieChartData = FXCollections.observableArrayList(new PieChart.Data("max",max),new PieChart.Data("used",used));
+    	pieChartData.add(new PieChart.Data("Available Holidays", max-used));
+    	pieChartData.add(new PieChart.Data("Used Holidays",used));
+    	//pieChartData = FXCollections.observableArrayList(new PieChart.Data("max",max),new PieChart.Data("used",used));
     	pieChart = new PieChart(pieChartData);
     }
     @FXML
