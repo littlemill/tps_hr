@@ -23,8 +23,7 @@ public class timesheetController {
     
     @FXML
     void setOnActionCreateNewTimeSheet(ActionEvent event) {
-    	//newMain.switchScene("createTimeSheet.fxml");
-    	System.out.println("createTimeSheets");
+    	newMain.switchScene("createTimeSheet.fxml");
     }
     
     @FXML
@@ -34,7 +33,6 @@ public class timesheetController {
     
     @FXML
     void setOnActionShowTimeBtn(ActionEvent event) {
-    	System.out.println(newMain.user.getName());
     	String data = "TimeSheet: "+newMain.user.getName()+" "+newMain.user.getSurname()+"\n";
     	if(newMain.user.getTimeSheetList().isEmpty()) {
     		data += "No Timesheet to be shown.";

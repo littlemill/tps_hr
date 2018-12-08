@@ -20,6 +20,6 @@
         </columns>
       </TableView>
       <Button fx:id="backBtn" layoutX="460.0" layoutY="322.0" mnemonicParsing="false" onAction="#setOnActionBackBtn" prefHeight="25.0" prefWidth="90.0" text="Back" />
-      <Button fx:id="showBtn" layoutX="359.0" layoutY="322.0" mnemonicParsing="false" onAction="#setOnActionshowBtn" prefHeight="27.0" prefWidth="90.0" text="Show" />
+      <Button fx:id="showBtn" layoutX="359.0" layoutY="322.0" mnemonicParsing="false" onAction="#setOnActionShowBtn" prefHeight="27.0" prefWidth="90.0" text="Show" />
    </children>
 </AnchorPane>

@@ -12,6 +12,11 @@ public class Notification {
 		setWriter(writer);
 	}
 	
+	@Override
+	public String toString() {
+		return this.header.toUpperCase()+"\n"+this.note+"\n"+"Annouced by"+this.writer.getName()+" "+this.writer.getSurname();
+	}
+	
 	//getters and setters
 	public String getHeader() {
 		return header;

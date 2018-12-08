@@ -47,9 +47,10 @@ public class payrollController {
 		table.getColumns().addAll(Month,Year,Salary,Commission,Total);
 	}
 	@FXML
-	void setOnActionshowBtn(ActionEvent event) {
+	void setOnActionShowBtn(ActionEvent event) {
 		show();
 	}
+	@FXML
 	void setOnActionBackBtn(ActionEvent event) {
 		newMain.switchScene("Home.fxml");
 	}

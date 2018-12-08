@@ -8,14 +8,12 @@ public class TimeSheet {
 	private String note;
 	private Employee user;
 	
-	public TimeSheet(Calendar date,String startTime ,String endTime , String note,Employee user) {
+	public TimeSheet(String startTime ,String endTime , String note,Employee user) {
 		setDate (Calendar.getInstance());
 		setStartTime(startTime);
 		setEndTime(endTime);
 		setNote(note);
 		setUser(user);
-		this.getUser().timeSheetList.add(this);
-		
 	}
 	
 	public void editTimeSheet(String part,String editedInfo) {
@@ -42,7 +40,7 @@ public class TimeSheet {
 	
 	@Override
 	public String toString() {
-		return "Last Update:"+date.toString()+"\n"+"Start Time :"+startTime+"\n"+"End Time :"+endTime+"\n"+"Note :" + note;
+		return "Last Update:"+date.getTime().toString()+"\n"+"Start Time :"+startTime+"\n"+"End Time :"+endTime+"\n"+"Note :" + note;
 	}
 	
 	//getters and setters

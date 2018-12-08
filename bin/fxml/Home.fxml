@@ -20,7 +20,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml.homeController">
+<AnchorPane minHeight="0.0" minWidth="0.0" onMouseClicked="#showNotification" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml.homeController">
    <children>
       <VBox alignment="TOP_CENTER" layoutX="14.0" layoutY="34.0" nodeOrientation="LEFT_TO_RIGHT" opacity="0.88" prefHeight="281.0" prefWidth="180.0" spacing="10.0">
          <children>
@@ -43,7 +43,7 @@
       <Accordion layoutX="340.0" layoutY="117.0" />
       <ScrollPane layoutX="211.0" layoutY="86.0" prefHeight="235.0" prefWidth="362.0">
          <content>
-            <ListView fx:id="notificationList" onEditStart="#showNotification" onScroll="#showNotification" prefHeight="234.0" prefWidth="362.0" />
+            <ListView fx:id="notificationList" onScroll="#showNotification" prefHeight="234.0" prefWidth="362.0" />
          </content>
       </ScrollPane>
       <Label layoutX="211.0" layoutY="61.0" prefHeight="17.0" prefWidth="95.0" text="Annoucement" textFill="#03062f" />

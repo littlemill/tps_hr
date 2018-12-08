@@ -82,7 +82,7 @@ public class homeController {
 
 	    @FXML
 	    void setOnActionforHoliday(ActionEvent event) {
-	    	newMain.switchScene("HolidayEntitilement.fxml");
+	    	newMain.switchScene("HolidayEntitlement.fxml");
 	    }
 	    @FXML
 	    void setOnActionforLogOut(ActionEvent event) {
@@ -91,7 +91,9 @@ public class homeController {
 	    
 	    @FXML 
 	    public void showNotification() {
-	    	if(newMain.tps.getNotification().isEmpty()) notificationData.add("No updated news");
+	    	if(newMain.tps.getNotification().isEmpty()) {
+	    		notificationData.add("No updated news");
+	    	}
 	    	else {
 	    		for(Notification noti : newMain.tps.getNotification()) {
 		    		notificationData.add(noti.toString());

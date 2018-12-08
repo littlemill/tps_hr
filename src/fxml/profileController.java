@@ -34,7 +34,6 @@ public class profileController  {
 	@FXML
 	void setOnActionShowProfile(ActionEvent event) {
 		EmployeeType type = newMain.user.getType();
-		System.out.println(newMain.user.getType().toString());
 		Employee employee;
 		userImage.setImage(new Image("/picture/"+newMain.user.getName().toLowerCase()+".jpg"));
 		switch (type) {
