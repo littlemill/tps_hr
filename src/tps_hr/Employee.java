@@ -61,11 +61,7 @@ public abstract class Employee {
 		Calendar rightnow = Calendar.getInstance();
 		rightnow.compareTo(startingDate);
 	}
-		
-	public void promote(int newSalary) {
-		this.setSalary(newSalary);
-	}
-
+	
 	//getters and setters
 	public String getId() {
 		return id;
