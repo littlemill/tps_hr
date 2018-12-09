@@ -55,7 +55,7 @@ public class Finance extends Employee {
  					+employee.getSurname()+"\n"+year+"'s "+month+monthPostfix+" month payroll: "; //2018's 1st month payroll
  			for (int ii=0; ii<employee.payrollList.size(); ii++) {
  				if (employee.payrollList.get(ii).getMonth() == month && employee.payrollList.get(ii).getYear() == year) {
- 					data += employee.payrollList.get(ii).calculatePayroll()+"\n\n";
+ 					data += employee.payrollList.get(ii).getTotal()+"\n\n";
  					finance.add(data);
  					data = "";
  					check = true;

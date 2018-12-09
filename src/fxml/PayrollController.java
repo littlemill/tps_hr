@@ -37,21 +37,16 @@ public class PayrollController {
 		table.setEditable(true);
 		for(Payroll p :payrollList) {
 			data.add(p);
+			
 		}
 		table.setItems(data);
 		
-		/*Month = new TableColumn<Payroll,String>("Month");
-		Year = new TableColumn<Payroll,String>("Year");
-		Salary = new TableColumn<Payroll,String>("Salary");
-		Commission = new TableColumn<Payroll,String>("Commission");
-		Total = new TableColumn<Payroll,String>("Total");*/
-		
 		month.setCellValueFactory(new PropertyValueFactory("month"));
 		year.setCellValueFactory(new PropertyValueFactory("year"));
-		salary.setCellValueFactory(new PropertyValueFactory("Salary"));
-		commission.setCellValueFactory(new PropertyValueFactory("Commission"));
-		total.setCellValueFactory(new PropertyValueFactory("Total"));
-		//table.setItems(data);
+		salary.setCellValueFactory(new PropertyValueFactory("salary"));
+		commission.setCellValueFactory(new PropertyValueFactory("commission"));
+		total.setCellValueFactory(new PropertyValueFactory("total"));
+		
 		table.getColumns().setAll(month,year,salary,commission,total);
 	}
 	@FXML
