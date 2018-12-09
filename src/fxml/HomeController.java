@@ -1,13 +1,11 @@
 package fxml;
 import tps_hr.*;
 
-
-
-
 import javafx.fxml.FXML;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.*;
@@ -31,6 +29,9 @@ public class HomeController {
 
 	    @FXML
 	    private Button logOutBtn;
+	    
+	    @FXML
+	    private Button notiBtn;
 
 	    @FXML
 	    private ListView<String> notificationList;
@@ -101,19 +102,32 @@ public class HomeController {
 	    	System.exit(0);
 	    }
 	    
-	    @FXML 
-	    public void showNotification() {
-	    	Main.stopThread();
-	    	Main.startThread();
-	    	if(Main.tps.getNotification().isEmpty()) {
-	    		notificationData.add("No updated news");
+	    
+	    public void showNotification(ObservableList<String> l) throws NotificationException {
+	    	if(!Main.tps.getNotification().isEmpty()) {
+	    		for(Notification noti : Main.tps.getNotification()) {
+		    		l.add(noti.toString());
+	    		}
 	    	}
 	    	else {
-	    		for(Notification noti : Main.tps.getNotification()) {
-		    		notificationData.add(noti.toString());
-		    	}
+	    		throw new NotificationException(l);
 	    	}
-	    	notificationList.setItems(notificationData);
+	    	
+	    	Main.stopThread();
+	    	Main.startThread();
+	    }
+	    
+	    @FXML
+	    void setOnActionforNoti(ActionEvent event) {
+	    	try {
+	    		showNotification(notificationData);
+	    	}
+	    	catch(NotificationException e) {
+	    		notificationData.add("No updated news available.");
+	    	}
+	    	finally {
+	    		notificationList.setItems(notificationData);
+	    	}
 	    }
 
 }
