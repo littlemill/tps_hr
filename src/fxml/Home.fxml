@@ -20,7 +20,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane minHeight="0.0" minWidth="0.0" onMouseClicked="#showNotification" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml.HomeController">
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml.HomeController">
    <children>
       <VBox alignment="TOP_CENTER" layoutX="14.0" layoutY="34.0" nodeOrientation="LEFT_TO_RIGHT" opacity="0.88" prefHeight="281.0" prefWidth="180.0" spacing="10.0">
          <children>
@@ -40,10 +40,9 @@
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
       </VBox>
-      <Accordion layoutX="340.0" layoutY="117.0" />
       <ScrollPane layoutX="211.0" layoutY="86.0" prefHeight="191.0" prefWidth="362.0">
          <content>
-            <ListView fx:id="notificationList" onScroll="#showNotification" prefHeight="196.0" prefWidth="362.0" />
+            <ListView fx:id="notificationList" prefHeight="196.0" prefWidth="362.0" />
          </content>
       </ScrollPane>
       <Label layoutX="211.0" layoutY="61.0" prefHeight="17.0" prefWidth="95.0" text="Annoucement" textFill="#03062f" />
@@ -59,6 +58,6 @@
             </LinearGradient>
          </fill>
       </Text>
-      <Button fx:id="notiBtn" layoutX="451.0" layoutY="288.0" mnemonicParsing="false" onAction="#setOnActionforNoti" prefHeight="27.0" prefWidth="122.0" text="Show Notification" />
+      <Button fx:id="notiBtn" layoutX="423.0" layoutY="288.0" mnemonicParsing="false" onAction="#setOnActionforNoti" prefHeight="27.0" prefWidth="150.0" text="Show Notification" />
    </children>
 </AnchorPane>
