@@ -17,17 +17,17 @@ public class PayrollController {
 	@FXML
     private Button backBtn;
 	@FXML
-	private TableView<Payroll> table;
+	private TableView<Payroll> table = new TableView<Payroll>();
 	@FXML
-	private TableColumn Month;
+	private TableColumn<Payroll,String> month;
 	@FXML 
-	private TableColumn Year;
+	private TableColumn<Payroll,String> year;
 	@FXML
-	private TableColumn Salary;
+	private TableColumn<Payroll,String> salary;
 	@FXML
-	private TableColumn Commission;
+	private TableColumn<Payroll,String> commission;
 	@FXML
-	private TableColumn Total;
+	private TableColumn<Payroll,String> total;
 	@FXML
 	private Button showBtn;
 	@FXML
@@ -39,13 +39,20 @@ public class PayrollController {
 			data.add(p);
 		}
 		table.setItems(data);
-		/*Month.setCellValueFactory(new PropertyValueFactory<Payroll,String>("month"));
-		Year.setCellValueFactory(new PropertyValueFactory<Payroll,String>("year"));
-		Salary.setCellValueFactory(new PropertyValueFactory<Payroll,String>("Salary"));
-		Commission.setCellValueFactory(new PropertyValueFactory<Payroll,String>("Commission"));
-		Total.setCellValueFactory(new PropertyValueFactory<Payroll,String>("Total"));
-		table.setItems(data);
-		table.getColumns().addAll(Month,Year,Salary,Commission,Total);*/
+		
+		/*Month = new TableColumn<Payroll,String>("Month");
+		Year = new TableColumn<Payroll,String>("Year");
+		Salary = new TableColumn<Payroll,String>("Salary");
+		Commission = new TableColumn<Payroll,String>("Commission");
+		Total = new TableColumn<Payroll,String>("Total");*/
+		
+		month.setCellValueFactory(new PropertyValueFactory("month"));
+		year.setCellValueFactory(new PropertyValueFactory("year"));
+		salary.setCellValueFactory(new PropertyValueFactory("Salary"));
+		commission.setCellValueFactory(new PropertyValueFactory("Commission"));
+		total.setCellValueFactory(new PropertyValueFactory("Total"));
+		//table.setItems(data);
+		table.getColumns().setAll(month,year,salary,commission,total);
 	}
 	@FXML
 	void setOnActionShowBtn(ActionEvent event) {

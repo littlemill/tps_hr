@@ -16,24 +16,6 @@ public class TimeSheet {
 		setUser(user);
 	}
 	
-	public void editTimeSheet(String part,String editedInfo) {
-		if(part.toLowerCase() == "starttime") {
-			setStartTime(editedInfo);
-			setDate(Calendar.getInstance());
-			return;
-		}
-		if(part.toLowerCase() == "endtime") {
-			setEndTime(editedInfo);
-			setDate(Calendar.getInstance());
-			return;
-		}
-		if(part.toLowerCase() == "note") {
-			setNote(editedInfo);
-			setDate(Calendar.getInstance());
-			return;
-		}
-	}
-	
 	public void addNote(String newnote) {
 		setNote(this.getNote()+"\n"+newnote);
 	}
