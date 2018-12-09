@@ -38,21 +38,28 @@ public class HolidayController {
     private ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList();
     @FXML    
     void update() {
-    	int used,max;
-    	
-    	Calendar rightnow = Calendar.getInstance();
-    	updateLbl.setText("Last updated : "+ rightnow.getTime().toString());
-    	used = Main.user.getHoliday().getUsedHolidays();
-    	max =  Main.user.getHoliday().getmaxHolidays();
-    	usedLbl.setText(Integer.toString(used));
-    	maxLbl.setText(Integer.toString(max));
-    	pieChartData.add(new PieChart.Data("Available Holidays", max-used));
-    	pieChartData.add(new PieChart.Data("Used Holidays",used));
-    	pieChart = new PieChart(pieChartData);
-    	pieChart.setTitle("Proportion of your used holidays and left holidays");
-    	pieChart.setPrefWidth(460);
-    	pieChart.setPrefHeight(242);
-    	pieChartPane.getChildren().add(pieChart);
+    	try {
+    		int used,max;
+    		if(!pieChartData.isEmpty()) {
+    			pieChartData.clear();
+    			pieChartPane.getChildren().clear();
+    		}
+    		Calendar rightnow = Calendar.getInstance();
+    		updateLbl.setText("Last updated : "+ rightnow.getTime().toString());
+    		used = Main.user.getHoliday().getUsedHolidays();
+    		max =  Main.user.getHoliday().getmaxHolidays();
+    		usedLbl.setText(Integer.toString(used));
+    		maxLbl.setText(Integer.toString(max));
+    		pieChartData.add(new PieChart.Data("Available Holidays", max-used));
+    		pieChartData.add(new PieChart.Data("Used Holidays",used));
+    		pieChart = new PieChart(pieChartData);
+    		pieChart.setTitle("Proportion of your used holidays and left holidays");
+    		pieChart.setPrefWidth(460);
+    		pieChart.setPrefHeight(242);
+    		pieChartPane.getChildren().add(pieChart);
+    	}catch(Exception e) {
+    		System.out.println("refreshed");
+    	}
     }
     @FXML
     void setOnActionBackBtn(ActionEvent event) {
