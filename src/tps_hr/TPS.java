@@ -44,7 +44,9 @@ public class TPS {
 	private int[] monthPayroll = {1,1,1,2,2,2,3,3};
 	private int[] yearPayroll = {2018,2018,2018,2018,2018,2018,2018,2018};
 	private int[] commissionPayroll = {0,0,0,30000,0,0,25000,0};
+	private String[] project = {"00123","Engineering Data Center","Faculty of Engineering , Chulalongkorn University"};
 	private int initialsize = 8;
+	
 	
 	public TPS() {
 		operationList = new ArrayList<Operation>();
@@ -115,15 +117,27 @@ public class TPS {
  			employee.getHoliday().setMaxHolidays(employee.getWorkYears());
  			employee.getHoliday().setUsedHolidays(usedHolidayL[i]);
  			list.add(employee);
-		}	
+		}
+		
+		Sales sale = getSalesList().get(0);
+		Operation eng = getOperationList().get(0);
+		Project prj = new Project(project[1],sale,eng);
+		GA ga = getGaList().get(0);
+		prj.setProjectCode(project[0]);
+		getCeoList().get(0).approveProject(prj);
+		getEvpList().get(0).approveProject(prj);
+		prj.setOrganization(project[2]);
+		prj.setApprovedbyCEO(true);
+		prj.setApprovedbyEVP(true);
+		eng.getProjectHistory().add(prj);
+		sale.getProjectHistory().add(prj);
+		
+		projectList.add(prj);
 	}
 
-	public Project projectCodeToProject(int projectCode) {
-		if (projectCode > (this.getLatestProjectCode()-1)) {
-			projectCode = this.getLatestProjectCode()-1;
-		}
+	public Project projectCodeToProject(String projectCode) {
 		for(int i=0;i<projectList.size();i++) {
-			if(projectList.get(i).getProjectCode() == projectCode) {
+			if(projectList.get(i).getProjectCode().equals(projectCode)) {
 				return projectList.get(i);
 			}
 		}
@@ -231,6 +245,13 @@ public class TPS {
 	public void setNotification(ArrayList<Notification> notification) {
 		this.notification = notification;
 	}
-	
+
+	public ArrayList<Project> getProjectList() {
+		return projectList;
+	}
+
+	public void setProjectList(ArrayList<Project> projectList) {
+		this.projectList = projectList;
+	}
 	
 }

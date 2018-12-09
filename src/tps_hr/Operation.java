@@ -5,18 +5,14 @@ import java.util.Calendar;
 
 public class Operation extends Employee {
 	private int annualTravelExpense;
-	private ArrayList<Project> projectHistory;
+	private ArrayList<Project> projectHistory = new ArrayList<Project>();
 	
 	public Operation() {
 		super();
 	}
+	
 	public Operation(String name,String surname) {
 		super(name,surname);
-		projectHistory = new ArrayList<Project>();
-	}
-	
-	public void addHistory(Project project) {
-		projectHistory.add(project);
 	}
 	
 	public void implementProject(Project project,int travelexpense) {
@@ -35,6 +31,12 @@ public class Operation extends Employee {
 		this.annualTravelExpense = annualTravelExpense;
 	}
 
+	public ArrayList<Project> getProjectHistory() {
+		return projectHistory;
+	}
+	public void setProjectHistory(ArrayList<Project> projectHistory) {
+		this.projectHistory = projectHistory;
+	}
 	@Override
 	public String toString() {
 		String data;

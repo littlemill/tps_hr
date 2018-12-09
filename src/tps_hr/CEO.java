@@ -11,9 +11,8 @@ public class CEO extends Employee implements Approvable {
 		super(name, surname);
 	}
 	
-	public void approveProject(int projectCode) {
-		Project a = Main.tps.projectCodeToProject(projectCode);
-		a.setApprovedbyCEO(true);
+	public void approveProject(Project project) {
+		project.setApprovedbyCEO(true);
 	}
 	
 	private String printMembers(EmployeeType type) {

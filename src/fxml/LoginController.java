@@ -95,8 +95,9 @@ public class LoginController {
 		    					}
 		    				}
 		    			}
-		    			Main.startThread();
+		    			Main.alertcheck = false;
 		    			Main.switchScene("Home.fxml");
+		    			Main.startThread();
 		    		}catch(Exception e) {
 		    			e.printStackTrace();
 		    		}

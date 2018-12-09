@@ -12,12 +12,6 @@ public class GA extends Employee {
 		super(name, surname);
 	}
 	
-	public int generateProjectCode() {
-		int projectCode = Main.tps.getLatestProjectCode();
-		Main.tps.setLatestProjectCode(Main.tps.getLatestProjectCode()+1);
-		return projectCode;
-	}
-	
 	public void addNotification(String header,String note) {
 		Main.tps.notification.add(new Notification(header,note,this));
 	}

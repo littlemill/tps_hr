@@ -46,14 +46,15 @@ public class EditOperationController {
     		alert.show();
     		Main.startThread();
     	}else {
-    		int prjCode = Integer.parseInt(codeTfield.getText());
-        	if(prjCode>Main.tps.getLatestProjectCode()) {
+    		String prjCode = codeTfield.getText();
+    		Project prj = Main.tps.projectCodeToProject(prjCode);
+    		Project checkProject = Main.tps.getProjectList().get(Main.tps.getProjectList().size()-1);
+        	if(Main.tps.projectCodeToProject(prjCode).equals(checkProject) && !(checkProject.getProjectCode().equals(prj.getProjectCode()))){
         		Alert alert = new Alert(AlertType.ERROR);
         		alert.setContentText("Invalid Project Code");
         		alert.show();
         		Main.startThread();
         	}
-        	Project prj = Main.tps.projectCodeToProject(prjCode);
         	label.setText(prj.toString());
         	Main.startThread();
     	}
@@ -68,14 +69,15 @@ public class EditOperationController {
     		alert.show();
     		Main.startThread();
     	}else {
-    		int prjCode = Integer.parseInt(codeTfield.getText());
-        	if(prjCode>Main.tps.getLatestProjectCode()) {
+    		String prjCode = codeTfield.getText();
+    		Project prj = Main.tps.projectCodeToProject(prjCode);
+    		Project checkProject = Main.tps.getProjectList().get(Main.tps.getProjectList().size()-1);
+        	if(Main.tps.projectCodeToProject(prjCode).equals(checkProject) && !(checkProject.getProjectCode().equals(prj.getProjectCode()))){
         		Alert alert = new Alert(AlertType.ERROR);
         		alert.setContentText("Invalid Project Code");
         		alert.show();
         		Main.startThread();
         	}
-        	Project prj = Main.tps.projectCodeToProject(prjCode);
         	prj.setTravelExpenses(Integer.parseInt(expenseTfield.getText()));
         	prj.getEngineer().setAnnualTravelExpense(prj.getEngineer().getAnnualTravelExpense()+Integer.parseInt(expenseTfield.getText()));
         	expenseTfield.setDisable(true);
@@ -83,6 +85,7 @@ public class EditOperationController {
         	Main.startThread();
     	}
     }
+    
     
     @FXML
     void setOnActionSaveBtn(ActionEvent event) {
@@ -99,14 +102,7 @@ public class EditOperationController {
         		alert.show();
         		Main.startThread();
         	}else {
-        		int prjCode = Integer.parseInt(codeTfield.getText());
-            	if(prjCode>Main.tps.getLatestProjectCode()) {
-            		Alert alert = new Alert(AlertType.ERROR);
-            		alert.setContentText("Invalid Project Code");
-            		alert.show();
-            		Main.startThread();
-            	}
-            	Project prj = Main.tps.projectCodeToProject(prjCode);
+            	Project prj = Main.tps.projectCodeToProject(codeTfield.getText());
             	prj.setImplemented(true);
             	Main.startThread();
         	}

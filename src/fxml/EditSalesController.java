@@ -31,14 +31,15 @@ public class EditSalesController {
 	    		alert.show();
 	    		Main.startThread();
 	    	}else {
-	    		int prjCode = Integer.parseInt(codeTfield.getText());
-	        	if(prjCode>Main.tps.getLatestProjectCode()) {
+	    		String prjCode = codeTfield.getText();
+	    		Project prj = Main.tps.projectCodeToProject(prjCode);
+	    		Project checkProject = Main.tps.getProjectList().get(Main.tps.getProjectList().size()-1);
+	        	if(Main.tps.projectCodeToProject(prjCode).equals(checkProject) && !(checkProject.getProjectCode().equals(prj.getProjectCode()))){
 	        		Alert alert = new Alert(AlertType.ERROR);
 	        		alert.setContentText("Invalid Project Code");
 	        		alert.show();
 	        		Main.startThread();
 	        	}
-	        	Project prj = Main.tps.projectCodeToProject(prjCode);
 	        	label.setText(prj.toString());
 	        	Main.startThread();
 	    	}

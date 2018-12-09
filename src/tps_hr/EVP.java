@@ -10,9 +10,8 @@ public class EVP extends Employee implements Approvable {
 	public EVP(String name, String surname) {
 		super(name, surname);
 	}
-	public void approveProject(int projectCode) {
-		Project a = Main.tps.projectCodeToProject(projectCode);
-		a.setApprovedbyEVP(true);
+	public void approveProject(Project project) {
+		project.setApprovedbyEVP(true);
 	}
 	
 	public String printOperationMembers() {

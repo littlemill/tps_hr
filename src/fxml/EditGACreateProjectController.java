@@ -73,13 +73,6 @@ public class EditGACreateProjectController {
     }
     
     @FXML
-    void setOnActionGenBtn(ActionEvent event) {
-    	Main.stopThread();
-    	codeTfield.setText(Integer.toString(Main.tps.getLatestProjectCode()));
-    	Main.startThread();
-    }
-    
-    @FXML
     void setOnActionClearBtn(ActionEvent event) {
     	Main.stopThread();
     	codeTfield.setText(null);
@@ -93,6 +86,12 @@ public class EditGACreateProjectController {
     @FXML
     void setOnActionCreatebutton(ActionEvent event) {
     	Main.stopThread();
+    	if(codeTfield.getText()==null) {
+    		Alert alert = new Alert(AlertType.ERROR);
+    		alert.setContentText("Please fill Project Code");
+    		alert.show();
+    		Main.startThread();
+    	}
     	if(!ceoCheck.isSelected()&&!evpCheck.isSelected()) {
     		Alert alert = new Alert(AlertType.WARNING);
     		alert.setContentText("Please get the project approved by CEO and EVP");
@@ -143,9 +142,9 @@ public class EditGACreateProjectController {
     		}
     		GA ga = (GA) Main.user;
     		Project prj = new Project(nameTfield.getText(),sales,engineer);
-    		prj.setProjectCode(ga.generateProjectCode());
-    		Main.tps.getCeoList().get(0).approveProject(prj.getProjectCode());
-    		Main.tps.getEvpList().get(0).approveProject(prj.getProjectCode());
+    		prj.setProjectCode(codeTfield.getText());
+    		Main.tps.getCeoList().get(0).approveProject(prj);
+    		Main.tps.getEvpList().get(0).approveProject(prj);
     		prj.setOrganization(orgTfield.getText());
     		prj.setApprovedbyCEO(true);
     		prj.setApprovedbyEVP(true);

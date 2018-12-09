@@ -7,16 +7,14 @@ public class Project {
 	private Sales sale;
 	private Operation engineer;
 	private Calendar startingDate,implementDate;
-	private int projectCode;
+	private String projectCode;
 	private int projectCost,profit,travelExpenses;
 	private boolean hasProjectCode,isApprovedbyCEO,isApprovedbyEVP,isImplemented;
 	
 	public Project(String projectName,Sales sale,Operation engineer){
 		setProjectName(projectName);
 		setSale(sale);
-		this.sale.addHistory(this);
 		setEngineer(engineer);
-		this.engineer.addHistory(this);
 		setStartingDate(Calendar.getInstance());
 	}
 	
@@ -29,7 +27,6 @@ public class Project {
 			return false;
 		}
 	}
-
 	public String getProjectName() {
 		return projectName;
 	}
@@ -87,11 +84,11 @@ public class Project {
 		
 	}
 
-	public int getProjectCode() {
+	public String getProjectCode() {
 		return projectCode;
 	}
 
-	public void setProjectCode(int projectCode) {
+	public void setProjectCode(String projectCode) {
 		this.projectCode = projectCode;
 	}
 
@@ -142,6 +139,5 @@ public class Project {
 	public void setTravelExpenses(int travelExpenses) {
 		this.travelExpenses = travelExpenses;
 	}
-	
 	
 }

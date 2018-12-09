@@ -4,18 +4,13 @@ import java.util.ArrayList;
 
 public class Sales extends Employee {
 	private double annualCommission;
-	private ArrayList<Project> projectHistory;
+	private ArrayList<Project> projectHistory = new ArrayList<Project>();
 	
 	public Sales() {
 		super();
 	}
 	public Sales(String name, String surname) {
 		super(name, surname);
-		projectHistory = new ArrayList<Project>();
-	}
-	
-	public void addHistory(Project project) {
-		projectHistory.add(project);
 	}
 	
 	public String toString() {

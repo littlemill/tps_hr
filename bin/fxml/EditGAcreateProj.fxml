@@ -60,8 +60,7 @@
                   <Label text="Project Code :" />
                   <HBox prefHeight="100.0" prefWidth="200.0" spacing="7.0" GridPane.columnIndex="1">
                      <children>
-                        <TextField fx:id="codeTfield" />
-                        <Button fx:id="genBtn" mnemonicParsing="false" onAction="#setOnActionGenBtn" prefHeight="27.0" prefWidth="148.0" text="Gen Code" />
+                        <TextField fx:id="codeTfield" prefHeight="27.0" prefWidth="190.0" />
                      </children>
                   </HBox>
                   <Label text="Project Name :" GridPane.rowIndex="1" />

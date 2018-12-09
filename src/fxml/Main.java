@@ -2,6 +2,7 @@ package fxml;
 
 import tps_hr.*;
 
+
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
@@ -22,7 +23,7 @@ public class Main extends Application{
 	public static TPS tps = new TPS();
 	public static Login login = new Login();
 	private static Thread thread;
-	private static boolean alertcheck = false;
+	public static boolean alertcheck = false;
 	
 	@Override
     public void start(Stage primaryStage) throws Exception{
@@ -64,22 +65,24 @@ public class Main extends Application{
 		thread = new Thread(() -> {
 			while (true) {
 				try {
-					//Main.alertcheck = false;
 					Thread.sleep(600000);
 					Platform.runLater(new Runnable() {
 					    @Override
 					    public void run() {
-					    	if(!Main.alertcheck) {
-					    		Alert alert = new Alert(AlertType.ERROR);
-								alert.setTitle("Out of Time");
-								alert.setContentText("You have stayed in the page for 10 minutes with out doing anything."+"\n"+"Please login again.");
-								alert.showAndWait().ifPresent(type->{
-									Main.switchScene("Login.fxml");
-								});
+					    	try {
+					    		if(!Main.alertcheck) {
+					    			Alert alert = new Alert(AlertType.ERROR);
+					    			alert.setTitle("Out of Time");
+					    			alert.setContentText("You have stayed in the page for 10 minutes with out doing anything."+"\n"+"Please login again.");
+					    			alert.showAndWait().ifPresent(type->{
+					    				Main.switchScene("Login.fxml");
+					    			});
 								Main.alertcheck = true;
-								Platform.setImplicitExit(true);
+					    		}
+					    	}catch (Exception e){
+					    		e.printStackTrace();
 					    	}
-					    }
+					}
 					});
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -93,7 +96,14 @@ public class Main extends Application{
     
     public static void stopThread() {
     	thread.interrupt();
-    	
     }
     
+    public static void alertCall() {
+    	Alert alert = new Alert(AlertType.ERROR);
+		alert.setTitle("Out of Time");
+		alert.setContentText("You have stayed in the page for 10 minutes with out doing anything."+"\n"+"Please login again.");
+		alert.showAndWait().ifPresent(type->{
+			Main.switchScene("Login.fxml");
+		});
+    }
 }
