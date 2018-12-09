@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.2.2" icons="true" automaticImage="PNG" always-add-relationships="false" generalizations="true" 
-  realizations="true" associations="false" dependencies="false" nesting-relationships="true" router="FAN">  
+  realizations="true" associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
   <class id="1" language="java" name="fxml.CreateTimeSheetController" project="tps_hr" 
     file="/tps_hr/src/fxml/CreateTimeSheetController.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="126" y="96"/>    
+    <position height="-1" width="-1" x="151" y="153"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -12,7 +12,7 @@
   </class>  
   <class id="2" language="java" name="fxml.EditCEOController" project="tps_hr" 
     file="/tps_hr/src/fxml/EditCEOController.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="118" y="360"/>    
+    <position height="-1" width="-1" x="157" y="369"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -21,7 +21,7 @@
   </class>  
   <class id="3" language="java" name="fxml.EditEVPController" project="tps_hr" 
     file="/tps_hr/src/fxml/EditEVPController.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="121" y="570"/>    
+    <position height="-1" width="-1" x="160" y="557"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -30,7 +30,7 @@
   </class>  
   <class id="4" language="java" name="fxml.EditFinanceController" project="tps_hr" 
     file="/tps_hr/src/fxml/EditFinanceController.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="108" y="867"/>    
+    <position height="-1" width="-1" x="477" y="170"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -39,7 +39,7 @@
   </class>  
   <class id="5" language="java" name="fxml.EditGAanounceController" project="tps_hr" 
     file="/tps_hr/src/fxml/EditGAanounceController.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="444" y="824"/>    
+    <position height="-1" width="-1" x="799" y="428"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -48,7 +48,7 @@
   </class>  
   <class id="6" language="java" name="fxml.EditGAController" project="tps_hr" 
     file="/tps_hr/src/fxml/EditGAController.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="434" y="1097"/>    
+    <position height="-1" width="-1" x="795" y="128"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -57,7 +57,7 @@
   </class>  
   <class id="7" language="java" name="fxml.EditGACreateProjectController" project="tps_hr" 
     file="/tps_hr/src/fxml/EditGACreateProjectController.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="762" y="1001"/>    
+    <position height="-1" width="-1" x="793" y="819"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -66,7 +66,7 @@
   </class>  
   <class id="8" language="java" name="fxml.EditOperationController" project="tps_hr" 
     file="/tps_hr/src/fxml/EditOperationController.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="753" y="603"/>    
+    <position height="-1" width="-1" x="469" y="472"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -75,7 +75,7 @@
   </class>  
   <class id="9" language="java" name="fxml.EditSalesController" project="tps_hr" 
     file="/tps_hr/src/fxml/EditSalesController.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="760" y="300"/>    
+    <position height="-1" width="-1" x="476" y="751"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -84,7 +84,7 @@
   </class>  
   <class id="10" language="java" name="fxml.HolidayController" project="tps_hr" 
     file="/tps_hr/src/fxml/HolidayController.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1086" y="1002"/>    
+    <position height="-1" width="-1" x="170" y="814"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -93,7 +93,7 @@
   </class>  
   <class id="11" language="java" name="fxml.HomeController" project="tps_hr" file="/tps_hr/src/fxml/HomeController.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="439" y="417"/>    
+    <position height="-1" width="-1" x="215" y="-189"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -102,7 +102,7 @@
   </class>  
   <class id="12" language="java" name="fxml.LoginController" project="tps_hr" 
     file="/tps_hr/src/fxml/LoginController.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="766" y="85"/>    
+    <position height="-1" width="-1" x="803" y="-303"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -111,7 +111,7 @@
   </class>  
   <class id="13" language="java" name="fxml.Main" project="tps_hr" file="/tps_hr/src/fxml/Main.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="442" y="26"/>    
+    <position height="-1" width="-1" x="497" y="-187"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -120,7 +120,7 @@
   </class>  
   <class id="14" language="java" name="fxml.NotificationException" project="tps_hr" 
     file="/tps_hr/src/fxml/NotificationException.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1044" y="-52"/>    
+    <position height="-1" width="-1" x="794" y="-133"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -129,7 +129,7 @@
   </class>  
   <class id="15" language="java" name="fxml.PayrollController" project="tps_hr" 
     file="/tps_hr/src/fxml/PayrollController.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1088" y="398"/>    
+    <position height="-1" width="-1" x="471" y="1014"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -138,7 +138,7 @@
   </class>  
   <class id="16" language="java" name="fxml.ProfileController" project="tps_hr" 
     file="/tps_hr/src/fxml/ProfileController.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1084" y="142"/>    
+    <position height="-1" width="-1" x="150" y="1075"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -147,7 +147,7 @@
   </class>  
   <class id="17" language="java" name="fxml.TimeSheetController" project="tps_hr" 
     file="/tps_hr/src/fxml/TimeSheetController.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1096" y="692"/>    
+    <position height="-1" width="-1" x="803" y="1154"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      

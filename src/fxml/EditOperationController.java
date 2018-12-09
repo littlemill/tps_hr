@@ -63,7 +63,7 @@ public class EditOperationController {
     @FXML
     void setOnActionAddBtn(ActionEvent event) {
     	Main.stopThread();
-    	if(codeTfield.getText()==null) {
+    	if(codeTfield.getText().equals("")) {
     		Alert alert = new Alert(AlertType.ERROR);
     		alert.setContentText("Please fill Project Code");
     		alert.show();
@@ -77,8 +77,10 @@ public class EditOperationController {
         		alert.setContentText("Invalid Project Code");
         		alert.show();
         		Main.startThread();
-        	}
-        	prj.setTravelExpenses(Integer.parseInt(expenseTfield.getText()));
+        }
+        	//System.out.println("hello");
+        	int expenses = Integer.parseInt(expenseTfield.getText());
+        	prj.setTravelExpenses(expenses);
         	prj.getEngineer().setAnnualTravelExpense(prj.getEngineer().getAnnualTravelExpense()+Integer.parseInt(expenseTfield.getText()));
         	expenseTfield.setDisable(true);
         	addBtn.setDisable(true);
@@ -96,7 +98,7 @@ public class EditOperationController {
     		alert.show();
     		Main.startThread();
     	}else {
-		if(codeTfield.getText()==null || !addBtn.isDisable() ) {
+		if(codeTfield.getText().equals("") || !addBtn.isDisable() ) {
         		Alert alert = new Alert(AlertType.ERROR);
         		alert.setContentText("Please fill in every details to complete the task");
         		alert.show();

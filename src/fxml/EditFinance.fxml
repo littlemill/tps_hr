@@ -24,34 +24,10 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <MenuButton fx:id="monthMenu" layoutX="153.0" layoutY="41.0" mnemonicParsing="false" onAction="#setOnActionMonthMenu" prefHeight="25.0" prefWidth="80.0" text="month">
-        <items>
-          <MenuItem mnemonicParsing="false" text="January" />
-          <MenuItem mnemonicParsing="false" text="February" />
-            <MenuItem mnemonicParsing="false" text="March" />
-            <MenuItem mnemonicParsing="false" text="April" />
-            <MenuItem mnemonicParsing="false" text="May" />
-            <MenuItem mnemonicParsing="false" text="June" />
-            <MenuItem mnemonicParsing="false" text="July" />
-            <MenuItem mnemonicParsing="false" text="August" />
-            <MenuItem mnemonicParsing="false" text="September" />
-            <MenuItem mnemonicParsing="false" text="October" />
-            <MenuItem mnemonicParsing="false" text="November" />
-            <MenuItem mnemonicParsing="false" text="December" />
-        </items>
-      </MenuButton>
-      <MenuButton fx:id="yearMenu" layoutX="300.0" layoutY="41.0" mnemonicParsing="false" onAction="#setOnActionYearMenu" prefHeight="25.0" prefWidth="80.0" text="year">
-         <items>
-            <MenuItem mnemonicParsing="false" text="2018" />
-            <MenuItem mnemonicParsing="false" text="2017" />
-            <MenuItem mnemonicParsing="false" text="2016" />
-            <MenuItem mnemonicParsing="false" text="2015" />
-            <MenuItem mnemonicParsing="false" text="2014" />
-         </items>
-      </MenuButton>
       <Button fx:id="searchBtn" layoutX="424.0" layoutY="41.0" mnemonicParsing="false" onAction="#setOnActionSearchBtn" prefHeight="25.0" prefWidth="80.0" text="Search" />
       <Button fx:id="backBtn" layoutX="453.0" layoutY="352.0" mnemonicParsing="false" onAction="#setOnActionBackBtn" prefHeight="25.0" prefWidth="90.0" text="Back" />
       <ListView fx:id="financeList" layoutX="97.0" layoutY="83.0" prefHeight="253.0" prefWidth="407.0" />
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+      <TextField fx:id="monthTfield" layoutX="153.0" layoutY="40.0" prefHeight="27.0" prefWidth="99.0" promptText="ex.August" />
+      <TextField fx:id="yearTfield" layoutX="301.0" layoutY="39.0" prefHeight="27.0" prefWidth="109.0" promptText="in A.D." />
    </children>
 </AnchorPane>

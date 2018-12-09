@@ -16,13 +16,11 @@ public class TimeSheet {
 		setUser(user);
 	}
 	
-	public void addNote(String newnote) {
-		setNote(this.getNote()+"\n"+newnote);
-	}
-	
 	@Override
 	public String toString() {
-		return "Last Update:"+date.getTime().toString()+"\n"+"Start Time :"+startTime+"\n"+"End Time :"+endTime+"\n"+"Note :" + note;
+		String data =  "Last Update:"+date.getTime().toString()+"\n"+"Start Time : "+startTime+"\n"+"End Time : "+endTime+"\n"+"Note : ";
+		if(this.getNote().equals("")) return data + "-";
+		else return data + this.getNote();
 	}
 	
 	//getters and setters

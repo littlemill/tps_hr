@@ -39,7 +39,6 @@ public class Main extends Application{
         
     }
 
-
     public static void main(String[] args) {
         launch(args);
     }
@@ -98,12 +97,4 @@ public class Main extends Application{
     	thread.interrupt();
     }
     
-    public static void alertCall() {
-    	Alert alert = new Alert(AlertType.ERROR);
-		alert.setTitle("Out of Time");
-		alert.setContentText("You have stayed in the page for 10 minutes with out doing anything."+"\n"+"Please login again.");
-		alert.showAndWait().ifPresent(type->{
-			Main.switchScene("Login.fxml");
-		});
-    }
 }

@@ -16,6 +16,7 @@ public class Project {
 		setSale(sale);
 		setEngineer(engineer);
 		setStartingDate(Calendar.getInstance());
+		setNote("");
 	}
 	
 	public boolean closeProject() {
@@ -27,6 +28,16 @@ public class Project {
 			return false;
 		}
 	}
+	
+	@Override
+	public String toString() {
+		String data =  "Project Code: "+this.getProjectCode()+"\n"+"Project Name: "+this.getProjectName()+"\n"+"Organization: "+this.getOrganization()
+		+"\n"+"Sale: "+this.getSale().getName()+"\n"+"Engineer: "+this.getEngineer().getName()+" "+this.getEngineer().getSurname()+"\n"+"Note: ";
+		if(this.getNote().equals("")) return data + "-";
+		else return data + this.getNote();
+	}
+	
+	//getters and setters
 	public String getProjectName() {
 		return projectName;
 	}
