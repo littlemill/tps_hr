@@ -32,7 +32,7 @@ public class Project {
 	@Override
 	public String toString() {
 		String data =  "Project Code: "+this.getProjectCode()+"\n"+"Project Name: "+this.getProjectName()+"\n"+"Organization: "+this.getOrganization()
-		+"\n"+"Sale: "+this.getSale().getName()+"\n"+"Engineer: "+this.getEngineer().getName()+" "+this.getEngineer().getSurname()+"\n"+"Note: ";
+		+"\n"+"Sale: "+this.getSale().getName()+" "+this.getSale().getSurname()+"\n"+"Engineer: "+this.getEngineer().getName()+" "+this.getEngineer().getSurname()+"\n"+"Note: ";
 		if(this.getNote().equals("")) return data + "-";
 		else return data + this.getNote();
 	}
